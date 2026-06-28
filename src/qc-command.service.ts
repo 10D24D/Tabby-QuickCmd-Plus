@@ -274,14 +274,28 @@ export class QuickCommandService {
     }
 
     // 清理重复数据后写回
+    let changed = false
     if (JSON.stringify(merged) !== JSON.stringify(this.groups)) {
       this.groups = merged
-      this.saveGroups()
+      changed = true
     }
 
-    // 按 order 排序
-    this.groups.sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
-    this.saveGroups()
+    // 按 order 排序（仅在顺序实际变化时才标记为 changed）
+    let orderChanged = false
+    for (let i = 0; i < this.groups.length - 1; i++) {
+      if ((this.groups[i].order ?? 999) > (this.groups[i + 1].order ?? 999)) {
+        orderChanged = true
+        break
+      }
+    }
+    if (orderChanged) {
+      this.groups.sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+      changed = true
+    }
+
+    if (changed) {
+      this.saveGroups()
+    }
 
     return this.groups
   }

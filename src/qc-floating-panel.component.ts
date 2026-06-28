@@ -729,11 +729,13 @@ export class QuickCommandFloatingPanel implements OnInit, OnDestroy {
   confirmParamModal(): void {
     if (!this.paramModalCmd) return
     let text = this.paramModalCmd.text
+    const paramValues: Record<string, string> = {}
     for (const p of this.paramModalParams) {
-      const val = this.paramModalValues[p] || ''
+      const val = this.paramModalValues[p] ?? ''
+      paramValues[p] = val
       text = text.split('${' + p + '}').join(val)
     }
-    this.sendCommand(this.paramModalCmd, text, this.paramModalForceExecute)
+    this.sendCommand(this.paramModalCmd, text, this.paramModalForceExecute, paramValues)
     this.closeParamModal()
   }
 
@@ -797,9 +799,23 @@ export class QuickCommandFloatingPanel implements OnInit, OnDestroy {
     } catch (e) { console.warn('[QC+] sendLineText error', e) }
   }
 
-  private sendCommand(cmd: QuickCommand, text: string, forceExecute = false): void {
+  private sendCommand(cmd: QuickCommand, text: string, forceExecute = false, paramValues?: Record<string, string>): void {
     this.svc.incrementUsage(cmd.id)
-    const steps = resolveSteps({ ...cmd, steps: cmd.steps, text })
+    // 如果有参数值，同时替换步骤文本中的占位符
+    let effectiveCmd = cmd
+    if (paramValues && cmd.steps && cmd.steps.length > 0) {
+      effectiveCmd = {
+        ...cmd,
+        steps: cmd.steps.map(s => {
+          let stepText = s.text
+          for (const [p, val] of Object.entries(paramValues)) {
+            stepText = stepText.split('${' + p + '}').join(val ?? '')
+          }
+          return { ...s, text: stepText }
+        }),
+      }
+    }
+    const steps = resolveSteps({ ...effectiveCmd, steps: effectiveCmd.steps, text })
     if (steps.length === 0) return
     this.executeSteps(cmd, steps, 0, forceExecute)
   }

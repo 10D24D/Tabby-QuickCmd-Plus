@@ -171,6 +171,9 @@ function detectSystemLocale(): 'zh-CN' | 'en-US' {
             <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
             {{ t('Github源码', 'GitHub Source') }}
           </span>
+          <span class="qs-about-link" (click)="openGithub()" style="margin-left:14px;">
+            ⭐ {{ t('点赞支持', 'Give a Star') }}
+          </span>
         </div>
       </div>
     </div>
@@ -304,16 +307,13 @@ function detectSystemLocale(): 'zh-CN' | 'en-US' {
     .qs-font-control { display:flex; align-items:center; gap:10px; }
     .qs-font-val { font-size:13px; min-width:30px; color:var(--_text-muted); font-variant-numeric:tabular-nums; }
 
-    /* range 滑块 */
-    .qs-range { flex:1; max-width:160px; margin:0; height:4px; -webkit-appearance:none; appearance:none; background:var(--_border,#585b70); border-radius:2px; outline:none; cursor:pointer; }
-    .qs-range::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:14px; height:14px; border-radius:50%; background:var(--_primary,#b4befe); border:2px solid var(--_surface,#45475a); cursor:pointer; }
-    .qs-range::-moz-range-track { height:4px; background:var(--_border,#585b70); border-radius:2px; }
-    .qs-range::-moz-range-thumb { width:14px; height:14px; border-radius:50%; background:var(--_primary,#b4befe); border:2px solid var(--_surface,#45475a); cursor:pointer; }
+    /* range 滑块 — 保持浏览器原生样式 */
+    .qs-range { flex:1; max-width:160px; margin:0; cursor:pointer; background:none; border:none; outline:none; }
 
     /* 关于 */
     .qs-about-row { display:flex; gap:16px; flex-wrap:wrap; margin-top:4px; font-size:13px; }
     .qs-about-item { color:var(--_text-muted); }
-    .qs-about-link { color:var(--_primary,#b4befe); text-decoration:none; cursor:pointer; }
+    .qs-about-link { color:inherit; text-decoration:none; cursor:pointer; }
     .qs-about-link:hover { text-decoration:underline; }
     .qs-about-link svg { width:12px; height:12px; vertical-align:middle; margin-right:2px; }
 
@@ -393,7 +393,7 @@ export class QuickCommandSettingsComponent {
   /** 获取颜色主题的本地化名称 */
   themeLabel(c: any): string {
     const labels: Record<string, [string, string]> = {
-      '':      ['跟随系统', 'Auto'],
+      '':      ['自动', 'Auto'],
       'dark':  ['深色', 'Dark'],
       'light': ['浅色', 'Light'],
       'blue':  ['蓝色', 'Blue'],
@@ -477,7 +477,7 @@ export class QuickCommandSettingsComponent {
   }
 
   openGithub(): void {
-    const url = 'https://github.com/DD1024z/Tabby-QuickCmd-Plus'
+    const url = 'https://github.com/10D24D/Tabby-QuickCmd-Plus'
     try {
       // Electron shell
       ;(window as any).require('electron').shell.openExternal(url)

@@ -34,27 +34,47 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
 
   private applySavedTheme(): void {
     try {
-      // 先应用字体大小（不依赖主题设置）
       const root = document.documentElement
+
+      // 先应用字体大小（不依赖主题设置）
       const savedFontSize = localStorage.getItem('qc-plus-font-size')
       if (savedFontSize && !root.style.getPropertyValue('--qc-font-size')) {
         root.style.setProperty('--qc-font-size', savedFontSize + 'px')
       }
 
-      // 如果是 Auto 模式（theme 为空），不做颜色设置
       const theme = localStorage.getItem('qc-plus-theme')
-      if (!theme || theme === '') return
+      if (!theme || theme === '') return // Auto 模式不做颜色设置
 
       const keys = ['primary', 'bg', 'text', 'border', 'surface', 'hover', 'input-bg', 'text-muted']
-      let applied = false
+
+      // 1) 优先读取用户自定义颜色值（Custom 模式保存到 qc-plus-color-*）
       for (const k of keys) {
         const val = localStorage.getItem(`qc-plus-color-${k}`)
         if (val && !root.style.getPropertyValue(`--qc-${k}`)) {
           root.style.setProperty(`--qc-${k}`, val)
-          applied = true
         }
       }
-      if (applied) console.log('[QC+] Color theme applied')
+      // 如果任意自定义颜色已应用，说明是 Custom 模式，跳过预设
+      if (localStorage.getItem('qc-plus-color-primary')) return
+
+      // 2) 没有自定义颜色 → 从预设主题获取
+      const presets: Record<string, Record<string, string>> = {
+        dark:   { primary:'#67676f', bg:'#1e1e2e', text:'#cdd6f4', border:'#585b70', surface:'#45475a', hover:'#585b70', 'input-bg':'#1e1e2e', 'text-muted':'#6c7086' },
+        light:  { primary:'#2563eb', bg:'#ffffff', text:'#1a1a2e', border:'#d1d9e6', surface:'#f0f4f8', hover:'#e5e9f0', 'input-bg':'#ffffff', 'text-muted':'#8899aa' },
+        blue:   { primary:'#3b9eff', bg:'#0b1929', text:'#e6f0ff', border:'#1e3a5f', surface:'#0d2240', hover:'#112a50', 'input-bg':'#091520', 'text-muted':'#5a7a9a' },
+        green:  { primary:'#4ade80', bg:'#0a2016', text:'#e8fce8', border:'#1a5030', surface:'#0d2818', hover:'#103420', 'input-bg':'#081810', 'text-muted':'#3a7a5a' },
+        purple: { primary:'#b794f4', bg:'#160e23', text:'#ebe0fc', border:'#3a2558', surface:'#1e1230', hover:'#281640', 'input-bg':'#120c20', 'text-muted':'#7a5a9a' },
+        red:    { primary:'#f87171', bg:'#1a0808', text:'#ffe0dd', border:'#502020', surface:'#2a0e0e', hover:'#341212', 'input-bg':'#140606', 'text-muted':'#9a5a5a' },
+      }
+      const p = presets[theme]
+      if (p) {
+        for (const k of keys) {
+          if (!root.style.getPropertyValue(`--qc-${k}`)) {
+            root.style.setProperty(`--qc-${k}`, p[k])
+          }
+        }
+        console.log('[QC+] Preset theme applied:', theme)
+      }
     } catch { /* ignore */ }
   }
 
