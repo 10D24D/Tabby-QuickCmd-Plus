@@ -1246,64 +1246,51 @@ export class QuickCommandSettingsComponent {
   }
 
   /**
-   * 「报告问题」入口：预填环境信息后新建 issue（对齐 Tabby 原生「报告问题」）
-   *   机制：GitHub 支持 https://github.com/<owner>/<repo>/issues/new?body=<urlencoded>
-   *   纯 URL query 预填，无需 API/token；正文按界面语言双语（中文 + English）
+   * 「报告问题」入口：打开 issue **表单**（按界面语言路由中/英模板）并预填环境信息
+   *   机制：GitHub issue forms 的字段 `id` 就是 URL query 参数名，配合 ?template=<表单文件> 使用
+   *   注意：本仓库 config.yml 关闭了 blank_issues_enabled，故**不能**用 ?body= 空白编辑器方案
    */
   openBugReport(): void {
     this._openIssue('bug')
   }
 
-  /**
-   * 「提出需求」入口：预填环境信息后新建 issue（双语正文，非中文用户也能看懂）
-   */
+  /** 「提出需求」入口：打开功能需求表单（按界面语言路由中/英模板）并预填环境信息 */
   openFeatureRequest(): void {
     this._openIssue('feature')
   }
 
-  /** 统一打开 issue：kind=bug 走缺陷正文，kind=feature 走需求正文；任一异常都回退为纯新建页 */
+  /** 统一打开 issue 表单：kind=bug 走缺陷报告模板，kind=feature 走功能需求模板；异常时回退纯新建页 */
   private _openIssue(kind: 'bug' | 'feature'): void {
     let url = 'https://github.com/10D24D/Tabby-QuickCmd-Plus/issues/new'
     try {
-      const body = this._buildIssueBody(kind)
-      if (body) url += `?body=${encodeURIComponent(body)}`
-    } catch { /* 组装失败则退化为空白新建页 */ }
+      url = this._buildIssueUrl(kind)
+    } catch { /* 组装失败则退化为纯新建页 */ }
     this._openExternal(url)
   }
 
   /**
-   * 组装 issue 正文：用户填写模板 + 自动环境信息；正文双语（中文 + English）以覆盖非中文用户
-   * 隐私红线：不采集主机名、用户名、文件路径、服务器地址等任何敏感字段
+   * 组装 issue 表单 URL：`?template=<表单文件>&<字段id>=<值>`
+   *   - 按界面语言路由中/英模板；两套模板**字段 id 完全一致**，同一套预填参数对两者都有效
+   *   - ⛔ 本仓库 config.yml 关闭了 blank_issues_enabled，不能用 ?body= 空白编辑器方案
+   *   - 隐私红线：不采集主机名、用户名、文件路径、服务器地址等任何敏感字段
    */
-  private _buildIssueBody(kind: 'bug' | 'feature'): string {
+  private _buildIssueUrl(kind: 'bug' | 'feature'): string {
     const zh = String(this.i18n.getLocale() || '').toLowerCase().startsWith('zh')
-    const lines: string[] = []
-    if (kind === 'bug') {
-      lines.push(zh ? '### 问题描述' : '### Description')
-      lines.push(zh
-        ? '<!-- 请描述遇到的问题：做了什么、期望什么、实际发生了什么（可附截图） -->'
-        : '<!-- What you did, what you expected, what actually happened (screenshots welcome) -->')
-      lines.push('')
-      lines.push(zh ? '### 复现步骤' : '### Steps to reproduce')
-      lines.push('1. ')
-      lines.push('2. ')
-    } else {
-      lines.push(zh ? '### 功能需求' : '### Feature Request')
-      lines.push(zh
-        ? '<!-- 请描述使用场景与期望功能 -->'
-        : '<!-- Describe the use case and expected feature -->')
-      lines.push('')
-      lines.push(zh ? '### 使用场景' : '### Use case')
-      lines.push(zh ? '<!-- 当前痛点或使用场景是什么？ -->' : '<!-- What is the current pain point or use case? -->')
-      lines.push('')
-      lines.push(zh ? '### 期望功能' : '### Expected feature')
-      lines.push(zh ? '<!-- 希望产品怎么做？ -->' : '<!-- How would you like the product to behave? -->')
+    const template = kind === 'bug'
+      ? (zh ? 'bug_report.yml' : 'bug_report_en.yml')
+      : (zh ? 'feature_request.yml' : 'feature_request_en.yml')
+    const base = `https://github.com/10D24D/Tabby-QuickCmd-Plus/issues/new?template=${template}`
+    const params: string[] = []
+    const add = (key: string, value: string): void => {
+      if (value) params.push(`${key}=${encodeURIComponent(value)}`)
     }
-    lines.push('')
-    lines.push('---')
-    lines.push(zh ? '**环境信息**（插件自动填写，请保留）' : '**Environment** (auto-filled, please keep)')
-    lines.push(...this._collectEnvLines())
-    return lines.join('\n')
+    add('os_version', this._platformLabel())
+    add('tabby_version', this._safeStr(() => this.platformService?.getAppVersion?.(), ''))
+    add('qc_plus_version', this.pkgVersion)
+    add('tabby_frontend', this._safeStr(() => this.configService?.store?.terminal?.frontend, ''))
+    add('installed_plugins', this._pluginsLabel())
+    // base 里已带 ?template=…，预填参数一律用 & 追加
+    return params.length ? `${base}&${params.join('&')}` : base
   }
 
   /** 打开外部链接：Electron shell 优先，失败回退浏览器 / location.href */
@@ -1317,17 +1304,6 @@ export class QuickCommandSettingsComponent {
         try { location.href = url } catch { /* ignore */ }
       }
     }
-  }
-
-  /** 收集环境信息行（对齐 Tabby 原生 reportBug 的 Version/Platform/Plugins/Frontend 四项） */
-  private _collectEnvLines(): string[] {
-    return [
-      `Version: tabby-quick-command-plus ${this.pkgVersion}`,
-      `Tabby: ${this._safeStr(() => this.platformService?.getAppVersion?.())}`,
-      `Platform: ${this._platformLabel()}`,
-      `Frontend: ${this._safeStr(() => this.configService?.store?.terminal?.frontend)}`,
-      `Plugins: ${this._pluginsLabel()}`,
-    ]
   }
 
   /**
