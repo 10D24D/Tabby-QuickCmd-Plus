@@ -1,13 +1,16 @@
 {
   "name": "tabby-quick-command-plus",
-  "version": "1.0.0",
-  "description": "QuickCommand+ 快捷命令插件 - 浮动面板 + 可拖拽入口 + 分组管理",
-  "keywords": ["tabby-plugin"],
+  "version": "2.0.0",
+  "description": "QuickCmd+ 快捷命令插件 - 浮动面板 + 可拖拽入口 + 分组管理",
+  "keywords": ["tabby-plugin", "command", "quick-command", "terminal", "tabby"],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --progress --color",
+    "check-common": "node scripts/check-common-sync.mjs",
+    "prebuild": "npm run check-common",
+    "build": "webpack --progress --color && node scripts/copy-icons.mjs && node scripts/copy-qc-manifest.mjs",
     "watch": "webpack --progress --color --watch",
+    "use-in-tabby": "powershell -NoProfile -ExecutionPolicy Bypass -File ./use-in-tabby.ps1",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build"
   },
