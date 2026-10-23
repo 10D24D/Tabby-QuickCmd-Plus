@@ -2,7 +2,13 @@
   "name": "tabby-quick-command-plus",
   "version": "2.0.0",
   "description": "QuickCmd+ 快捷命令插件 - 浮动面板 + 可拖拽入口 + 分组管理",
-  "keywords": ["tabby-plugin", "command", "quick-command", "terminal", "tabby"],
+  "keywords": [
+    "tabby-plugin",
+    "command",
+    "quick-command",
+    "terminal",
+    "tabby"
+  ],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -14,7 +20,9 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm run build"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "DD1024z",
   "license": "MIT",
   "repository": {
@@ -25,7 +33,6 @@
   "bugs": {
     "url": "https://github.com/10D24D/Tabby-QuickCmd-Plus/issues"
   },
-  "dependencies": {},
   "devDependencies": {
     "@angular/animations": "^9.1.13",
     "@angular/common": "^9.1.13",
@@ -37,6 +44,7 @@
     "@types/webpack-env": "^1.18.8",
     "apply-loader": "^2.0.0",
     "css-loader": "^7.1.2",
+    "js-yaml": "^5.5.0",
     "rxjs": "^6.6.7",
     "sass": "^1.86.0",
     "sass-loader": "^16.0.5",

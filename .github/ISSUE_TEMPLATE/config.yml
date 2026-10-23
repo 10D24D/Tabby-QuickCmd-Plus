@@ -1,0 +1,12 @@
+# 创建人: DD1024z + Hy3; 创建时间: 2026-10-23
+# Issue 模板选择器配置。
+# ⛔ blank_issues_enabled: false ⇒ 用户不能创建空白 issue，插件反馈入口必须走 ?template=<表单> 方案
+#   （不能用 ?body=，否则会被引导到空白页）。
+blank_issues_enabled: false
+contact_links:
+  - name: 使用说明 / README
+    url: https://github.com/10D24D/Tabby-QuickCmd-Plus/blob/main/README.md
+    about: 提问或提 Issue 前，可先阅读安装与使用说明
+  - name: 更新日志 / Changelog
+    url: https://github.com/10D24D/Tabby-QuickCmd-Plus/blob/main/CHANGELOG.md
+    about: 查看每个版本新增与修复了什么

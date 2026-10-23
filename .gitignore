@@ -3,3 +3,7 @@ dist/
 *.log
 .DS_Store
 Thumbs.db
+
+# TypeScript 模块解析追踪输出（tsc --traceResolution 产物）
+# 2026-07 曾因路径拼接异常留下一个 1.5MB 的畸形文件名 trace，2026-10-23 清理并加此规则
+*_trace.txt

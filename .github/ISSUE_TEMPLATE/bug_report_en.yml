@@ -1,0 +1,91 @@
+# 创建人: DD1024z + Hy3; 创建时间: 2026-10-23
+# 英文版缺陷报告（bug_report.yml 的英文对应版）。
+# 用途：插件「报告问题」入口按界面语言路由 —— 非中文用本模板，中文用 bug_report.yml。
+# ⛔ 字段 id 必须与 bug_report.yml 完全一致（os_version / tabby_version / qc_plus_version /
+#   tabby_frontend / installed_plugins / steps_actual / expected / logs）。
+name: Bug report (English)
+description: Report a bug (please fill in the environment and steps as completely as possible)
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report! Complete information helps get it fixed faster.
+
+  - type: input
+    id: os_version
+    attributes:
+      label: OS version
+      description: e.g. Windows 11 24H2 / macOS 15.1 / Ubuntu 24.04
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+
+  - type: input
+    id: tabby_version
+    attributes:
+      label: Tabby version
+      description: See Tabby → About
+      placeholder: 1.0.2xx
+    validations:
+      required: true
+
+  - type: input
+    id: qc_plus_version
+    attributes:
+      label: QuickCmd+ plugin version
+      description: Visible in the settings About section or on the release page
+      placeholder: 2.0.0
+    validations:
+      required: true
+
+  # The two fields below are auto-filled by the plugin's Report entry (injected as URL query params keyed by field id)
+  - type: input
+    id: tabby_frontend
+    attributes:
+      label: Tabby frontend
+      description: Settings → Appearance → Frontend (e.g. xterm-webgl / xterm.js / vte)
+      placeholder: xterm-webgl
+    validations:
+      required: false
+
+  - type: input
+    id: installed_plugins
+    attributes:
+      label: Installed plugins
+      description: Plugin list, helps detect conflicts between plugins
+      placeholder: tabby-quick-command-plus@2.0.0, tabby-sftp-plus@3.0.0
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps_actual
+    attributes:
+      label: Steps to reproduce & actual behaviour
+      description: What did you do, and what actually happens now? (error messages and screenshots welcome)
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. Type ...
+
+        Result: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should have happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs (optional)
+      description: Paste logs as-is, they will be rendered as a code block
+      render: shell
+    validations:
+      required: false

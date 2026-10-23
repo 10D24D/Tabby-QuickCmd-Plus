@@ -1,0 +1,67 @@
+# 创建人: DD1024z + Hy3; 创建时间: 2026-10-23
+# 英文版功能需求（feature_request.yml 的英文对应版）。
+# ⛔ 字段 id 必须与 feature_request.yml 完全一致
+#   （os_version / tabby_version / qc_plus_version / scenario / expected / extra）。
+name: Feature request (English)
+description: Suggest a new feature or an improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! Please describe the use case and the expected behaviour.
+
+  - type: input
+    id: os_version
+    attributes:
+      label: OS version
+      description: e.g. Windows 11 24H2 / macOS 15.1 / Ubuntu 24.04
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+
+  - type: input
+    id: tabby_version
+    attributes:
+      label: Tabby version
+      description: See Tabby → About
+      placeholder: 1.0.2xx
+    validations:
+      required: true
+
+  - type: input
+    id: qc_plus_version
+    attributes:
+      label: QuickCmd+ plugin version
+      description: Visible in the settings About section or on the release page
+      placeholder: 2.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Use case
+      description: When do you need this, and what is inconvenient about the current way?
+      placeholder: |
+        When I ... I would like to ...
+        Right now I have to ..., which is tedious.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: How should the plugin behave? (interaction, button placement, wording, ...)
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context (optional)
+      description: Screenshots, how other tools solve it, other ideas
+    validations:
+      required: false
