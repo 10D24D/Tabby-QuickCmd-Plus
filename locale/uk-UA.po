@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: uk_UA\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Пошук команд..."
+
+msgid "app.ungrouped"
+msgstr "Без групи"
+
+msgid "app.noresults"
+msgstr "Немає відповідних команд"
+
+msgid "app.pinned"
+msgstr "Обране"
+
+msgid "app.all_groups"
+msgstr "Усі групи"
+
+msgid "app.auto_filter"
+msgstr "Авто"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — перетягніть для переміщення, натисніть для перемикання"
+
+msgid "entry.disconnected"
+msgstr "SSH від’єднано"
+
+msgid "entry.opened"
+msgstr "відкрито, натисніть щоб закрити"
+
+msgid "entry.minimized"
+msgstr "згорнуто, натисніть щоб відновити"
+
+msgid "panel.minimize"
+msgstr "Згорнути"
+
+msgid "panel.close"
+msgstr "Закрити"
+
+msgid "panel.restore"
+msgstr "Відновити панель"
+
+msgid "panel.settings"
+msgstr "Відкрити налаштування"
+
+msgid "panel.sort"
+msgstr "Сортувати"
+
+msgid "panel.sort_manual"
+msgstr "Ручний порядок"
+
+msgid "panel.sort_name"
+msgstr "Ім'я"
+
+msgid "panel.sort_usage"
+msgstr "Кількість запусків"
+
+msgid "panel.sort_hint"
+msgstr "Увімкнено автоматичне сортування; щоб перетягувати, поверніться до ручного порядку"
+
+msgid "app.clear_search"
+msgstr "Очистити пошук"
+
+msgid "panel.add"
+msgstr "Нова команда"
+
+msgid "panel.edit"
+msgstr "Редагувати"
+
+msgid "panel.delete"
+msgstr "Видалити"
+
+msgid "panel.delete_confirm"
+msgstr "Видалити «{name}»?"
+
+msgid "panel.pin"
+msgstr "Закріпити у швидкому доступі"
+
+msgid "panel.unpin"
+msgstr "Відкріпити"
+
+msgid "panel.hint.search"
+msgstr "Знайдіть або введіть команду"
+
+msgid "panel.empty_group"
+msgstr "У цій групі немає команд"
+
+msgid "panel.no_auto_group"
+msgstr "Немає груп для поточного з’єднання"
+
+msgid "panel.execute"
+msgstr "Натисніть для виконання"
+
+msgid "panel.send_and_exec"
+msgstr "Надіслати й виконати"
+
+msgid "panel.send_to_line"
+msgstr "Лише надіслати"
+
+msgid "panel.multi_step_title"
+msgstr "Багатокрокова команда"
+
+msgid "panel.multi_step_hint"
+msgstr "Ця команда має {count} кроків. Об’єднати в один рядок?"
+
+msgid "panel.param_hint"
+msgstr "Введіть значення параметра"
+
+msgid "panel.send_all_tabs"
+msgstr "Надіслати в усі вкладки"
+
+msgid "panel.copy"
+msgstr "Копіювати команду"
+
+msgid "panel.drag_reorder"
+msgstr "Перетягніть для зміни порядку"
+
+msgid "panel.drag_reorder_group"
+msgstr "Перетягніть для зміни порядку групи"
+
+msgid "panel.pinPanel"
+msgstr "Залишати панель відкритою"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Сортувати за"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Додати команду"
+
+msgid "settings.edit_cmd"
+msgstr "Редагувати команду"
+
+msgid "settings.name"
+msgstr "Ім'я"
+
+msgid "settings.short_name"
+msgstr "Коротка назва"
+
+msgid "settings.short_name_hint"
+msgstr "Показується на панелі швидкого доступу; порожнє — назва команди"
+
+msgid "settings.text"
+msgstr "Текст команди"
+
+msgid "settings.group"
+msgstr "Групування"
+
+msgid "settings.shortcut"
+msgstr "Ярлик"
+
+msgid "settings.append_cr"
+msgstr "Надіслати й виконати"
+
+msgid "settings.confirm_before_run"
+msgstr "Підтверджувати перед виконанням"
+
+msgid "confirm.title"
+msgstr "Підтвердження виконання"
+
+msgid "confirm.message"
+msgstr "Наступне буде надіслано в термінал. Продовжити?"
+
+msgid "confirm.run"
+msgstr "Виконати"
+
+msgid "settings.params"
+msgstr "Параметри"
+
+msgid "settings.pinned"
+msgstr "Закріпити у швидкому доступі"
+
+msgid "settings.delay"
+msgstr "Затримка кроку (с)"
+
+msgid "settings.delay_hint"
+msgstr "Відкласти час виконання"
+
+msgid "settings.delay_short"
+msgstr "Затримка"
+
+msgid "settings.add_step"
+msgstr "Додати команду"
+
+msgid "settings.add_break"
+msgstr "Додати переривання"
+
+msgid "settings.send_ctrlc"
+msgstr "Переривання Ctrl+C"
+
+msgid "settings.usage_count"
+msgstr "Використання"
+
+msgid "settings.reset"
+msgstr "Скинути"
+
+msgid "settings.step_placeholder"
+msgstr "Команда"
+
+msgid "settings.step_type_cmd"
+msgstr "Перемкнути на команду"
+
+msgid "settings.step_type_break"
+msgstr "Перемкнути на переривання"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH профіль (порожньо = усі)"
+
+msgid "settings.save"
+msgstr "Зберегти"
+
+msgid "settings.cancel"
+msgstr "Скасувати"
+
+msgid "settings.ok"
+msgstr "ОК"
+
+msgid "settings.delete"
+msgstr "Видалити"
+
+msgid "settings.export"
+msgstr "Експортувати"
+
+msgid "settings.import"
+msgstr "Імпорт"
+
+msgid "settings.clear"
+msgstr "Очистити всі дані"
+
+msgid "settings.confirm_delete"
+msgstr "Видалити цю команду?"
+
+msgid "settings.confirm_clear"
+msgstr "Очистити всі дані команд? Це не можна скасувати!"
+
+msgid "settings.language"
+msgstr "Мова"
+
+msgid "settings.lang_auto"
+msgstr "Слідувати Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Керування даними"
+
+msgid "group.add"
+msgstr "Нова група"
+
+msgid "group.name"
+msgstr "Назва групи"
+
+msgid "group.order"
+msgstr "Порядок"
+
+msgid "group.profiles"
+msgstr "Обмежити профілями"
+
+msgid "group.profiles_hint"
+msgstr "Не позначено = видно всім"
+
+msgid "group.profiles_selected"
+msgstr " вибрано"
+
+msgid "group.no_profiles"
+msgstr "Профілі з'єднань не знайдено, спершу створіть SSH-з'єднання"
+
+msgid "group.delete"
+msgstr "Видалити групу (команди стануть без групи)"
+
+msgid "group.rename"
+msgstr "Перейменувати"
+
+msgid "group.edit"
+msgstr "Редагувати групу"
+
+msgid "group.manage"
+msgstr "Керувати групами"
+
+msgid "group.delete_confirm"
+msgstr "Видалити групу «{name}»? Команди в ній стануть без групи."
+
+msgid "notify.executed"
+msgstr "Команду виконано"
+
+msgid "notify.copied"
+msgstr "Команду скопійовано"
+
+msgid "notify.import_ok"
+msgstr "Імпорт успішний"
+
+msgid "notify.import_fail"
+msgstr "Помилка імпорту: неприпустимий формат даних"
+
+msgid "notify.cleared"
+msgstr "Дані очищено"
+
+msgid "notify.no_ssh"
+msgstr "Поточна вкладка не є SSH-з'єднанням"
+
+msgid "settings.hotkey"
+msgstr "Гаряча клавіша панелі"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Натисніть, щоб задати комбінацію"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Не призначено"
+
+msgid "settings.hotkeyRecording"
+msgstr "Натисніть клавіші..."
+
+msgid "settings.hotkeyClear"
+msgstr "Очистити"
+
+msgid "settings.hotkeySaved"
+msgstr "Комбінацію задано: {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Комбінацію очищено"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Зберегти failed"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Час запису вичерпано"
+
+msgid "settings.hotkeyConflict"
+msgstr "Комбінація «{hotkey}» використовується {names}. Перезаписати?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Конфлікт комбінації: {names}. Збереження перезапише."
+
+msgid "settings.enable_step"
+msgstr "Увімкнути крок"
+
+msgid "settings.disable_step"
+msgstr "Вимкнути крок"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Панель швидких команд: створення та керування командами."
+
+msgid "语言"
+msgstr "Мова"
+
+msgid "跟随Tabby"
+msgstr "Слідувати Tabby"
+
+msgid "界面"
+msgstr "Інтерфейс"
+
+msgid "主色调"
+msgstr "Основний"
+
+msgid "背景"
+msgstr "Фон"
+
+msgid "文字"
+msgstr "Текст"
+
+msgid "标题栏"
+msgstr "Поверхня"
+
+msgid "边框"
+msgstr "Межа"
+
+msgid "次要文字"
+msgstr "Приглушений"
+
+msgid "字体大小"
+msgstr "Розмір шрифту"
+
+msgid "入口模式"
+msgstr "Режим входу"
+
+msgid "浮动按钮"
+msgstr "Плаваючий"
+
+msgid "工具栏按钮"
+msgstr "Панель інструментів"
+
+msgid "面板常驻"
+msgstr "Залишати панель відкритою"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Сортувати за"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Ім'я"
+
+msgid "执行次数"
+msgstr "Використання"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Гаряча клавіша панелі"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Відкрити панель QuickCmd+"
+
+msgid "点击设置快捷键"
+msgstr "Натисніть, щоб задати комбінацію"
+
+msgid "未绑定"
+msgstr "Не призначено"
+
+msgid "清除"
+msgstr "Очистити"
+
+msgid "清空"
+msgstr "Очистити"
+
+msgid "确认覆盖"
+msgstr "Перезаписати"
+
+msgid "保存失败"
+msgstr "Зберегти failed"
+
+msgid "录制超时"
+msgstr "Час запису вичерпано"
+
+msgid "快捷键已清除"
+msgstr "Комбінацію очищено"
+
+msgid "数据"
+msgstr "Дані"
+
+msgid "导入数据"
+msgstr "Імпорт"
+
+msgid "导出数据"
+msgstr "Експортувати"
+
+msgid "清空数据"
+msgstr "Очистити Всі"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Очистити Всі Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Змінити кольори"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Очистити всі дані команд? Це не можна скасувати!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Це видалить усі команди та групи без можливості скасування!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Введіть DELETE для підтвердження:"
+
+msgid "已清空所有数据"
+msgstr "Всі data cleared"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Ви в режимі Auto/Пресет. Зміни перезапишуть власну кольорову схему. Продовжити?"
+
+msgid "导入成功"
+msgstr "Імпорт успішний"
+
+msgid "导入失败：文件格式无效"
+msgstr "Помилка імпорту: неприпустимий формат файлу"
+
+msgid "无效的数据格式。"
+msgstr "Невірний формат даних."
+
+msgid "取消"
+msgstr "Скасувати"
+
+msgid "功能"
+msgstr "Функції"
+
+msgid "隐藏插件作者信息"
+msgstr "Приховати інформацію про автора"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Перш ніж приховати інформацію про автора, поставте зірку репозиторію плагіна. Сторінку репозиторію відкрито у браузері. Ваша зірка — моя мотивація розвивати проєкт. Дякую за підтримку! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Я поставив зірку"
+
+msgid "隐藏面板设置入口"
+msgstr "Приховати кнопку налаштувань панелі"
+
+msgid "滚动时对齐整行"
+msgstr "Вирівнювати рядки під час прокручування"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Увімк.: панель залишається відкритою після виконання команди або втрати фокуса; вимк.: ховається автоматично."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Увімк.: після зупинки прокручування список вирівнюється за цілими рядками, щоб записи не обрізалися."
+
+msgid "关于"
+msgstr "Про"
+
+msgid "版本"
+msgstr "Версія"
+
+msgid "构建时间"
+msgstr "Час збірки"
+
+msgid "作者"
+msgstr "Автор"
+
+msgid "意见反馈"
+msgstr "Зворотний зв'язок"
+
+msgid "点赞支持"
+msgstr "Поставте зірочку"
+
+msgid "Github源码"
+msgstr "GitHub джерело"
+
+msgid "NPM源码"
+msgstr "Вихідний код NPM"
+
+msgid "请喝咖啡"
+msgstr "Пригостіть кавою"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Виберіть, що включити до файлу експорту."
+
+msgid "命令与分组"
+msgstr "Команди та групи"
+
+msgid "界面与外观"
+msgstr "Інтерфейс і вигляд"
+
+msgid "窗口行为与位置"
+msgstr "Поведінка та положення вікна"
+
+msgid "条命令"
+msgstr "команд"
+
+msgid "个分组"
+msgstr "груп"
+
+msgid "全选"
+msgstr "Вибрати все"
+
+msgid "全不选"
+msgstr "Очистити вибір"
+

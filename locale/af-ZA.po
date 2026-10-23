@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: af_ZA\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Soek bevele..."
+
+msgid "app.ungrouped"
+msgstr "Ongegroepeer"
+
+msgid "app.noresults"
+msgstr "Geen passende bevele nie"
+
+msgid "app.pinned"
+msgstr "Gunstelinge"
+
+msgid "app.all_groups"
+msgstr "Alle groepe"
+
+msgid "app.auto_filter"
+msgstr "Outo"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — sleep om te skuif, klik om te wissel"
+
+msgid "entry.disconnected"
+msgstr "SSH ontkoppel"
+
+msgid "entry.opened"
+msgstr "oop, klik om toe te maak"
+
+msgid "entry.minimized"
+msgstr "geminimaliseer, klik om te herstel"
+
+msgid "panel.minimize"
+msgstr "Minimeer"
+
+msgid "panel.close"
+msgstr "Maak Toe"
+
+msgid "panel.restore"
+msgstr "Herstel paneel"
+
+msgid "panel.settings"
+msgstr "Maak instellings oop"
+
+msgid "panel.sort"
+msgstr "Sorteer"
+
+msgid "panel.sort_manual"
+msgstr "Handmatige volgorde"
+
+msgid "panel.sort_name"
+msgstr "Naam"
+
+msgid "panel.sort_usage"
+msgstr "Gebruiktelling"
+
+msgid "panel.sort_hint"
+msgstr "Outomatiese sortering is aan; skakel terug na handmatige volgorde om te sleep"
+
+msgid "app.clear_search"
+msgstr "Vee soektog uit"
+
+msgid "panel.add"
+msgstr "Nuwe bevel"
+
+msgid "panel.edit"
+msgstr "Wysig"
+
+msgid "panel.delete"
+msgstr "Vee uit"
+
+msgid "panel.delete_confirm"
+msgstr "Skrap \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Speld aan snelinskrywing"
+
+msgid "panel.unpin"
+msgstr "Ontspeld"
+
+msgid "panel.hint.search"
+msgstr "Soek of tik pasgemaakte bevel"
+
+msgid "panel.empty_group"
+msgstr "Geen bevele in hierdie groep nie"
+
+msgid "panel.no_auto_group"
+msgstr "Geen groepe pas by huidige verbinding nie"
+
+msgid "panel.execute"
+msgstr "Klik om uit te voer"
+
+msgid "panel.send_and_exec"
+msgstr "Stuur en voer uit"
+
+msgid "panel.send_to_line"
+msgstr "Stuur net"
+
+msgid "panel.multi_step_title"
+msgstr "Multi-stap-bevel"
+
+msgid "panel.multi_step_hint"
+msgstr "Hierdie bevel het {count} stappe. Voeg in een reël saam?"
+
+msgid "panel.param_hint"
+msgstr "Voer parameterwaarde in"
+
+msgid "panel.send_all_tabs"
+msgstr "Stuur na alle oortjies"
+
+msgid "panel.copy"
+msgstr "Kopieer bevel"
+
+msgid "panel.drag_reorder"
+msgstr "Sleep om te herrangskik"
+
+msgid "panel.drag_reorder_group"
+msgstr "Sleep om groep te herrangskik"
+
+msgid "panel.pinPanel"
+msgstr "Hou paneel oop"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Sorteer volgens"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Voeg bevel by"
+
+msgid "settings.edit_cmd"
+msgstr "Wysig bevel"
+
+msgid "settings.name"
+msgstr "Naam"
+
+msgid "settings.short_name"
+msgstr "Kort naam"
+
+msgid "settings.short_name_hint"
+msgstr "Wys op die vinnige balk; val terug op die opdragnaam"
+
+msgid "settings.text"
+msgstr "Bevelteks"
+
+msgid "settings.group"
+msgstr "Groepeer"
+
+msgid "settings.shortcut"
+msgstr "Kortpad"
+
+msgid "settings.append_cr"
+msgstr "Stuur en voer uit"
+
+msgid "settings.confirm_before_run"
+msgstr "Bevestig voor uitvoering"
+
+msgid "confirm.title"
+msgstr "Bevestig uitvoering"
+
+msgid "confirm.message"
+msgstr "Die volgende sal na die terminaal gestuur word. Gaan voort?"
+
+msgid "confirm.run"
+msgstr "Voer uit"
+
+msgid "settings.params"
+msgstr "Parameters"
+
+msgid "settings.pinned"
+msgstr "Speld aan snelinskrywing"
+
+msgid "settings.delay"
+msgstr "Stapvertraging (s)"
+
+msgid "settings.delay_hint"
+msgstr "Vertraag uitvoertyd"
+
+msgid "settings.delay_short"
+msgstr "Vertraging"
+
+msgid "settings.add_step"
+msgstr "Voeg bevel by"
+
+msgid "settings.add_break"
+msgstr "Voeg onderbreking by"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C onderbreking"
+
+msgid "settings.usage_count"
+msgstr "Gebruik"
+
+msgid "settings.reset"
+msgstr "Herstel"
+
+msgid "settings.step_placeholder"
+msgstr "Bevel"
+
+msgid "settings.step_type_cmd"
+msgstr "Wissel na bevel"
+
+msgid "settings.step_type_break"
+msgstr "Wissel na onderbreking"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH-profiel (laat leeg vir almal)"
+
+msgid "settings.save"
+msgstr "Stoor"
+
+msgid "settings.cancel"
+msgstr "Kanselleer"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "Vee uit"
+
+msgid "settings.export"
+msgstr "Eksporteer"
+
+msgid "settings.import"
+msgstr "Invoer"
+
+msgid "settings.clear"
+msgstr "Vee alle data uit"
+
+msgid "settings.confirm_delete"
+msgstr "Skrap hierdie bevel?"
+
+msgid "settings.confirm_clear"
+msgstr "Vee alle beveldata uit? Dit kan nie ongedaan gemaak word nie!"
+
+msgid "settings.language"
+msgstr "Taal"
+
+msgid "settings.lang_auto"
+msgstr "Volg Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Databestuur"
+
+msgid "group.add"
+msgstr "Nuwe groep"
+
+msgid "group.name"
+msgstr "Groepnaam"
+
+msgid "group.order"
+msgstr "Volgorde"
+
+msgid "group.profiles"
+msgstr "Beperk tot profiele"
+
+msgid "group.profiles_hint"
+msgstr "Ongemerk = sigbaar vir almal"
+
+msgid "group.profiles_selected"
+msgstr " gekies"
+
+msgid "group.no_profiles"
+msgstr "Geen verbindingsprofiele gevind nie, skep eers SSH-verbindings"
+
+msgid "group.delete"
+msgstr "Skrap groep (bevele word ongegroepeer)"
+
+msgid "group.rename"
+msgstr "Hernoem"
+
+msgid "group.edit"
+msgstr "Wysig groep"
+
+msgid "group.manage"
+msgstr "Bestuur groepe"
+
+msgid "group.delete_confirm"
+msgstr "Skrap groep \"{name}\"? Bevele daarin word ongegroepeer."
+
+msgid "notify.executed"
+msgstr "Bevel uitgevoer"
+
+msgid "notify.copied"
+msgstr "Bevel gekopieer"
+
+msgid "notify.import_ok"
+msgstr "Invoer suksesvol"
+
+msgid "notify.import_fail"
+msgstr "Invoer misluk: ongeldige dataformaat"
+
+msgid "notify.cleared"
+msgstr "Data uitgevee"
+
+msgid "notify.no_ssh"
+msgstr "Huidige oortjie is nie 'n SSH-verbinding nie"
+
+msgid "settings.hotkey"
+msgstr "Paneel-kortpad"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Klik om kortpad te stel"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Ongebonde"
+
+msgid "settings.hotkeyRecording"
+msgstr "Druk sleutels..."
+
+msgid "settings.hotkeyClear"
+msgstr "Vee uit"
+
+msgid "settings.hotkeySaved"
+msgstr "Kortpad gestel op {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Kortpad uitgevee"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Stoor failed"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Opname het uitgetel"
+
+msgid "settings.hotkeyConflict"
+msgstr "Kortpad \"{hotkey}\" word deur {names} gebruik. Oorskryf?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Kortpadkonflik: {names}. Stoor sal oorskryf."
+
+msgid "settings.enable_step"
+msgstr "Aktiveer stap"
+
+msgid "settings.disable_step"
+msgstr "Deaktiveer stap"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Snelbevelpaneel, skep en bestuur bevele."
+
+msgid "语言"
+msgstr "Taal"
+
+msgid "跟随Tabby"
+msgstr "Volg Tabby"
+
+msgid "界面"
+msgstr "Koppelvlak"
+
+msgid "主色调"
+msgstr "Primêr"
+
+msgid "背景"
+msgstr "Agtergrond"
+
+msgid "文字"
+msgstr "Teks"
+
+msgid "标题栏"
+msgstr "Oppervlak"
+
+msgid "边框"
+msgstr "Rand"
+
+msgid "次要文字"
+msgstr "Gedemp"
+
+msgid "字体大小"
+msgstr "Lettergrootte"
+
+msgid "入口模式"
+msgstr "Toegangsmodus"
+
+msgid "浮动按钮"
+msgstr "Swewend"
+
+msgid "工具栏按钮"
+msgstr "Nutsbalk"
+
+msgid "面板常驻"
+msgstr "Hou paneel oop"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Sorteer volgens"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Naam"
+
+msgid "执行次数"
+msgstr "Gebruik"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Paneel-kortpad"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Open QuickCmd+-paneel"
+
+msgid "点击设置快捷键"
+msgstr "Klik om kortpad te stel"
+
+msgid "未绑定"
+msgstr "Ongebonde"
+
+msgid "清除"
+msgstr "Vee uit"
+
+msgid "清空"
+msgstr "Vee uit"
+
+msgid "确认覆盖"
+msgstr "Oorskryf"
+
+msgid "保存失败"
+msgstr "Stoor failed"
+
+msgid "录制超时"
+msgstr "Opname het uitgetel"
+
+msgid "快捷键已清除"
+msgstr "Kortpad uitgevee"
+
+msgid "数据"
+msgstr "Data"
+
+msgid "导入数据"
+msgstr "Invoer"
+
+msgid "导出数据"
+msgstr "Eksporteer"
+
+msgid "清空数据"
+msgstr "Vee Uit Alles"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Vee Uit Alles Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Wysig Kleure"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Vee alle beveldata uit? Dit kan nie ongedaan gemaak word nie!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Dit sal alle bevele en groepe uitvee en kan nie ongedaan gemaak word nie!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Tik DELETE om te bevestig:"
+
+msgid "已清空所有数据"
+msgstr "Alles data cleared"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "U is in Auto/Voorinstelling-modus. Veranderinge sal die aangepaste kleurskema oorskryf. Gaan voort?"
+
+msgid "导入成功"
+msgstr "Invoer suksesvol"
+
+msgid "导入失败：文件格式无效"
+msgstr "Invoer misluk: ongeldige lêerformaat"
+
+msgid "无效的数据格式。"
+msgstr "Ongeldige dataformaat."
+
+msgid "取消"
+msgstr "Kanselleer"
+
+msgid "功能"
+msgstr "Funksies"
+
+msgid "隐藏插件作者信息"
+msgstr "Verberg outeurinligting"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Voordat jy die outeurinligting versteek, gee asseblief 'n ster aan die inprop-bewaarplek. Die bewaarplekblad is in jou blaaier oopgemaak. Jou ster is my motivasie om te ontwikkel — dankie vir jou ondersteuning! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Ek het ’n ster gegee"
+
+msgid "隐藏面板设置入口"
+msgstr "Verberg paneelinstellings-knop"
+
+msgid "滚动时对齐整行"
+msgstr "Belyn rye wanneer daar gerol word"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Wanneer aan, bly die paneel oop ná die uitvoer van ’n opdrag of verlies van fokus; wanneer af, verberg dit outomaties."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Wanneer aan, pas die lys by heel rye aan nadat rol gestop het, sodat inskrywings nie halfpad afgesny word nie."
+
+msgid "关于"
+msgstr "Oor"
+
+msgid "版本"
+msgstr "Weergawe"
+
+msgid "构建时间"
+msgstr "Boutyd"
+
+msgid "作者"
+msgstr "Outeur"
+
+msgid "意见反馈"
+msgstr "Terugvoer"
+
+msgid "点赞支持"
+msgstr "Gee ’n Ster"
+
+msgid "Github源码"
+msgstr "GitHub-bron"
+
+msgid "NPM源码"
+msgstr "NPM-bron"
+
+msgid "请喝咖啡"
+msgstr "Trakteer my op koffie"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Kies wat om in die uitvoerlêer in te sluit."
+
+msgid "命令与分组"
+msgstr "Bevele en groepe"
+
+msgid "界面与外观"
+msgstr "Koppelvlak en voorkoms"
+
+msgid "窗口行为与位置"
+msgstr "Venstergedrag en posisie"
+
+msgid "条命令"
+msgstr "bevele"
+
+msgid "个分组"
+msgstr "groepe"
+
+msgid "全选"
+msgstr "Kies alles"
+
+msgid "全不选"
+msgstr "Ontkies alles"
+

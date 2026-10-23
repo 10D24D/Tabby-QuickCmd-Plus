@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: da_DK\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Søg kommandoer..."
+
+msgid "app.ungrouped"
+msgstr "Ugrupperet"
+
+msgid "app.noresults"
+msgstr "Ingen matchende kommandoer"
+
+msgid "app.pinned"
+msgstr "Favoritter"
+
+msgid "app.all_groups"
+msgstr "Alle grupper"
+
+msgid "app.auto_filter"
+msgstr "Auto"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — træk for at flytte, klik for at skifte"
+
+msgid "entry.disconnected"
+msgstr "SSH afbrudt"
+
+msgid "entry.opened"
+msgstr "åben, klik for at lukke"
+
+msgid "entry.minimized"
+msgstr "minimeret, klik for at gendanne"
+
+msgid "panel.minimize"
+msgstr "Minimer"
+
+msgid "panel.close"
+msgstr "Luk"
+
+msgid "panel.restore"
+msgstr "Gendan panel"
+
+msgid "panel.settings"
+msgstr "Åbn indstillinger"
+
+msgid "panel.sort"
+msgstr "Sortér"
+
+msgid "panel.sort_manual"
+msgstr "Manuel rækkefølge"
+
+msgid "panel.sort_name"
+msgstr "Navn"
+
+msgid "panel.sort_usage"
+msgstr "Antal anvendelser"
+
+msgid "panel.sort_hint"
+msgstr "Automatisk sortering er slået til; skift til manuel rækkefølge for at trække"
+
+msgid "app.clear_search"
+msgstr "Ryd søgning"
+
+msgid "panel.add"
+msgstr "Ny kommando"
+
+msgid "panel.edit"
+msgstr "Rediger"
+
+msgid "panel.delete"
+msgstr "Slet"
+
+msgid "panel.delete_confirm"
+msgstr "Slet \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Fastgør til hurtigadgang"
+
+msgid "panel.unpin"
+msgstr "Frigør"
+
+msgid "panel.hint.search"
+msgstr "Søg eller skriv en kommando"
+
+msgid "panel.empty_group"
+msgstr "Ingen kommandoer i denne gruppe"
+
+msgid "panel.no_auto_group"
+msgstr "Ingen grupper matcher den aktuelle forbindelse"
+
+msgid "panel.execute"
+msgstr "Klik for at køre"
+
+msgid "panel.send_and_exec"
+msgstr "Send og kør"
+
+msgid "panel.send_to_line"
+msgstr "Send kun"
+
+msgid "panel.multi_step_title"
+msgstr "Flertrinskommando"
+
+msgid "panel.multi_step_hint"
+msgstr "Denne kommando har {count} trin. Saml til én linje?"
+
+msgid "panel.param_hint"
+msgstr "Indtast parameterværdi"
+
+msgid "panel.send_all_tabs"
+msgstr "Send til alle faner"
+
+msgid "panel.copy"
+msgstr "Kopiér kommando"
+
+msgid "panel.drag_reorder"
+msgstr "Træk for at omarrangere"
+
+msgid "panel.drag_reorder_group"
+msgstr "Træk for at omarrangere gruppe"
+
+msgid "panel.pinPanel"
+msgstr "Hold panelet åbent"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Sortér efter"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Tilføj kommando"
+
+msgid "settings.edit_cmd"
+msgstr "Rediger kommando"
+
+msgid "settings.name"
+msgstr "Navn"
+
+msgid "settings.short_name"
+msgstr "Kort navn"
+
+msgid "settings.short_name_hint"
+msgstr "Vises på genvejslinjen; tomt felt bruger kommandonavnet"
+
+msgid "settings.text"
+msgstr "Kommandotekst"
+
+msgid "settings.group"
+msgstr "Gruppér"
+
+msgid "settings.shortcut"
+msgstr "Genvej"
+
+msgid "settings.append_cr"
+msgstr "Send og kør"
+
+msgid "settings.confirm_before_run"
+msgstr "Bekræft før kørsel"
+
+msgid "confirm.title"
+msgstr "Bekræft kørsel"
+
+msgid "confirm.message"
+msgstr "Følgende sendes til terminalen. Fortsæt?"
+
+msgid "confirm.run"
+msgstr "Kør"
+
+msgid "settings.params"
+msgstr "Parametre"
+
+msgid "settings.pinned"
+msgstr "Fastgør til hurtigadgang"
+
+msgid "settings.delay"
+msgstr "Trinforsinkelse (s)"
+
+msgid "settings.delay_hint"
+msgstr "Forsink udførelsestid"
+
+msgid "settings.delay_short"
+msgstr "Forsinkelse"
+
+msgid "settings.add_step"
+msgstr "Tilføj kommando"
+
+msgid "settings.add_break"
+msgstr "Tilføj afbrydelse"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C afbrydelse"
+
+msgid "settings.usage_count"
+msgstr "Brug"
+
+msgid "settings.reset"
+msgstr "Nulstil"
+
+msgid "settings.step_placeholder"
+msgstr "Kommando"
+
+msgid "settings.step_type_cmd"
+msgstr "Skift til kommando"
+
+msgid "settings.step_type_break"
+msgstr "Skift til afbrydelse"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH-profil (tom = alle)"
+
+msgid "settings.save"
+msgstr "Gem"
+
+msgid "settings.cancel"
+msgstr "Annuller"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "Slet"
+
+msgid "settings.export"
+msgstr "Eksport"
+
+msgid "settings.import"
+msgstr "Importér"
+
+msgid "settings.clear"
+msgstr "Ryd alle data"
+
+msgid "settings.confirm_delete"
+msgstr "Slet denne kommando?"
+
+msgid "settings.confirm_clear"
+msgstr "Ryd alle kommandodata? Dette kan ikke fortrydes!"
+
+msgid "settings.language"
+msgstr "Sprog"
+
+msgid "settings.lang_auto"
+msgstr "Følg Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Datahåndtering"
+
+msgid "group.add"
+msgstr "Ny gruppe"
+
+msgid "group.name"
+msgstr "Gruppenavn"
+
+msgid "group.order"
+msgstr "Rækkefølge"
+
+msgid "group.profiles"
+msgstr "Begræns til profiler"
+
+msgid "group.profiles_hint"
+msgstr "Ikke markeret = synlig for alle"
+
+msgid "group.profiles_selected"
+msgstr " valgt"
+
+msgid "group.no_profiles"
+msgstr "Ingen forbindelsesprofiler fundet, opret først SSH-forbindelser"
+
+msgid "group.delete"
+msgstr "Slet gruppe (kommandoer bliver ugrupperede)"
+
+msgid "group.rename"
+msgstr "Omdøb"
+
+msgid "group.edit"
+msgstr "Rediger gruppe"
+
+msgid "group.manage"
+msgstr "Administrer grupper"
+
+msgid "group.delete_confirm"
+msgstr "Slet gruppen \"{name}\"? Kommandoer i den bliver ugrupperede."
+
+msgid "notify.executed"
+msgstr "Kommando udført"
+
+msgid "notify.copied"
+msgstr "Kommando kopieret"
+
+msgid "notify.import_ok"
+msgstr "Import lykkedes"
+
+msgid "notify.import_fail"
+msgstr "Import mislykkedes: ugyldigt dataformat"
+
+msgid "notify.cleared"
+msgstr "Data ryddet"
+
+msgid "notify.no_ssh"
+msgstr "Den aktuelle fane er ikke en SSH-forbindelse"
+
+msgid "settings.hotkey"
+msgstr "Panelgenvej"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Klik for at angive genvej"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Ikke tildelt"
+
+msgid "settings.hotkeyRecording"
+msgstr "Tryk på taster..."
+
+msgid "settings.hotkeyClear"
+msgstr "Ryd"
+
+msgid "settings.hotkeySaved"
+msgstr "Genvej sat til {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Genvej ryddet"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Gem fejlede"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Optagelse fik timeout"
+
+msgid "settings.hotkeyConflict"
+msgstr "Genvejen \"{hotkey}\" bruges af {names}. Overskriv?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Genvejskonflikt: {names}. Gem vil overskrive."
+
+msgid "settings.enable_step"
+msgstr "Aktiver trin"
+
+msgid "settings.disable_step"
+msgstr "Deaktiver trin"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Panel til hurtigkommandoer, opret og administrer kommandoer."
+
+msgid "语言"
+msgstr "Sprog"
+
+msgid "跟随Tabby"
+msgstr "Følg Tabby"
+
+msgid "界面"
+msgstr "Grænseflade"
+
+msgid "主色调"
+msgstr "Primær"
+
+msgid "背景"
+msgstr "Baggrund"
+
+msgid "文字"
+msgstr "Tekst"
+
+msgid "标题栏"
+msgstr "Overflade"
+
+msgid "边框"
+msgstr "Kant"
+
+msgid "次要文字"
+msgstr "Dæmpet"
+
+msgid "字体大小"
+msgstr "Skriftstørrelse"
+
+msgid "入口模式"
+msgstr "Adgangstilstand"
+
+msgid "浮动按钮"
+msgstr "Flydende"
+
+msgid "工具栏按钮"
+msgstr "Værktøjslinje"
+
+msgid "面板常驻"
+msgstr "Hold panelet åbent"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Sortér efter"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Navn"
+
+msgid "执行次数"
+msgstr "Brug"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Panelgenvej"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Åbn QuickCmd+-panel"
+
+msgid "点击设置快捷键"
+msgstr "Klik for at angive genvej"
+
+msgid "未绑定"
+msgstr "Ikke tildelt"
+
+msgid "清除"
+msgstr "Ryd"
+
+msgid "清空"
+msgstr "Ryd"
+
+msgid "确认覆盖"
+msgstr "Overskriv"
+
+msgid "保存失败"
+msgstr "Gem fejlede"
+
+msgid "录制超时"
+msgstr "Optagelse fik timeout"
+
+msgid "快捷键已清除"
+msgstr "Genvej ryddet"
+
+msgid "数据"
+msgstr "Data"
+
+msgid "导入数据"
+msgstr "Importér"
+
+msgid "导出数据"
+msgstr "Eksport"
+
+msgid "清空数据"
+msgstr "Ryd Alle"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Ryd Alle Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Modificer Farver"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Ryd alle kommandodata? Dette kan ikke fortrydes!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Dette sletter alle kommandoer og grupper og kan ikke fortrydes!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Skriv DELETE for at bekræfte:"
+
+msgid "已清空所有数据"
+msgstr "Alle data ryddet"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Du er i Auto/Preset-tilstand. Ændringer overskriver den tilpassede farveskema. Fortsæt?"
+
+msgid "导入成功"
+msgstr "Import lykkedes"
+
+msgid "导入失败：文件格式无效"
+msgstr "Import mislykkedes: ugyldigt filformat"
+
+msgid "无效的数据格式。"
+msgstr "Ugyldigt dataformat."
+
+msgid "取消"
+msgstr "Annuller"
+
+msgid "功能"
+msgstr "Funktioner"
+
+msgid "隐藏插件作者信息"
+msgstr "Skjul forfatteroplysninger"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Før du skjuler forfatteroplysningerne, giv venligst plugin-lageret en stjerne. Lagersiden er åbnet i din browser. Din stjerne er min motivation til at udvikle — tak for din støtte! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Jeg har givet en stjerne"
+
+msgid "隐藏面板设置入口"
+msgstr "Skjul panelindstillingsknap"
+
+msgid "滚动时对齐整行"
+msgstr "Ret rækker til ved rulning"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Når slået til, forbliver panelet åbent efter en kommando eller mistet fokus; når slået fra, skjules det automatisk."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Når slået til, justeres listen til hele rækker, når rulningen stopper, så poster ikke skæres over."
+
+msgid "关于"
+msgstr "Om"
+
+msgid "版本"
+msgstr "Version"
+
+msgid "构建时间"
+msgstr "Build-tid"
+
+msgid "作者"
+msgstr "Forfatter"
+
+msgid "意见反馈"
+msgstr "Feedback"
+
+msgid "点赞支持"
+msgstr "Giv en Stjerne"
+
+msgid "Github源码"
+msgstr "GitHub Kilde"
+
+msgid "NPM源码"
+msgstr "NPM-kildekode"
+
+msgid "请喝咖啡"
+msgstr "Giv mig en kop kaffe"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Vælg, hvad der skal med i eksportfilen."
+
+msgid "命令与分组"
+msgstr "Kommandoer og grupper"
+
+msgid "界面与外观"
+msgstr "Grænseflade og udseende"
+
+msgid "窗口行为与位置"
+msgstr "Vindueadfærd og placering"
+
+msgid "条命令"
+msgstr "kommandoer"
+
+msgid "个分组"
+msgstr "grupper"
+
+msgid "全选"
+msgstr "Vælg alle"
+
+msgid "全不选"
+msgstr "Ryd valg"
+

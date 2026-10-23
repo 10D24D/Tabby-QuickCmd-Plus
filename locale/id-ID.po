@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: id_ID\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Cari perintah..."
+
+msgid "app.ungrouped"
+msgstr "Tanpa grup"
+
+msgid "app.noresults"
+msgstr "Tidak ada perintah yang cocok"
+
+msgid "app.pinned"
+msgstr "Favorit"
+
+msgid "app.all_groups"
+msgstr "Semua grup"
+
+msgid "app.auto_filter"
+msgstr "Otomatis"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — seret untuk memindahkan, klik untuk beralih"
+
+msgid "entry.disconnected"
+msgstr "SSH terputus"
+
+msgid "entry.opened"
+msgstr "terbuka, klik untuk menutup"
+
+msgid "entry.minimized"
+msgstr "diminimalkan, klik untuk memulihkan"
+
+msgid "panel.minimize"
+msgstr "Perkecil"
+
+msgid "panel.close"
+msgstr "Tutup"
+
+msgid "panel.restore"
+msgstr "Pulihkan panel"
+
+msgid "panel.settings"
+msgstr "Buka pengaturan"
+
+msgid "panel.sort"
+msgstr "Urutkan"
+
+msgid "panel.sort_manual"
+msgstr "Urutan manual"
+
+msgid "panel.sort_name"
+msgstr "Nama"
+
+msgid "panel.sort_usage"
+msgstr "Jumlah pemakaian"
+
+msgid "panel.sort_hint"
+msgstr "Pengurutan otomatis aktif; beralih ke urutan manual untuk menyeret"
+
+msgid "app.clear_search"
+msgstr "Hapus pencarian"
+
+msgid "panel.add"
+msgstr "Perintah baru"
+
+msgid "panel.edit"
+msgstr "Edit"
+
+msgid "panel.delete"
+msgstr "Hapus"
+
+msgid "panel.delete_confirm"
+msgstr "Hapus \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Sematkan ke akses cepat"
+
+msgid "panel.unpin"
+msgstr "Lepas sematan"
+
+msgid "panel.hint.search"
+msgstr "Cari atau ketik perintah"
+
+msgid "panel.empty_group"
+msgstr "Tidak ada perintah di grup ini"
+
+msgid "panel.no_auto_group"
+msgstr "Tidak ada grup yang cocok dengan koneksi saat ini"
+
+msgid "panel.execute"
+msgstr "Klik untuk menjalankan"
+
+msgid "panel.send_and_exec"
+msgstr "Kirim & Jalankan"
+
+msgid "panel.send_to_line"
+msgstr "Hanya kirim"
+
+msgid "panel.multi_step_title"
+msgstr "Perintah multi-langkah"
+
+msgid "panel.multi_step_hint"
+msgstr "Perintah ini memiliki {count} langkah. Gabungkan jadi satu baris?"
+
+msgid "panel.param_hint"
+msgstr "Masukkan nilai parameter"
+
+msgid "panel.send_all_tabs"
+msgstr "Kirim ke semua tab"
+
+msgid "panel.copy"
+msgstr "Salin perintah"
+
+msgid "panel.drag_reorder"
+msgstr "Seret untuk menyusun ulang"
+
+msgid "panel.drag_reorder_group"
+msgstr "Seret untuk menyusun ulang grup"
+
+msgid "panel.pinPanel"
+msgstr "Biarkan panel tetap terbuka"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Urutkan berdasarkan"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Tambah perintah"
+
+msgid "settings.edit_cmd"
+msgstr "Edit perintah"
+
+msgid "settings.name"
+msgstr "Nama"
+
+msgid "settings.short_name"
+msgstr "Nama singkat"
+
+msgid "settings.short_name_hint"
+msgstr "Ditampilkan di bilah cepat; kosong memakai nama perintah"
+
+msgid "settings.text"
+msgstr "Teks perintah"
+
+msgid "settings.group"
+msgstr "Kelompokkan"
+
+msgid "settings.shortcut"
+msgstr "Pintasan"
+
+msgid "settings.append_cr"
+msgstr "Kirim & Jalankan"
+
+msgid "settings.confirm_before_run"
+msgstr "Konfirmasi sebelum menjalankan"
+
+msgid "confirm.title"
+msgstr "Konfirmasi eksekusi"
+
+msgid "confirm.message"
+msgstr "Berikut akan dikirim ke terminal. Lanjutkan?"
+
+msgid "confirm.run"
+msgstr "Jalankan"
+
+msgid "settings.params"
+msgstr "Parameter"
+
+msgid "settings.pinned"
+msgstr "Sematkan ke akses cepat"
+
+msgid "settings.delay"
+msgstr "Jeda langkah (dtk)"
+
+msgid "settings.delay_hint"
+msgstr "Tunda waktu eksekusi"
+
+msgid "settings.delay_short"
+msgstr "Jeda"
+
+msgid "settings.add_step"
+msgstr "Tambah perintah"
+
+msgid "settings.add_break"
+msgstr "Tambah jeda"
+
+msgid "settings.send_ctrlc"
+msgstr "Jeda Ctrl+C"
+
+msgid "settings.usage_count"
+msgstr "Penggunaan"
+
+msgid "settings.reset"
+msgstr "Atur ulang"
+
+msgid "settings.step_placeholder"
+msgstr "Perintah"
+
+msgid "settings.step_type_cmd"
+msgstr "Alih ke perintah"
+
+msgid "settings.step_type_break"
+msgstr "Alih ke jeda"
+
+msgid "settings.ssh_profiles"
+msgstr "Profil SSH (kosong = semua)"
+
+msgid "settings.save"
+msgstr "Simpan"
+
+msgid "settings.cancel"
+msgstr "Batal"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "Hapus"
+
+msgid "settings.export"
+msgstr "Ekspor"
+
+msgid "settings.import"
+msgstr "Impor"
+
+msgid "settings.clear"
+msgstr "Hapus semua data"
+
+msgid "settings.confirm_delete"
+msgstr "Hapus perintah ini?"
+
+msgid "settings.confirm_clear"
+msgstr "Hapus semua data perintah? Ini tidak dapat dibatalkan!"
+
+msgid "settings.language"
+msgstr "Bahasa"
+
+msgid "settings.lang_auto"
+msgstr "Ikuti Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Manajemen data"
+
+msgid "group.add"
+msgstr "Grup baru"
+
+msgid "group.name"
+msgstr "Nama grup"
+
+msgid "group.order"
+msgstr "Urutan"
+
+msgid "group.profiles"
+msgstr "Batasi ke profil"
+
+msgid "group.profiles_hint"
+msgstr "Tak dicentang = terlihat oleh semua"
+
+msgid "group.profiles_selected"
+msgstr " dipilih"
+
+msgid "group.no_profiles"
+msgstr "Tidak ada profil koneksi terdeteksi, buat koneksi SSH terlebih dahulu"
+
+msgid "group.delete"
+msgstr "Hapus grup (perintah menjadi tanpa grup)"
+
+msgid "group.rename"
+msgstr "Ganti nama"
+
+msgid "group.edit"
+msgstr "Edit grup"
+
+msgid "group.manage"
+msgstr "Kelola grup"
+
+msgid "group.delete_confirm"
+msgstr "Hapus grup \"{name}\"? Perintah di dalamnya menjadi tanpa grup."
+
+msgid "notify.executed"
+msgstr "Perintah dijalankan"
+
+msgid "notify.copied"
+msgstr "Perintah disalin"
+
+msgid "notify.import_ok"
+msgstr "Impor berhasil"
+
+msgid "notify.import_fail"
+msgstr "Impor gagal: format data tidak valid"
+
+msgid "notify.cleared"
+msgstr "Data dihapus"
+
+msgid "notify.no_ssh"
+msgstr "Tab saat ini bukan koneksi SSH"
+
+msgid "settings.hotkey"
+msgstr "Pintasan panel"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Klik untuk mengatur pintasan"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Tak terikat"
+
+msgid "settings.hotkeyRecording"
+msgstr "Tekan tombol..."
+
+msgid "settings.hotkeyClear"
+msgstr "Bersihkan"
+
+msgid "settings.hotkeySaved"
+msgstr "Pintasan diatur ke {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Pintasan dihapus"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Penyimpanan gagal"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Waktu perekaman habis"
+
+msgid "settings.hotkeyConflict"
+msgstr "Pintasan \"{hotkey}\" digunakan oleh {names}. Timpa?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Konflik pintasan: {names}. Menyimpan akan menimpa."
+
+msgid "settings.enable_step"
+msgstr "Aktifkan langkah"
+
+msgid "settings.disable_step"
+msgstr "Nonaktifkan langkah"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Panel perintah cepat, buat dan kelola perintah."
+
+msgid "语言"
+msgstr "Bahasa"
+
+msgid "跟随Tabby"
+msgstr "Ikuti Tabby"
+
+msgid "界面"
+msgstr "Antarmuka"
+
+msgid "主色调"
+msgstr "Utama"
+
+msgid "背景"
+msgstr "Latar"
+
+msgid "文字"
+msgstr "Teks"
+
+msgid "标题栏"
+msgstr "Permukaan"
+
+msgid "边框"
+msgstr "Batas"
+
+msgid "次要文字"
+msgstr "Redup"
+
+msgid "字体大小"
+msgstr "Ukuran font"
+
+msgid "入口模式"
+msgstr "Mode masuk"
+
+msgid "浮动按钮"
+msgstr "Mengambang"
+
+msgid "工具栏按钮"
+msgstr "Bilah alat"
+
+msgid "面板常驻"
+msgstr "Biarkan panel tetap terbuka"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Urutkan berdasarkan"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Nama"
+
+msgid "执行次数"
+msgstr "Penggunaan"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Pintasan panel"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Buka panel QuickCmd+"
+
+msgid "点击设置快捷键"
+msgstr "Klik untuk mengatur pintasan"
+
+msgid "未绑定"
+msgstr "Tak terikat"
+
+msgid "清除"
+msgstr "Bersihkan"
+
+msgid "清空"
+msgstr "Bersihkan"
+
+msgid "确认覆盖"
+msgstr "Timpa"
+
+msgid "保存失败"
+msgstr "Penyimpanan gagal"
+
+msgid "录制超时"
+msgstr "Waktu perekaman habis"
+
+msgid "快捷键已清除"
+msgstr "Pintasan dihapus"
+
+msgid "数据"
+msgstr "Data"
+
+msgid "导入数据"
+msgstr "Impor"
+
+msgid "导出数据"
+msgstr "Ekspor"
+
+msgid "清空数据"
+msgstr "Bersihkan Semua"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Bersihkan Semua Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Modifikasi Warna"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Hapus semua data perintah? Ini tidak dapat dibatalkan!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Ini akan menghapus semua perintah dan grup, dan tidak dapat dibatalkan!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Silakan ketik DELETE untuk mengonfirmasi:"
+
+msgid "已清空所有数据"
+msgstr "Semua data dibersihkan"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Anda berada dalam mode Auto/Preset. Perubahan akan menimpa skema warna kustom. Lanjutkan?"
+
+msgid "导入成功"
+msgstr "Impor berhasil"
+
+msgid "导入失败：文件格式无效"
+msgstr "Impor gagal: format berkas tidak valid"
+
+msgid "无效的数据格式。"
+msgstr "Format data tidak valid."
+
+msgid "取消"
+msgstr "Batal"
+
+msgid "功能"
+msgstr "Fitur"
+
+msgid "隐藏插件作者信息"
+msgstr "Sembunyikan info penulis"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Sebelum menyembunyikan info pembuat, berikan bintang ke repositori plugin. Halaman repositori telah dibuka di browser. Bintang Anda adalah motivasi saya dalam mengembangkan — terima kasih atas dukungannya! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Saya sudah memberi bintang"
+
+msgid "隐藏面板设置入口"
+msgstr "Sembunyikan tombol pengaturan panel"
+
+msgid "滚动时对齐整行"
+msgstr "Sejajarkan baris saat menggulir"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Saat aktif, panel tetap terbuka setelah menjalankan perintah atau kehilangan fokus; saat nonaktif, panel tersembunyi otomatis."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Saat aktif, daftar disejajarkan ke baris utuh setelah gulir berhenti, agar entri tidak terpotong."
+
+msgid "关于"
+msgstr "Tentang"
+
+msgid "版本"
+msgstr "Versi"
+
+msgid "构建时间"
+msgstr "Waktu Build"
+
+msgid "作者"
+msgstr "Penulis"
+
+msgid "意见反馈"
+msgstr "Umpan balik"
+
+msgid "点赞支持"
+msgstr "Beri Bintang"
+
+msgid "Github源码"
+msgstr "Sumber GitHub"
+
+msgid "NPM源码"
+msgstr "Sumber NPM"
+
+msgid "请喝咖啡"
+msgstr "Traktir saya kopi"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Pilih apa yang akan disertakan dalam file ekspor."
+
+msgid "命令与分组"
+msgstr "Perintah dan grup"
+
+msgid "界面与外观"
+msgstr "Antarmuka dan tampilan"
+
+msgid "窗口行为与位置"
+msgstr "Perilaku dan posisi jendela"
+
+msgid "条命令"
+msgstr "perintah"
+
+msgid "个分组"
+msgstr "grup"
+
+msgid "全选"
+msgstr "Pilih semua"
+
+msgid "全不选"
+msgstr "Hapus pilihan"
+

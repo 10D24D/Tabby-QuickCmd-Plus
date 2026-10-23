@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: bg_BG\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Търсене на команди..."
+
+msgid "app.ungrouped"
+msgstr "Без група"
+
+msgid "app.noresults"
+msgstr "Няма съвпадащи команди"
+
+msgid "app.pinned"
+msgstr "Любими"
+
+msgid "app.all_groups"
+msgstr "Всички групи"
+
+msgid "app.auto_filter"
+msgstr "Авто"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — плъзнете за преместване, щракнете за превключване"
+
+msgid "entry.disconnected"
+msgstr "SSH прекъснат"
+
+msgid "entry.opened"
+msgstr "отворено, щракнете за затваряне"
+
+msgid "entry.minimized"
+msgstr "минимизирано, щракнете за възстановяване"
+
+msgid "panel.minimize"
+msgstr "Минимизиране"
+
+msgid "panel.close"
+msgstr "Затвори"
+
+msgid "panel.restore"
+msgstr "Възстанови панела"
+
+msgid "panel.settings"
+msgstr "Отвори настройките"
+
+msgid "panel.sort"
+msgstr "Сортиране"
+
+msgid "panel.sort_manual"
+msgstr "Ръчен ред"
+
+msgid "panel.sort_name"
+msgstr "Име"
+
+msgid "panel.sort_usage"
+msgstr "Брой използвания"
+
+msgid "panel.sort_hint"
+msgstr "Автоматичното сортиране е включено; върнете на ръчен ред, за да плъзгате"
+
+msgid "app.clear_search"
+msgstr "Изчисти търсенето"
+
+msgid "panel.add"
+msgstr "Нова команда"
+
+msgid "panel.edit"
+msgstr "Редактиране"
+
+msgid "panel.delete"
+msgstr "Изтриване"
+
+msgid "panel.delete_confirm"
+msgstr "Изтриване на \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Закачи към бърз достъп"
+
+msgid "panel.unpin"
+msgstr "Откачи"
+
+msgid "panel.hint.search"
+msgstr "Търсете или въведете команда"
+
+msgid "panel.empty_group"
+msgstr "Няма команди в тази група"
+
+msgid "panel.no_auto_group"
+msgstr "Няма групи за текущата връзка"
+
+msgid "panel.execute"
+msgstr "Щракнете за изпълнение"
+
+msgid "panel.send_and_exec"
+msgstr "Изпрати и изпълни"
+
+msgid "panel.send_to_line"
+msgstr "Само изпрати"
+
+msgid "panel.multi_step_title"
+msgstr "Многостъпкова команда"
+
+msgid "panel.multi_step_hint"
+msgstr "Тази команда има {count} стъпки. Да се обединят в един ред?"
+
+msgid "panel.param_hint"
+msgstr "Въведете стойност на параметъра"
+
+msgid "panel.send_all_tabs"
+msgstr "Изпрати към всички раздели"
+
+msgid "panel.copy"
+msgstr "Копирай команда"
+
+msgid "panel.drag_reorder"
+msgstr "Плъзнете за пренареждане"
+
+msgid "panel.drag_reorder_group"
+msgstr "Плъзнете за пренареждане на групата"
+
+msgid "panel.pinPanel"
+msgstr "Панелът да остава отворен"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Сортиране по"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Добави команда"
+
+msgid "settings.edit_cmd"
+msgstr "Редактирай команда"
+
+msgid "settings.name"
+msgstr "Име"
+
+msgid "settings.short_name"
+msgstr "Кратко име"
+
+msgid "settings.short_name_hint"
+msgstr "Показва се в лентата за бърз достъп; при празно се използва името на командата"
+
+msgid "settings.text"
+msgstr "Текст на командата"
+
+msgid "settings.group"
+msgstr "Групиране"
+
+msgid "settings.shortcut"
+msgstr "Пряк път"
+
+msgid "settings.append_cr"
+msgstr "Изпрати и изпълни"
+
+msgid "settings.confirm_before_run"
+msgstr "Потвърждение преди изпълнение"
+
+msgid "confirm.title"
+msgstr "Потвърждаване на изпълнението"
+
+msgid "confirm.message"
+msgstr "Следното ще бъде изпратено към терминала. Да продължи ли?"
+
+msgid "confirm.run"
+msgstr "Изпълни"
+
+msgid "settings.params"
+msgstr "Параметри"
+
+msgid "settings.pinned"
+msgstr "Закачи към бърз достъп"
+
+msgid "settings.delay"
+msgstr "Забавяне на стъпка (сек)"
+
+msgid "settings.delay_hint"
+msgstr "Забавяне на изпълнението"
+
+msgid "settings.delay_short"
+msgstr "Забавяне"
+
+msgid "settings.add_step"
+msgstr "Добави команда"
+
+msgid "settings.add_break"
+msgstr "Добави прекъсване"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C прекъсване"
+
+msgid "settings.usage_count"
+msgstr "Използване"
+
+msgid "settings.reset"
+msgstr "Нулиране"
+
+msgid "settings.step_placeholder"
+msgstr "Команда"
+
+msgid "settings.step_type_cmd"
+msgstr "Превключи към команда"
+
+msgid "settings.step_type_break"
+msgstr "Превключи към прекъсване"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH профил (празно = всички)"
+
+msgid "settings.save"
+msgstr "Запази"
+
+msgid "settings.cancel"
+msgstr "Отказ"
+
+msgid "settings.ok"
+msgstr "ОК"
+
+msgid "settings.delete"
+msgstr "Изтриване"
+
+msgid "settings.export"
+msgstr "Експортирай"
+
+msgid "settings.import"
+msgstr "Внасяне"
+
+msgid "settings.clear"
+msgstr "Изчисти всички данни"
+
+msgid "settings.confirm_delete"
+msgstr "Изтриване на тази команда?"
+
+msgid "settings.confirm_clear"
+msgstr "Изчистване на всички команди? Действието е необратимо!"
+
+msgid "settings.language"
+msgstr "Език"
+
+msgid "settings.lang_auto"
+msgstr "Следвай Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Управление на данни"
+
+msgid "group.add"
+msgstr "Нова група"
+
+msgid "group.name"
+msgstr "Име на групата"
+
+msgid "group.order"
+msgstr "Ред"
+
+msgid "group.profiles"
+msgstr "Ограничи до профили"
+
+msgid "group.profiles_hint"
+msgstr "Без отметка = видимо за всички"
+
+msgid "group.profiles_selected"
+msgstr " избрани"
+
+msgid "group.no_profiles"
+msgstr "Няма открити профили, първо създайте SSH връзки"
+
+msgid "group.delete"
+msgstr "Изтрий групата (командите стават без група)"
+
+msgid "group.rename"
+msgstr "Преименуване"
+
+msgid "group.edit"
+msgstr "Редактирай групата"
+
+msgid "group.manage"
+msgstr "Управление на групи"
+
+msgid "group.delete_confirm"
+msgstr "Изтриване на групата \"{name}\"? Командите в нея ще станат без група."
+
+msgid "notify.executed"
+msgstr "Командата е изпълнена"
+
+msgid "notify.copied"
+msgstr "Командата е копирана"
+
+msgid "notify.import_ok"
+msgstr "Импортирането е успешно"
+
+msgid "notify.import_fail"
+msgstr "Импортирането неуспешно: невалиден формат"
+
+msgid "notify.cleared"
+msgstr "Данните са изчистени"
+
+msgid "notify.no_ssh"
+msgstr "Текущият раздел не е SSH връзка"
+
+msgid "settings.hotkey"
+msgstr "Пряк път за панела"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Щракнете, за да зададете пряк път"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Незададен"
+
+msgid "settings.hotkeyRecording"
+msgstr "Натиснете клавиши..."
+
+msgid "settings.hotkeyClear"
+msgstr "Изчисти"
+
+msgid "settings.hotkeySaved"
+msgstr "Пряк път зададен на {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Пряк път изчистен"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Запази failed"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Времето за запис изтече"
+
+msgid "settings.hotkeyConflict"
+msgstr "Пряк път \"{hotkey}\" се използва от {names}. Презаписване?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Конфликт на пряк път: {names}. Запазването ще презапише."
+
+msgid "settings.enable_step"
+msgstr "Активиране на стъпка"
+
+msgid "settings.disable_step"
+msgstr "Деактивиране на стъпка"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Панел за бързи команди — създаване и управление."
+
+msgid "语言"
+msgstr "Език"
+
+msgid "跟随Tabby"
+msgstr "Следвай Tabby"
+
+msgid "界面"
+msgstr "Интерфейс"
+
+msgid "主色调"
+msgstr "Основен"
+
+msgid "背景"
+msgstr "Фон"
+
+msgid "文字"
+msgstr "Текст"
+
+msgid "标题栏"
+msgstr "Повърхност"
+
+msgid "边框"
+msgstr "Рамка"
+
+msgid "次要文字"
+msgstr "Приглушен"
+
+msgid "字体大小"
+msgstr "Размер на шрифта"
+
+msgid "入口模式"
+msgstr "Режим на вход"
+
+msgid "浮动按钮"
+msgstr "Плаващ"
+
+msgid "工具栏按钮"
+msgstr "Лента с инструменти"
+
+msgid "面板常驻"
+msgstr "Панелът да остава отворен"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Сортиране по"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Име"
+
+msgid "执行次数"
+msgstr "Използване"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Пряк път за панела"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Отвори панела QuickCmd+"
+
+msgid "点击设置快捷键"
+msgstr "Щракнете, за да зададете пряк път"
+
+msgid "未绑定"
+msgstr "Незададен"
+
+msgid "清除"
+msgstr "Изчисти"
+
+msgid "清空"
+msgstr "Изчисти"
+
+msgid "确认覆盖"
+msgstr "Презапиши"
+
+msgid "保存失败"
+msgstr "Запази failed"
+
+msgid "录制超时"
+msgstr "Времето за запис изтече"
+
+msgid "快捷键已清除"
+msgstr "Пряк път изчистен"
+
+msgid "数据"
+msgstr "Данни"
+
+msgid "导入数据"
+msgstr "Внасяне"
+
+msgid "导出数据"
+msgstr "Експортирай"
+
+msgid "清空数据"
+msgstr "Изчисти Всички"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Изчисти Всички Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Промени цветовете"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Изчистване на всички команди? Действието е необратимо!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Това ще изтрие всички команди и групи и е необратимо!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Въведете DELETE за потвърждение:"
+
+msgid "已清空所有数据"
+msgstr "Всички data cleared"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Вие сте в режим Авто/Предварителен. Промените ще презапишат потребителската цветова схема. Продължаване?"
+
+msgid "导入成功"
+msgstr "Импортирането е успешно"
+
+msgid "导入失败：文件格式无效"
+msgstr "Импортирането неуспешно: невалиден файлов формат"
+
+msgid "无效的数据格式。"
+msgstr "Невалиден формат на данни."
+
+msgid "取消"
+msgstr "Отказ"
+
+msgid "功能"
+msgstr "Функции"
+
+msgid "隐藏插件作者信息"
+msgstr "Скрий информация за автора"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Преди да скриете информацията за автора, моля, дайте звезда на хранилището на плъгина. Страницата на хранилището е отворена в браузъра. Вашата звезда е моята мотивация да разработвам — благодаря за подкрепата! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Дадох звезда"
+
+msgid "隐藏面板设置入口"
+msgstr "Скрий бутона за настройки на панела"
+
+msgid "滚动时对齐整行"
+msgstr "Подравняване на редовете при превъртане"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Когато е включено, панелът остава отворен след изпълнение на команда или загуба на фокус; когато е изключено, се скрива автоматично."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Когато е включено, списъкът се подравнява по цели редове след спиране на превъртането, за да не се отрязват записи наполовина."
+
+msgid "关于"
+msgstr "За"
+
+msgid "版本"
+msgstr "Версия"
+
+msgid "构建时间"
+msgstr "Време на изграждане"
+
+msgid "作者"
+msgstr "Автор"
+
+msgid "意见反馈"
+msgstr "Обратна връзка"
+
+msgid "点赞支持"
+msgstr "Дай звезда"
+
+msgid "Github源码"
+msgstr "GitHub изходен код"
+
+msgid "NPM源码"
+msgstr "NPM изходен код"
+
+msgid "请喝咖啡"
+msgstr "Почерпете ме с кафе"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Изберете какво да включите във файла за експорт."
+
+msgid "命令与分组"
+msgstr "Команди и групи"
+
+msgid "界面与外观"
+msgstr "Интерфейс и външен вид"
+
+msgid "窗口行为与位置"
+msgstr "Поведение и позиция на прозореца"
+
+msgid "条命令"
+msgstr "команди"
+
+msgid "个分组"
+msgstr "групи"
+
+msgid "全选"
+msgstr "Избери всички"
+
+msgid "全不选"
+msgstr "Изчисти избора"
+

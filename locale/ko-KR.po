@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ko_KR\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "명령 검색..."
+
+msgid "app.ungrouped"
+msgstr "그룹 없음"
+
+msgid "app.noresults"
+msgstr "일치하는 명령이 없습니다"
+
+msgid "app.pinned"
+msgstr "즐겨찾기"
+
+msgid "app.all_groups"
+msgstr "모든 그룹"
+
+msgid "app.auto_filter"
+msgstr "자동"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — 드래그하여 이동, 클릭하여 전환"
+
+msgid "entry.disconnected"
+msgstr "SSH 연결 끊김"
+
+msgid "entry.opened"
+msgstr "열림, 클릭하여 닫기"
+
+msgid "entry.minimized"
+msgstr "최소화됨, 클릭하여 복원"
+
+msgid "panel.minimize"
+msgstr "최소화"
+
+msgid "panel.close"
+msgstr "닫기"
+
+msgid "panel.restore"
+msgstr "패널 복원"
+
+msgid "panel.settings"
+msgstr "설정 열기"
+
+msgid "panel.sort"
+msgstr "정렬"
+
+msgid "panel.sort_manual"
+msgstr "수동 순서"
+
+msgid "panel.sort_name"
+msgstr "이름"
+
+msgid "panel.sort_usage"
+msgstr "실행 횟수"
+
+msgid "panel.sort_hint"
+msgstr "자동 정렬이 켜져 있습니다. 드래그하려면 수동 순서로 전환하세요"
+
+msgid "app.clear_search"
+msgstr "검색 지우기"
+
+msgid "panel.add"
+msgstr "새 명령"
+
+msgid "panel.edit"
+msgstr "편집"
+
+msgid "panel.delete"
+msgstr "삭제"
+
+msgid "panel.delete_confirm"
+msgstr "\"{name}\"을(를) 삭제할까요?"
+
+msgid "panel.pin"
+msgstr "빠른 진입에 고정"
+
+msgid "panel.unpin"
+msgstr "고정 해제"
+
+msgid "panel.hint.search"
+msgstr "검색하거나 명령 입력"
+
+msgid "panel.empty_group"
+msgstr "이 그룹에 명령이 없습니다"
+
+msgid "panel.no_auto_group"
+msgstr "현재 연결과 일치하는 그룹이 없습니다"
+
+msgid "panel.execute"
+msgstr "클릭하여 실행"
+
+msgid "panel.send_and_exec"
+msgstr "전송 후 실행"
+
+msgid "panel.send_to_line"
+msgstr "전송만"
+
+msgid "panel.multi_step_title"
+msgstr "다단계 명령"
+
+msgid "panel.multi_step_hint"
+msgstr "이 명령에는 {count}개의 단계가 있습니다. 한 줄로 합칠까요?"
+
+msgid "panel.param_hint"
+msgstr "매개변수 값 입력"
+
+msgid "panel.send_all_tabs"
+msgstr "모든 탭에 전송"
+
+msgid "panel.copy"
+msgstr "명령 복사"
+
+msgid "panel.drag_reorder"
+msgstr "드래그하여 순서 변경"
+
+msgid "panel.drag_reorder_group"
+msgstr "드래그하여 그룹 순서 변경"
+
+msgid "panel.pinPanel"
+msgstr "패널 열어 두기"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "정렬 기준"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "명령 추가"
+
+msgid "settings.edit_cmd"
+msgstr "명령 편집"
+
+msgid "settings.name"
+msgstr "이름"
+
+msgid "settings.short_name"
+msgstr "약칭"
+
+msgid "settings.short_name_hint"
+msgstr "빠른 실행 바에 표시됩니다. 비워 두면 명령 이름을 사용합니다"
+
+msgid "settings.text"
+msgstr "명령 텍스트"
+
+msgid "settings.group"
+msgstr "그룹"
+
+msgid "settings.shortcut"
+msgstr "단축키"
+
+msgid "settings.append_cr"
+msgstr "전송 후 실행"
+
+msgid "settings.confirm_before_run"
+msgstr "실행 전 확인"
+
+msgid "confirm.title"
+msgstr "실행 확인"
+
+msgid "confirm.message"
+msgstr "다음 내용이 터미널로 전송됩니다. 계속하시겠습니까?"
+
+msgid "confirm.run"
+msgstr "실행"
+
+msgid "settings.params"
+msgstr "매개변수"
+
+msgid "settings.pinned"
+msgstr "빠른 진입에 고정"
+
+msgid "settings.delay"
+msgstr "단계 지연 (초)"
+
+msgid "settings.delay_hint"
+msgstr "실행 시간 지연"
+
+msgid "settings.delay_short"
+msgstr "지연"
+
+msgid "settings.add_step"
+msgstr "명령 추가"
+
+msgid "settings.add_break"
+msgstr "중단 추가"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C 중단"
+
+msgid "settings.usage_count"
+msgstr "사용"
+
+msgid "settings.reset"
+msgstr "초기화"
+
+msgid "settings.step_placeholder"
+msgstr "명령"
+
+msgid "settings.step_type_cmd"
+msgstr "명령으로 전환"
+
+msgid "settings.step_type_break"
+msgstr "중단으로 전환"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH 프로필 (비우면 전체)"
+
+msgid "settings.save"
+msgstr "저장"
+
+msgid "settings.cancel"
+msgstr "취소"
+
+msgid "settings.ok"
+msgstr "확인"
+
+msgid "settings.delete"
+msgstr "삭제"
+
+msgid "settings.export"
+msgstr "내보내기"
+
+msgid "settings.import"
+msgstr "가져오기"
+
+msgid "settings.clear"
+msgstr "모든 데이터 지우기"
+
+msgid "settings.confirm_delete"
+msgstr "이 명령을 삭제할까요?"
+
+msgid "settings.confirm_clear"
+msgstr "모든 명령 데이터를 지울까요? 되돌릴 수 없습니다!"
+
+msgid "settings.language"
+msgstr "언어"
+
+msgid "settings.lang_auto"
+msgstr "Tabby 따라가기"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "데이터 관리"
+
+msgid "group.add"
+msgstr "새 그룹"
+
+msgid "group.name"
+msgstr "그룹 이름"
+
+msgid "group.order"
+msgstr "순서"
+
+msgid "group.profiles"
+msgstr "프로필로 제한"
+
+msgid "group.profiles_hint"
+msgstr "선택 안 함 = 모두에게 표시"
+
+msgid "group.profiles_selected"
+msgstr "개 선택"
+
+msgid "group.no_profiles"
+msgstr "연결 프로필이 없습니다. 먼저 SSH 연결을 만드세요"
+
+msgid "group.delete"
+msgstr "그룹 삭제 (명령은 그룹 없음으로)"
+
+msgid "group.rename"
+msgstr "이름 바꾸기"
+
+msgid "group.edit"
+msgstr "그룹 편집"
+
+msgid "group.manage"
+msgstr "그룹 관리"
+
+msgid "group.delete_confirm"
+msgstr "\"{name}\" 그룹을 삭제할까요? 안의 명령은 그룹 없음이 됩니다."
+
+msgid "notify.executed"
+msgstr "명령 실행됨"
+
+msgid "notify.copied"
+msgstr "명령 복사됨"
+
+msgid "notify.import_ok"
+msgstr "가져오기 성공"
+
+msgid "notify.import_fail"
+msgstr "가져오기 실패: 잘못된 데이터 형식"
+
+msgid "notify.cleared"
+msgstr "데이터 삭제됨"
+
+msgid "notify.no_ssh"
+msgstr "현재 탭은 SSH 연결이 아닙니다"
+
+msgid "settings.hotkey"
+msgstr "패널 단축키"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "클릭하여 단축키 설정"
+
+msgid "settings.hotkeyUnbound"
+msgstr "미지정"
+
+msgid "settings.hotkeyRecording"
+msgstr "키를 누르세요..."
+
+msgid "settings.hotkeyClear"
+msgstr "지우기"
+
+msgid "settings.hotkeySaved"
+msgstr "단축키를 {hotkey}로 설정"
+
+msgid "settings.hotkeyCleared"
+msgstr "단축키 지워짐"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "저장 실패"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "기록 시간 초과"
+
+msgid "settings.hotkeyConflict"
+msgstr "단축키 \"{hotkey}\"은(는) {names}에서 사용 중입니다. 덮어쓸까요?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "단축키 충돌: {names}. 저장하면 덮어씁니다."
+
+msgid "settings.enable_step"
+msgstr "단계 활성화"
+
+msgid "settings.disable_step"
+msgstr "단계 비활성화"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "빠른 명령 패널, 명령 생성 및 관리."
+
+msgid "语言"
+msgstr "언어"
+
+msgid "跟随Tabby"
+msgstr "Tabby 따라가기"
+
+msgid "界面"
+msgstr "인터페이스"
+
+msgid "主色调"
+msgstr "주요"
+
+msgid "背景"
+msgstr "배경"
+
+msgid "文字"
+msgstr "텍스트"
+
+msgid "标题栏"
+msgstr "표면"
+
+msgid "边框"
+msgstr "테두리"
+
+msgid "次要文字"
+msgstr "흐린색"
+
+msgid "字体大小"
+msgstr "글꼴 크기"
+
+msgid "入口模式"
+msgstr "진입 모드"
+
+msgid "浮动按钮"
+msgstr "플로팅"
+
+msgid "工具栏按钮"
+msgstr "도구 모음"
+
+msgid "面板常驻"
+msgstr "패널 열어 두기"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "정렬 기준"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "이름"
+
+msgid "执行次数"
+msgstr "사용"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "패널 단축키"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "QuickCmd+ 패널 열기"
+
+msgid "点击设置快捷键"
+msgstr "클릭하여 단축키 설정"
+
+msgid "未绑定"
+msgstr "미지정"
+
+msgid "清除"
+msgstr "지우기"
+
+msgid "清空"
+msgstr "지우기"
+
+msgid "确认覆盖"
+msgstr "덮어기"
+
+msgid "保存失败"
+msgstr "저장 실패"
+
+msgid "录制超时"
+msgstr "기록 시간 초과"
+
+msgid "快捷键已清除"
+msgstr "단축키 지워짐"
+
+msgid "数据"
+msgstr "데이터"
+
+msgid "导入数据"
+msgstr "가져오기"
+
+msgid "导出数据"
+msgstr "내보내기"
+
+msgid "清空数据"
+msgstr "모두 지우기"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ 모든 데이터 지우기"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ 색상 수정"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "모든 명령 데이터를 지울까요? 되돌릴 수 없습니다!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "모든 명령과 그룹이 삭제되며 되돌릴 수 없습니다!"
+
+msgid "请输入 DELETE 确认："
+msgstr "확인을 위해 DELETE를 입력하세요:"
+
+msgid "已清空所有数据"
+msgstr "모든 데이터가 지워짐"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "자동/프리셋 모드입니다. 변경 사항은 사용자 정의 색상을 덮어씁니다. 계속하시겠습니까?"
+
+msgid "导入成功"
+msgstr "가져오기 성공"
+
+msgid "导入失败：文件格式无效"
+msgstr "가져오기 실패: 잘못된 파일 형식"
+
+msgid "无效的数据格式。"
+msgstr "잘못된 데이터 형식입니다."
+
+msgid "取消"
+msgstr "취소"
+
+msgid "功能"
+msgstr "기능"
+
+msgid "隐藏插件作者信息"
+msgstr "작성자 정보 숨기기"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "제작자 정보를 숨기기 전에 플러그인 저장소에 Star를 눌러 응원해 주세요. 저장소 페이지가 브라우저에서 열렸습니다. 여러분의 Star가 개발의 원동력입니다. 응원해 주셔서 감사합니다! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "별을 눌렀습니다"
+
+msgid "隐藏面板设置入口"
+msgstr "패널 설정 버튼 숨기기"
+
+msgid "滚动时对齐整行"
+msgstr "스크롤 시 행 정렬"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "켜짐: 명령 실행 후나 포커스를 잃어도 패널이 열린 채 유지됩니다. 꺼짐: 자동으로 닫힙니다."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "켜짐: 스크롤이 멈추면 목록이 행 단위로 정렬되어 항목이 잘리지 않습니다."
+
+msgid "关于"
+msgstr "정보"
+
+msgid "版本"
+msgstr "버전"
+
+msgid "构建时间"
+msgstr "빌드 시간"
+
+msgid "作者"
+msgstr "작성자"
+
+msgid "意见反馈"
+msgstr "피드백"
+
+msgid "点赞支持"
+msgstr "별점 주기"
+
+msgid "Github源码"
+msgstr "GitHub 소스"
+
+msgid "NPM源码"
+msgstr "NPM 소스"
+
+msgid "请喝咖啡"
+msgstr "커피 한 잔 사주기"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "내보내기 파일에 포함할 내용을 선택하세요."
+
+msgid "命令与分组"
+msgstr "명령 및 그룹"
+
+msgid "界面与外观"
+msgstr "인터페이스 및 모양"
+
+msgid "窗口行为与位置"
+msgstr "창 동작 및 위치"
+
+msgid "条命令"
+msgstr "개 명령"
+
+msgid "个分组"
+msgstr "개 그룹"
+
+msgid "全选"
+msgstr "모두 선택"
+
+msgid "全不选"
+msgstr "선택 해제"
+

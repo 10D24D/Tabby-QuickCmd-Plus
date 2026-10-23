@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: sv_SE\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Sök kommandon..."
+
+msgid "app.ungrouped"
+msgstr "Ogrupperad"
+
+msgid "app.noresults"
+msgstr "Inga matchande kommandon"
+
+msgid "app.pinned"
+msgstr "Favoriter"
+
+msgid "app.all_groups"
+msgstr "Alla grupper"
+
+msgid "app.auto_filter"
+msgstr "Auto"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — dra för att flytta, klicka för att växla"
+
+msgid "entry.disconnected"
+msgstr "SSH frånkopplad"
+
+msgid "entry.opened"
+msgstr "öppen, klicka för att stänga"
+
+msgid "entry.minimized"
+msgstr "minimerad, klicka för att återställa"
+
+msgid "panel.minimize"
+msgstr "Minimera"
+
+msgid "panel.close"
+msgstr "Stäng"
+
+msgid "panel.restore"
+msgstr "Återställ panel"
+
+msgid "panel.settings"
+msgstr "Öppna inställningar"
+
+msgid "panel.sort"
+msgstr "Sortera"
+
+msgid "panel.sort_manual"
+msgstr "Manuell ordning"
+
+msgid "panel.sort_name"
+msgstr "Namn"
+
+msgid "panel.sort_usage"
+msgstr "Antal användningar"
+
+msgid "panel.sort_hint"
+msgstr "Automatisk sortering är på; växla till manuell ordning för att dra"
+
+msgid "app.clear_search"
+msgstr "Rensa sökning"
+
+msgid "panel.add"
+msgstr "Nytt kommando"
+
+msgid "panel.edit"
+msgstr "Redigera"
+
+msgid "panel.delete"
+msgstr "Ta bort"
+
+msgid "panel.delete_confirm"
+msgstr "Ta bort \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Fäst vid snabbåtkomst"
+
+msgid "panel.unpin"
+msgstr "Lossa"
+
+msgid "panel.hint.search"
+msgstr "Sök eller skriv ett kommando"
+
+msgid "panel.empty_group"
+msgstr "Inga kommandon i denna grupp"
+
+msgid "panel.no_auto_group"
+msgstr "Inga grupper matchar aktuell anslutning"
+
+msgid "panel.execute"
+msgstr "Klicka för att köra"
+
+msgid "panel.send_and_exec"
+msgstr "Skicka & kör"
+
+msgid "panel.send_to_line"
+msgstr "Skicka endast"
+
+msgid "panel.multi_step_title"
+msgstr "Flerstegskommando"
+
+msgid "panel.multi_step_hint"
+msgstr "Detta kommando har {count} steg. Slå ihop till en rad?"
+
+msgid "panel.param_hint"
+msgstr "Ange parametervärde"
+
+msgid "panel.send_all_tabs"
+msgstr "Skicka till alla flikar"
+
+msgid "panel.copy"
+msgstr "Kopiera kommando"
+
+msgid "panel.drag_reorder"
+msgstr "Dra för att ändra ordning"
+
+msgid "panel.drag_reorder_group"
+msgstr "Dra för att ändra gruppordning"
+
+msgid "panel.pinPanel"
+msgstr "Håll panelen öppen"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Sortera efter"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Lägg till kommando"
+
+msgid "settings.edit_cmd"
+msgstr "Redigera kommando"
+
+msgid "settings.name"
+msgstr "Namn"
+
+msgid "settings.short_name"
+msgstr "Kort namn"
+
+msgid "settings.short_name_hint"
+msgstr "Visas i snabbraden; tomt använder kommandots namn"
+
+msgid "settings.text"
+msgstr "Kommandotext"
+
+msgid "settings.group"
+msgstr "Gruppera"
+
+msgid "settings.shortcut"
+msgstr "Genväg"
+
+msgid "settings.append_cr"
+msgstr "Skicka & kör"
+
+msgid "settings.confirm_before_run"
+msgstr "Bekräfta före körning"
+
+msgid "confirm.title"
+msgstr "Bekräfta körning"
+
+msgid "confirm.message"
+msgstr "Följande skickas till terminalen. Fortsätt?"
+
+msgid "confirm.run"
+msgstr "Kör"
+
+msgid "settings.params"
+msgstr "Parametrar"
+
+msgid "settings.pinned"
+msgstr "Fäst vid snabbåtkomst"
+
+msgid "settings.delay"
+msgstr "Stegfördröjning (s)"
+
+msgid "settings.delay_hint"
+msgstr "Fördröj körningstid"
+
+msgid "settings.delay_short"
+msgstr "Fördröjning"
+
+msgid "settings.add_step"
+msgstr "Lägg till kommando"
+
+msgid "settings.add_break"
+msgstr "Lägg till avbrott"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C-avbrott"
+
+msgid "settings.usage_count"
+msgstr "Användning"
+
+msgid "settings.reset"
+msgstr "Återställ"
+
+msgid "settings.step_placeholder"
+msgstr "Kommando"
+
+msgid "settings.step_type_cmd"
+msgstr "Växla till kommando"
+
+msgid "settings.step_type_break"
+msgstr "Växla till avbrott"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH-profil (tom = alla)"
+
+msgid "settings.save"
+msgstr "Spara"
+
+msgid "settings.cancel"
+msgstr "Avbryt"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "Ta bort"
+
+msgid "settings.export"
+msgstr "Exportera"
+
+msgid "settings.import"
+msgstr "Importera"
+
+msgid "settings.clear"
+msgstr "Rensa all data"
+
+msgid "settings.confirm_delete"
+msgstr "Ta bort detta kommando?"
+
+msgid "settings.confirm_clear"
+msgstr "Rensa all kommandodata? Detta kan inte ångras!"
+
+msgid "settings.language"
+msgstr "Språk"
+
+msgid "settings.lang_auto"
+msgstr "Följ Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Datahantering"
+
+msgid "group.add"
+msgstr "Ny grupp"
+
+msgid "group.name"
+msgstr "Gruppnamn"
+
+msgid "group.order"
+msgstr "Ordning"
+
+msgid "group.profiles"
+msgstr "Begränsa till profiler"
+
+msgid "group.profiles_hint"
+msgstr "Omarkerad = synlig för alla"
+
+msgid "group.profiles_selected"
+msgstr " valda"
+
+msgid "group.no_profiles"
+msgstr "Inga anslutningsprofiler hittades, skapa SSH-anslutningar först"
+
+msgid "group.delete"
+msgstr "Ta bort grupp (kommandon blir ogrupperade)"
+
+msgid "group.rename"
+msgstr "Byt namn"
+
+msgid "group.edit"
+msgstr "Redigera grupp"
+
+msgid "group.manage"
+msgstr "Hantera grupper"
+
+msgid "group.delete_confirm"
+msgstr "Ta bort gruppen \"{name}\"? Kommandon i den blir ogrupperade."
+
+msgid "notify.executed"
+msgstr "Kommando utfört"
+
+msgid "notify.copied"
+msgstr "Kommando kopierat"
+
+msgid "notify.import_ok"
+msgstr "Import lyckades"
+
+msgid "notify.import_fail"
+msgstr "Import misslyckades: ogiltigt dataformat"
+
+msgid "notify.cleared"
+msgstr "Data rensad"
+
+msgid "notify.no_ssh"
+msgstr "Aktuell flik är inte en SSH-anslutning"
+
+msgid "settings.hotkey"
+msgstr "Panelgenväg"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Klicka för att ange genväg"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Ej bunden"
+
+msgid "settings.hotkeyRecording"
+msgstr "Tryck på tangenter..."
+
+msgid "settings.hotkeyClear"
+msgstr "Rensa"
+
+msgid "settings.hotkeySaved"
+msgstr "Genväg inställd på {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Genväg rensad"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Spara failed"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Inspelningen tog timeout"
+
+msgid "settings.hotkeyConflict"
+msgstr "Genvägen \"{hotkey}\" används av {names}. Skriva över?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Genvägskonflikt: {names}. Spara skriver över."
+
+msgid "settings.enable_step"
+msgstr "Aktivera steg"
+
+msgid "settings.disable_step"
+msgstr "Inaktivera steg"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Snabbkommandopanel, skapa och hantera kommandon."
+
+msgid "语言"
+msgstr "Språk"
+
+msgid "跟随Tabby"
+msgstr "Följ Tabby"
+
+msgid "界面"
+msgstr "Gränssnitt"
+
+msgid "主色调"
+msgstr "Primär"
+
+msgid "背景"
+msgstr "Bakgrund"
+
+msgid "文字"
+msgstr "Text"
+
+msgid "标题栏"
+msgstr "Yta"
+
+msgid "边框"
+msgstr "Kant"
+
+msgid "次要文字"
+msgstr "Dämpad"
+
+msgid "字体大小"
+msgstr "Teckenstorlek"
+
+msgid "入口模式"
+msgstr "Ingångsläge"
+
+msgid "浮动按钮"
+msgstr "Flytande"
+
+msgid "工具栏按钮"
+msgstr "Verktygsfält"
+
+msgid "面板常驻"
+msgstr "Håll panelen öppen"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Sortera efter"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Namn"
+
+msgid "执行次数"
+msgstr "Användning"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Panelgenväg"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Öppna QuickCmd+-panelen"
+
+msgid "点击设置快捷键"
+msgstr "Klicka för att ange genväg"
+
+msgid "未绑定"
+msgstr "Ej bunden"
+
+msgid "清除"
+msgstr "Rensa"
+
+msgid "清空"
+msgstr "Rensa"
+
+msgid "确认覆盖"
+msgstr "Skriv över"
+
+msgid "保存失败"
+msgstr "Spara failed"
+
+msgid "录制超时"
+msgstr "Inspelningen tog timeout"
+
+msgid "快捷键已清除"
+msgstr "Genväg rensad"
+
+msgid "数据"
+msgstr "Data"
+
+msgid "导入数据"
+msgstr "Importera"
+
+msgid "导出数据"
+msgstr "Exportera"
+
+msgid "清空数据"
+msgstr "Rensa Alla"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Rensa Alla Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Ändra färger"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Rensa all kommandodata? Detta kan inte ångras!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Detta tar bort alla kommandon och grupper och kan inte ångras!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Skriv DELETE för att bekräfta:"
+
+msgid "已清空所有数据"
+msgstr "Alla data cleared"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Du är i Auto/Förinställt läge. Ändringar kommer att skriva över det anpassade färgschemat. Fortsätta?"
+
+msgid "导入成功"
+msgstr "Import lyckades"
+
+msgid "导入失败：文件格式无效"
+msgstr "Import misslyckades: ogiltigt filformat"
+
+msgid "无效的数据格式。"
+msgstr "Ogiltigt dataformat."
+
+msgid "取消"
+msgstr "Avbryt"
+
+msgid "功能"
+msgstr "Funktioner"
+
+msgid "隐藏插件作者信息"
+msgstr "Dölj författarinfo"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Innan du döljer författarinformationen, ge gärna pluginförrådet en stjärna. Förrådssidan har öppnats i webbläsaren. Din stjärna är min motivation att utveckla — tack för ditt stöd! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Jag har gett en stjärna"
+
+msgid "隐藏面板设置入口"
+msgstr "Dölj panelinställningsknappen"
+
+msgid "滚动时对齐整行"
+msgstr "Justera rader vid rullning"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "På: panelen förblir öppen efter ett kommando eller förlorat fokus; av: den döljs automatiskt."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "På: listan justeras till hela rader när rullningen stannar, så poster inte kapas."
+
+msgid "关于"
+msgstr "Om"
+
+msgid "版本"
+msgstr "Version"
+
+msgid "构建时间"
+msgstr "Byggtid"
+
+msgid "作者"
+msgstr "Författare"
+
+msgid "意见反馈"
+msgstr "Feedback"
+
+msgid "点赞支持"
+msgstr "Ge en stjärna"
+
+msgid "Github源码"
+msgstr "GitHub-källa"
+
+msgid "NPM源码"
+msgstr "NPM-källkod"
+
+msgid "请喝咖啡"
+msgstr "Bjud mig på kaffe"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Välj vad som ska ingå i exportfilen."
+
+msgid "命令与分组"
+msgstr "Kommandon och grupper"
+
+msgid "界面与外观"
+msgstr "Gränssnitt och utseende"
+
+msgid "窗口行为与位置"
+msgstr "Fönsterbeteende och position"
+
+msgid "条命令"
+msgstr "kommandon"
+
+msgid "个分组"
+msgstr "grupper"
+
+msgid "全选"
+msgstr "Välj alla"
+
+msgid "全不选"
+msgstr "Rensa val"
+

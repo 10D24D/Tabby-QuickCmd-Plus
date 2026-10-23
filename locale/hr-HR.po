@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: hr_HR\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Pretraži naredbe..."
+
+msgid "app.ungrouped"
+msgstr "Nesvrstano"
+
+msgid "app.noresults"
+msgstr "Nema podudarnih naredbi"
+
+msgid "app.pinned"
+msgstr "Favoriti"
+
+msgid "app.all_groups"
+msgstr "Sve grupe"
+
+msgid "app.auto_filter"
+msgstr "Auto"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — povucite za pomicanje, kliknite za prebacivanje"
+
+msgid "entry.disconnected"
+msgstr "SSH prekinut"
+
+msgid "entry.opened"
+msgstr "otvoreno, kliknite za zatvaranje"
+
+msgid "entry.minimized"
+msgstr "minimizirano, kliknite za vraćanje"
+
+msgid "panel.minimize"
+msgstr "Minimiziraj"
+
+msgid "panel.close"
+msgstr "Zatvori"
+
+msgid "panel.restore"
+msgstr "Vrati ploču"
+
+msgid "panel.settings"
+msgstr "Otvori postavke"
+
+msgid "panel.sort"
+msgstr "Sortiraj"
+
+msgid "panel.sort_manual"
+msgstr "Ručni poredak"
+
+msgid "panel.sort_name"
+msgstr "Naziv"
+
+msgid "panel.sort_usage"
+msgstr "Broj korištenja"
+
+msgid "panel.sort_hint"
+msgstr "Automatsko sortiranje je uključeno; vratite na ručni poredak za povlačenje"
+
+msgid "app.clear_search"
+msgstr "Očisti pretragu"
+
+msgid "panel.add"
+msgstr "Nova naredba"
+
+msgid "panel.edit"
+msgstr "Uredi"
+
+msgid "panel.delete"
+msgstr "Izbriši"
+
+msgid "panel.delete_confirm"
+msgstr "Izbrisati \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Prikvači na brzi pristup"
+
+msgid "panel.unpin"
+msgstr "Otkvači"
+
+msgid "panel.hint.search"
+msgstr "Pretražite ili upišite naredbu"
+
+msgid "panel.empty_group"
+msgstr "Nema naredbi u ovoj grupi"
+
+msgid "panel.no_auto_group"
+msgstr "Nijedna grupa ne odgovara trenutnoj vezi"
+
+msgid "panel.execute"
+msgstr "Kliknite za izvršavanje"
+
+msgid "panel.send_and_exec"
+msgstr "Pošalji i izvrši"
+
+msgid "panel.send_to_line"
+msgstr "Samo pošalji"
+
+msgid "panel.multi_step_title"
+msgstr "Naredba u više koraka"
+
+msgid "panel.multi_step_hint"
+msgstr "Ova naredba ima {count} koraka. Spojiti u jedan redak?"
+
+msgid "panel.param_hint"
+msgstr "Unesite vrijednost parametra"
+
+msgid "panel.send_all_tabs"
+msgstr "Pošalji svim karticama"
+
+msgid "panel.copy"
+msgstr "Kopiraj naredbu"
+
+msgid "panel.drag_reorder"
+msgstr "Povucite za promjenu redoslijeda"
+
+msgid "panel.drag_reorder_group"
+msgstr "Povucite za promjenu redoslijeda grupe"
+
+msgid "panel.pinPanel"
+msgstr "Zadrži ploču otvorenom"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Sortiraj po"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Dodaj naredbu"
+
+msgid "settings.edit_cmd"
+msgstr "Uredi naredbu"
+
+msgid "settings.name"
+msgstr "Naziv"
+
+msgid "settings.short_name"
+msgstr "Kratki naziv"
+
+msgid "settings.short_name_hint"
+msgstr "Prikazuje se na traci za brzi pristup; prazno koristi naziv naredbe"
+
+msgid "settings.text"
+msgstr "Tekst naredbe"
+
+msgid "settings.group"
+msgstr "Grupiraj"
+
+msgid "settings.shortcut"
+msgstr "Prečac"
+
+msgid "settings.append_cr"
+msgstr "Pošalji i izvrši"
+
+msgid "settings.confirm_before_run"
+msgstr "Potvrdi prije izvršavanja"
+
+msgid "confirm.title"
+msgstr "Potvrdi izvršavanje"
+
+msgid "confirm.message"
+msgstr "Sljedeće će biti poslano u terminal. Nastaviti?"
+
+msgid "confirm.run"
+msgstr "Izvrši"
+
+msgid "settings.params"
+msgstr "Parametri"
+
+msgid "settings.pinned"
+msgstr "Prikvači na brzi pristup"
+
+msgid "settings.delay"
+msgstr "Kašnjenje koraka (s)"
+
+msgid "settings.delay_hint"
+msgstr "Odgodi vrijeme izvršenja"
+
+msgid "settings.delay_short"
+msgstr "Kašnjenje"
+
+msgid "settings.add_step"
+msgstr "Dodaj naredbu"
+
+msgid "settings.add_break"
+msgstr "Dodaj prekid"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C prekid"
+
+msgid "settings.usage_count"
+msgstr "Korištenje"
+
+msgid "settings.reset"
+msgstr "Poništi"
+
+msgid "settings.step_placeholder"
+msgstr "Naredba"
+
+msgid "settings.step_type_cmd"
+msgstr "Prebaci na naredbu"
+
+msgid "settings.step_type_break"
+msgstr "Prebaci na prekid"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH profil (prazno = sve)"
+
+msgid "settings.save"
+msgstr "Spremi"
+
+msgid "settings.cancel"
+msgstr "Odustani"
+
+msgid "settings.ok"
+msgstr "U redu"
+
+msgid "settings.delete"
+msgstr "Izbriši"
+
+msgid "settings.export"
+msgstr "Izvoz"
+
+msgid "settings.import"
+msgstr "Uvezi"
+
+msgid "settings.clear"
+msgstr "Obriši sve podatke"
+
+msgid "settings.confirm_delete"
+msgstr "Izbrisati ovu naredbu?"
+
+msgid "settings.confirm_clear"
+msgstr "Obrisati sve podatke naredbi? Ovo se ne može poništiti!"
+
+msgid "settings.language"
+msgstr "Jezik"
+
+msgid "settings.lang_auto"
+msgstr "Prati Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Upravljanje podacima"
+
+msgid "group.add"
+msgstr "Nova grupa"
+
+msgid "group.name"
+msgstr "Naziv grupe"
+
+msgid "group.order"
+msgstr "Redoslijed"
+
+msgid "group.profiles"
+msgstr "Ograniči na profile"
+
+msgid "group.profiles_hint"
+msgstr "Neoznačeno = vidljivo svima"
+
+msgid "group.profiles_selected"
+msgstr " odabrano"
+
+msgid "group.no_profiles"
+msgstr "Nema pronađenih profila, prvo stvorite SSH veze"
+
+msgid "group.delete"
+msgstr "Izbriši grupu (naredbe postaju nesvrstane)"
+
+msgid "group.rename"
+msgstr "Preimenuj"
+
+msgid "group.edit"
+msgstr "Uredi grupu"
+
+msgid "group.manage"
+msgstr "Upravljaj grupama"
+
+msgid "group.delete_confirm"
+msgstr "Izbrisati grupu \"{name}\"? Naredbe u njoj postat će nesvrstane."
+
+msgid "notify.executed"
+msgstr "Naredba izvršena"
+
+msgid "notify.copied"
+msgstr "Naredba kopirana"
+
+msgid "notify.import_ok"
+msgstr "Uvoz uspješan"
+
+msgid "notify.import_fail"
+msgstr "Uvoz neuspješan: nevažeći format podataka"
+
+msgid "notify.cleared"
+msgstr "Podaci obrisani"
+
+msgid "notify.no_ssh"
+msgstr "Trenutna kartica nije SSH veza"
+
+msgid "settings.hotkey"
+msgstr "Prečac ploče"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Kliknite za postavljanje prečaca"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Nedodijeljeno"
+
+msgid "settings.hotkeyRecording"
+msgstr "Pritisnite tipke..."
+
+msgid "settings.hotkeyClear"
+msgstr "Očisti"
+
+msgid "settings.hotkeySaved"
+msgstr "Prečac postavljen na {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Prečac obrisan"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Spremi failed"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Isteklo vrijeme snimanja"
+
+msgid "settings.hotkeyConflict"
+msgstr "Prečac \"{hotkey}\" koristi {names}. Prepisati?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Sukob prečaca: {names}. Spremanje će prepisati."
+
+msgid "settings.enable_step"
+msgstr "Omogući korak"
+
+msgid "settings.disable_step"
+msgstr "Onemogući korak"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Ploča brzih naredbi, stvaranje i upravljanje naredbama."
+
+msgid "语言"
+msgstr "Jezik"
+
+msgid "跟随Tabby"
+msgstr "Prati Tabby"
+
+msgid "界面"
+msgstr "Sučelje"
+
+msgid "主色调"
+msgstr "Primarno"
+
+msgid "背景"
+msgstr "Pozadina"
+
+msgid "文字"
+msgstr "Tekst"
+
+msgid "标题栏"
+msgstr "Površina"
+
+msgid "边框"
+msgstr "Rub"
+
+msgid "次要文字"
+msgstr "Prigušeno"
+
+msgid "字体大小"
+msgstr "Veličina fonta"
+
+msgid "入口模式"
+msgstr "Način ulaza"
+
+msgid "浮动按钮"
+msgstr "Plutajuće"
+
+msgid "工具栏按钮"
+msgstr "Alatna traka"
+
+msgid "面板常驻"
+msgstr "Zadrži ploču otvorenom"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Sortiraj po"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Naziv"
+
+msgid "执行次数"
+msgstr "Korištenje"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Prečac ploče"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Otvori QuickCmd+ ploču"
+
+msgid "点击设置快捷键"
+msgstr "Kliknite za postavljanje prečaca"
+
+msgid "未绑定"
+msgstr "Nedodijeljeno"
+
+msgid "清除"
+msgstr "Očisti"
+
+msgid "清空"
+msgstr "Očisti"
+
+msgid "确认覆盖"
+msgstr "Prepiši"
+
+msgid "保存失败"
+msgstr "Spremi failed"
+
+msgid "录制超时"
+msgstr "Isteklo vrijeme snimanja"
+
+msgid "快捷键已清除"
+msgstr "Prečac obrisan"
+
+msgid "数据"
+msgstr "Podaci"
+
+msgid "导入数据"
+msgstr "Uvezi"
+
+msgid "导出数据"
+msgstr "Izvoz"
+
+msgid "清空数据"
+msgstr "Očisti Sve"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Očisti Sve Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Promijeni boje"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Obrisati sve podatke naredbi? Ovo se ne može poništiti!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Ovo će izbrisati sve naredbe i grupe i ne može se poništiti!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Upišite DELETE za potvrdu:"
+
+msgid "已清空所有数据"
+msgstr "Sve data cleared"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "U načinu Auto/Predložak ste. Promjene će prepisati prilagođenu shemu boja. Nastaviti?"
+
+msgid "导入成功"
+msgstr "Uvoz uspješan"
+
+msgid "导入失败：文件格式无效"
+msgstr "Uvoz neuspješan: nevažeći format datoteke"
+
+msgid "无效的数据格式。"
+msgstr "Neispravan format podataka."
+
+msgid "取消"
+msgstr "Odustani"
+
+msgid "功能"
+msgstr "Značajke"
+
+msgid "隐藏插件作者信息"
+msgstr "Sakrij podatke o autoru"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Prije skrivanja podataka o autoru, dajte zvjezdicu repozitoriju dodatka. Stranica repozitorija otvorena je u pregledniku. Vaša zvjezdica je moja motivacija za razvoj — hvala na podršci! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Dao sam zvjezdicu"
+
+msgid "隐藏面板设置入口"
+msgstr "Sakrij gumb postavki panela"
+
+msgid "滚动时对齐整行"
+msgstr "Poravnaj retke pri pomicanju"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Kad je uključeno, ploča ostaje otvorena nakon naredbe ili gubitka fokusa; kad je isključeno, skriva se automatski."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Kad je uključeno, popis se nakon prestanka pomicanja poravnava na cijele retke, da se unosi ne režu napola."
+
+msgid "关于"
+msgstr "O"
+
+msgid "版本"
+msgstr "Verzija"
+
+msgid "构建时间"
+msgstr "Vrijeme izgradnje"
+
+msgid "作者"
+msgstr "Autor"
+
+msgid "意见反馈"
+msgstr "Povratne informacije"
+
+msgid "点赞支持"
+msgstr "Daj zvjezdicu"
+
+msgid "Github源码"
+msgstr "GitHub izvor"
+
+msgid "NPM源码"
+msgstr "NPM izvorni kod"
+
+msgid "请喝咖啡"
+msgstr "Časti me kavom"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Odaberite što će se uključiti u izvoznu datoteku."
+
+msgid "命令与分组"
+msgstr "Naredbe i grupe"
+
+msgid "界面与外观"
+msgstr "Sučelje i izgled"
+
+msgid "窗口行为与位置"
+msgstr "Ponašanje i položaj prozora"
+
+msgid "条命令"
+msgstr "naredbi"
+
+msgid "个分组"
+msgstr "grupa"
+
+msgid "全选"
+msgstr "Odaberi sve"
+
+msgid "全不选"
+msgstr "Očisti odabir"
+

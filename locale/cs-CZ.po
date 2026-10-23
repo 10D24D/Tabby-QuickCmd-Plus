@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: cs_CZ\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Hledat příkazy..."
+
+msgid "app.ungrouped"
+msgstr "Bez skupiny"
+
+msgid "app.noresults"
+msgstr "Žádné odpovídající příkazy"
+
+msgid "app.pinned"
+msgstr "Oblíbené"
+
+msgid "app.all_groups"
+msgstr "Všechny skupiny"
+
+msgid "app.auto_filter"
+msgstr "Auto"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — táhněte pro přesun, klikněte pro přepnutí"
+
+msgid "entry.disconnected"
+msgstr "SSH odpojeno"
+
+msgid "entry.opened"
+msgstr "otevřeno, kliknutím zavřete"
+
+msgid "entry.minimized"
+msgstr "minimalizováno, kliknutím obnovíte"
+
+msgid "panel.minimize"
+msgstr "Minimalizovat"
+
+msgid "panel.close"
+msgstr "Zavřít"
+
+msgid "panel.restore"
+msgstr "Obnovit panel"
+
+msgid "panel.settings"
+msgstr "Otevřít nastavení"
+
+msgid "panel.sort"
+msgstr "Řadit"
+
+msgid "panel.sort_manual"
+msgstr "Ruční pořadí"
+
+msgid "panel.sort_name"
+msgstr "Název"
+
+msgid "panel.sort_usage"
+msgstr "Počet použití"
+
+msgid "panel.sort_hint"
+msgstr "Automatické řazení je zapnuto; pro přetažení přepněte na ruční pořadí"
+
+msgid "app.clear_search"
+msgstr "Vymazat hledání"
+
+msgid "panel.add"
+msgstr "Nový příkaz"
+
+msgid "panel.edit"
+msgstr "Upravit"
+
+msgid "panel.delete"
+msgstr "Smazat"
+
+msgid "panel.delete_confirm"
+msgstr "Smazat \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Připnout k rychlému vstupu"
+
+msgid "panel.unpin"
+msgstr "Odepnout"
+
+msgid "panel.hint.search"
+msgstr "Hledejte nebo zadejte vlastní příkaz"
+
+msgid "panel.empty_group"
+msgstr "V této skupině nejsou žádné příkazy"
+
+msgid "panel.no_auto_group"
+msgstr "Žádné skupiny neodpovídají aktuálnímu připojení"
+
+msgid "panel.execute"
+msgstr "Klikněte pro spuštění"
+
+msgid "panel.send_and_exec"
+msgstr "Odeslat a spustit"
+
+msgid "panel.send_to_line"
+msgstr "Pouze odeslat"
+
+msgid "panel.multi_step_title"
+msgstr "Vícekrokový příkaz"
+
+msgid "panel.multi_step_hint"
+msgstr "Tento příkaz má {count} kroků. Spojit do jednoho řádku?"
+
+msgid "panel.param_hint"
+msgstr "Zadejte hodnotu parametru"
+
+msgid "panel.send_all_tabs"
+msgstr "Odeslat do všech karet"
+
+msgid "panel.copy"
+msgstr "Kopírovat příkaz"
+
+msgid "panel.drag_reorder"
+msgstr "Táhněte pro změnu pořadí"
+
+msgid "panel.drag_reorder_group"
+msgstr "Táhněte pro změnu pořadí skupiny"
+
+msgid "panel.pinPanel"
+msgstr "Ponechat panel otevřený"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Seřadit podle"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Přidat příkaz"
+
+msgid "settings.edit_cmd"
+msgstr "Upravit příkaz"
+
+msgid "settings.name"
+msgstr "Název"
+
+msgid "settings.short_name"
+msgstr "Krátký název"
+
+msgid "settings.short_name_hint"
+msgstr "Zobrazí se na panelu rychlého přístupu; prázdné použije název příkazu"
+
+msgid "settings.text"
+msgstr "Text příkazu"
+
+msgid "settings.group"
+msgstr "Seskupit"
+
+msgid "settings.shortcut"
+msgstr "Zkratka"
+
+msgid "settings.append_cr"
+msgstr "Odeslat a spustit"
+
+msgid "settings.confirm_before_run"
+msgstr "Potvrdit před spuštěním"
+
+msgid "confirm.title"
+msgstr "Potvrdit spuštění"
+
+msgid "confirm.message"
+msgstr "Následující bude odesláno do terminálu. Pokračovat?"
+
+msgid "confirm.run"
+msgstr "Spustit"
+
+msgid "settings.params"
+msgstr "Parametry"
+
+msgid "settings.pinned"
+msgstr "Připnout k rychlému vstupu"
+
+msgid "settings.delay"
+msgstr "Zpoždění kroku (s)"
+
+msgid "settings.delay_hint"
+msgstr "Zpoždění spuštění"
+
+msgid "settings.delay_short"
+msgstr "Zpoždění"
+
+msgid "settings.add_step"
+msgstr "Přidat příkaz"
+
+msgid "settings.add_break"
+msgstr "Přidat přerušení"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C přerušení"
+
+msgid "settings.usage_count"
+msgstr "Použití"
+
+msgid "settings.reset"
+msgstr "Obnovit"
+
+msgid "settings.step_placeholder"
+msgstr "Příkaz"
+
+msgid "settings.step_type_cmd"
+msgstr "Přepnout na příkaz"
+
+msgid "settings.step_type_break"
+msgstr "Přepnout na přerušení"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH profil (prázdné = vše)"
+
+msgid "settings.save"
+msgstr "Uložit"
+
+msgid "settings.cancel"
+msgstr "Zrušit"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "Smazat"
+
+msgid "settings.export"
+msgstr "Exportovat"
+
+msgid "settings.import"
+msgstr "Importovat"
+
+msgid "settings.clear"
+msgstr "Vymazat všechna data"
+
+msgid "settings.confirm_delete"
+msgstr "Smazat tento příkaz?"
+
+msgid "settings.confirm_clear"
+msgstr "Vymazat všechna data příkazů? Toto nelze vrátit!"
+
+msgid "settings.language"
+msgstr "Jazyk"
+
+msgid "settings.lang_auto"
+msgstr "Sledovat Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Správa dat"
+
+msgid "group.add"
+msgstr "Nová skupina"
+
+msgid "group.name"
+msgstr "Název skupiny"
+
+msgid "group.order"
+msgstr "Pořadí"
+
+msgid "group.profiles"
+msgstr "Omezit na profily"
+
+msgid "group.profiles_hint"
+msgstr "Nezaškrtnuto = viditelné pro všechny"
+
+msgid "group.profiles_selected"
+msgstr " vybráno"
+
+msgid "group.no_profiles"
+msgstr "Nebyly nalezeny žádné profily, nejprve vytvořte SSH připojení"
+
+msgid "group.delete"
+msgstr "Smazat skupinu (příkazy budou bez skupiny)"
+
+msgid "group.rename"
+msgstr "Přejmenovat"
+
+msgid "group.edit"
+msgstr "Upravit skupinu"
+
+msgid "group.manage"
+msgstr "Spravovat skupiny"
+
+msgid "group.delete_confirm"
+msgstr "Smazat skupinu \"{name}\"? Příkazy v ní budou bez skupiny."
+
+msgid "notify.executed"
+msgstr "Příkaz proveden"
+
+msgid "notify.copied"
+msgstr "Příkaz zkopírován"
+
+msgid "notify.import_ok"
+msgstr "Import úspěšný"
+
+msgid "notify.import_fail"
+msgstr "Import selhal: neplatný formát dat"
+
+msgid "notify.cleared"
+msgstr "Data vymazána"
+
+msgid "notify.no_ssh"
+msgstr "Aktuální karta není SSH připojení"
+
+msgid "settings.hotkey"
+msgstr "Klávesová zkratka panelu"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Kliknutím nastavíte zkratku"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Nepřiřazeno"
+
+msgid "settings.hotkeyRecording"
+msgstr "Stiskněte klávesy..."
+
+msgid "settings.hotkeyClear"
+msgstr "Vymazat"
+
+msgid "settings.hotkeySaved"
+msgstr "Zkratka nastavena na {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Zkratka vymazána"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Ukládání selhalo"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Vypršel čas nahrávání"
+
+msgid "settings.hotkeyConflict"
+msgstr "Zkratka \"{hotkey}\" používá {names}. Přepsat?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Konflikt zkratky: {names}. Uložení přepíše."
+
+msgid "settings.enable_step"
+msgstr "Povolit krok"
+
+msgid "settings.disable_step"
+msgstr "Zakázat krok"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Panel rychlých příkazů, vytváření a správa příkazů."
+
+msgid "语言"
+msgstr "Jazyk"
+
+msgid "跟随Tabby"
+msgstr "Sledovat Tabby"
+
+msgid "界面"
+msgstr "Rozhraní"
+
+msgid "主色调"
+msgstr "Primární"
+
+msgid "背景"
+msgstr "Pozadí"
+
+msgid "文字"
+msgstr "Text"
+
+msgid "标题栏"
+msgstr "Povrch"
+
+msgid "边框"
+msgstr "Okraj"
+
+msgid "次要文字"
+msgstr "Tlumený"
+
+msgid "字体大小"
+msgstr "Velikost písma"
+
+msgid "入口模式"
+msgstr "Režim vstupu"
+
+msgid "浮动按钮"
+msgstr "Plovoucí"
+
+msgid "工具栏按钮"
+msgstr "Panel nástrojů"
+
+msgid "面板常驻"
+msgstr "Ponechat panel otevřený"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Seřadit podle"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Název"
+
+msgid "执行次数"
+msgstr "Použití"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Klávesová zkratka panelu"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Otevřít panel QuickCmd+"
+
+msgid "点击设置快捷键"
+msgstr "Kliknutím nastavíte zkratku"
+
+msgid "未绑定"
+msgstr "Nepřiřazeno"
+
+msgid "清除"
+msgstr "Vymazat"
+
+msgid "清空"
+msgstr "Vymazat"
+
+msgid "确认覆盖"
+msgstr "Přepsat"
+
+msgid "保存失败"
+msgstr "Ukládání selhalo"
+
+msgid "录制超时"
+msgstr "Vypršel čas nahrávání"
+
+msgid "快捷键已清除"
+msgstr "Zkratka vymazána"
+
+msgid "数据"
+msgstr "Data"
+
+msgid "导入数据"
+msgstr "Importovat"
+
+msgid "导出数据"
+msgstr "Exportovat"
+
+msgid "清空数据"
+msgstr "Vymazat Vše"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Vymazat Všechna Data"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Upravit Barvy"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Vymazat všechna data příkazů? Toto nelze vrátit!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Tímto smažete všechny příkazy a skupiny, akci nelze vrátit!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Prosím napište DELETE pro potvrzení:"
+
+msgid "已清空所有数据"
+msgstr "Všechna data vymazána"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Jste v režimu Auto/Preset. Změny přepíšou vlastní barevné schéma. Pokračovat?"
+
+msgid "导入成功"
+msgstr "Import úspěšný"
+
+msgid "导入失败：文件格式无效"
+msgstr "Import selhal: neplatný formát souboru"
+
+msgid "无效的数据格式。"
+msgstr "Neplatný formát dat."
+
+msgid "取消"
+msgstr "Zrušit"
+
+msgid "功能"
+msgstr "Funkce"
+
+msgid "隐藏插件作者信息"
+msgstr "Skrýt informace o autorovi"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Než skryjete informace o autorovi, dejte prosím hvězdičku repozitáři pluginu. Stránka repozitáře byla otevřena v prohlížeči. Vaše hvězdička je mou motivací k vývoji — děkuji za podporu! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Přidal jsem hvězdu"
+
+msgid "隐藏面板设置入口"
+msgstr "Skrýt tlačítko nastavení panelu"
+
+msgid "滚动时对齐整行"
+msgstr "Zarovnat řádky při posouvání"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Je-li zapnuto, panel zůstane otevřený po spuštění příkazu nebo ztrátě fokusu; je-li vypnuto, skryje se automaticky."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Je-li zapnuto, seznam se po zastavení posouvání zarovná na celé řádky, aby položky nebyly rozpůleny."
+
+msgid "关于"
+msgstr "O"
+
+msgid "版本"
+msgstr "Verze"
+
+msgid "构建时间"
+msgstr "Čas sestavení"
+
+msgid "作者"
+msgstr "Autor"
+
+msgid "意见反馈"
+msgstr "Zpětná vazba"
+
+msgid "点赞支持"
+msgstr "Dejte Hvězdičku"
+
+msgid "Github源码"
+msgstr "GitHub Zdroj"
+
+msgid "NPM源码"
+msgstr "Zdrojový kód NPM"
+
+msgid "请喝咖啡"
+msgstr "Kupte mi kávu"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Vyberte, co má být součástí exportovaného souboru."
+
+msgid "命令与分组"
+msgstr "Příkazy a skupiny"
+
+msgid "界面与外观"
+msgstr "Rozhraní a vzhled"
+
+msgid "窗口行为与位置"
+msgstr "Chování a pozice okna"
+
+msgid "条命令"
+msgstr "příkazů"
+
+msgid "个分组"
+msgstr "skupin"
+
+msgid "全选"
+msgstr "Vybrat vše"
+
+msgid "全不选"
+msgstr "Zrušit výběr"
+

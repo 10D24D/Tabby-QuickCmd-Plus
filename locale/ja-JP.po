@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja_JP\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "コマンドを検索..."
+
+msgid "app.ungrouped"
+msgstr "グループなし"
+
+msgid "app.noresults"
+msgstr "一致するコマンドがありません"
+
+msgid "app.pinned"
+msgstr "お気に入り"
+
+msgid "app.all_groups"
+msgstr "すべてのグループ"
+
+msgid "app.auto_filter"
+msgstr "自動"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — ドラッグで移動、クリックで開閉"
+
+msgid "entry.disconnected"
+msgstr "SSH 切断"
+
+msgid "entry.opened"
+msgstr "開いています。クリックで閉じる"
+
+msgid "entry.minimized"
+msgstr "最小化されています。クリックで復元"
+
+msgid "panel.minimize"
+msgstr "最小化"
+
+msgid "panel.close"
+msgstr "閉じる"
+
+msgid "panel.restore"
+msgstr "パネルを復元"
+
+msgid "panel.settings"
+msgstr "設定を開く"
+
+msgid "panel.sort"
+msgstr "並べ替え"
+
+msgid "panel.sort_manual"
+msgstr "手動順"
+
+msgid "panel.sort_name"
+msgstr "名前"
+
+msgid "panel.sort_usage"
+msgstr "実行回数"
+
+msgid "panel.sort_hint"
+msgstr "自動並べ替えが有効です。ドラッグするには手動順に切り替えてください"
+
+msgid "app.clear_search"
+msgstr "検索をクリア"
+
+msgid "panel.add"
+msgstr "新しいコマンド"
+
+msgid "panel.edit"
+msgstr "編集"
+
+msgid "panel.delete"
+msgstr "削除"
+
+msgid "panel.delete_confirm"
+msgstr "\"{name}\" を削除しますか？"
+
+msgid "panel.pin"
+msgstr "クイック入口に固定"
+
+msgid "panel.unpin"
+msgstr "固定を解除"
+
+msgid "panel.hint.search"
+msgstr "検索またはコマンドを入力"
+
+msgid "panel.empty_group"
+msgstr "このグループにはコマンドがありません"
+
+msgid "panel.no_auto_group"
+msgstr "現在の接続に一致するグループがありません"
+
+msgid "panel.execute"
+msgstr "クリックで実行"
+
+msgid "panel.send_and_exec"
+msgstr "送信して実行"
+
+msgid "panel.send_to_line"
+msgstr "送信のみ"
+
+msgid "panel.multi_step_title"
+msgstr "複数ステップコマンド"
+
+msgid "panel.multi_step_hint"
+msgstr "このコマンドには {count} ステップあります。1 行にまとめますか？"
+
+msgid "panel.param_hint"
+msgstr "パラメータ値を入力"
+
+msgid "panel.send_all_tabs"
+msgstr "すべてのタブに送信"
+
+msgid "panel.copy"
+msgstr "コマンドをコピー"
+
+msgid "panel.drag_reorder"
+msgstr "ドラッグで並べ替え"
+
+msgid "panel.drag_reorder_group"
+msgstr "ドラッグでグループを並べ替え"
+
+msgid "panel.pinPanel"
+msgstr "パネルを開いたままにする"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "並び替え"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "コマンドを追加"
+
+msgid "settings.edit_cmd"
+msgstr "コマンドを編集"
+
+msgid "settings.name"
+msgstr "名前"
+
+msgid "settings.short_name"
+msgstr "略称"
+
+msgid "settings.short_name_hint"
+msgstr "クイックバーに表示されます。空欄の場合はコマンド名を使用します"
+
+msgid "settings.text"
+msgstr "コマンドテキスト"
+
+msgid "settings.group"
+msgstr "グループ化"
+
+msgid "settings.shortcut"
+msgstr "ショートカット"
+
+msgid "settings.append_cr"
+msgstr "送信して実行"
+
+msgid "settings.confirm_before_run"
+msgstr "実行前に確認"
+
+msgid "confirm.title"
+msgstr "実行の確認"
+
+msgid "confirm.message"
+msgstr "以下をターミナルに送信します。続行しますか？"
+
+msgid "confirm.run"
+msgstr "実行"
+
+msgid "settings.params"
+msgstr "パラメータ"
+
+msgid "settings.pinned"
+msgstr "クイック入口に固定"
+
+msgid "settings.delay"
+msgstr "ステップ遅延 (秒)"
+
+msgid "settings.delay_hint"
+msgstr "実行を遅延"
+
+msgid "settings.delay_short"
+msgstr "遅延"
+
+msgid "settings.add_step"
+msgstr "コマンドを追加"
+
+msgid "settings.add_break"
+msgstr "中断を追加"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C 中断"
+
+msgid "settings.usage_count"
+msgstr "使用状況"
+
+msgid "settings.reset"
+msgstr "リセット"
+
+msgid "settings.step_placeholder"
+msgstr "コマンド"
+
+msgid "settings.step_type_cmd"
+msgstr "コマンドに切替"
+
+msgid "settings.step_type_break"
+msgstr "中断に切替"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH プロファイル（空欄で全て）"
+
+msgid "settings.save"
+msgstr "保存"
+
+msgid "settings.cancel"
+msgstr "キャンセル"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "削除"
+
+msgid "settings.export"
+msgstr "エクスポート"
+
+msgid "settings.import"
+msgstr "インポート"
+
+msgid "settings.clear"
+msgstr "すべてのデータを消去"
+
+msgid "settings.confirm_delete"
+msgstr "このコマンドを削除しますか？"
+
+msgid "settings.confirm_clear"
+msgstr "すべてのコマンドデータを消去しますか？この操作は元に戻せません！"
+
+msgid "settings.language"
+msgstr "言語"
+
+msgid "settings.lang_auto"
+msgstr "Tabby に従う"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "データ管理"
+
+msgid "group.add"
+msgstr "新しいグループ"
+
+msgid "group.name"
+msgstr "グループ名"
+
+msgid "group.order"
+msgstr "順序"
+
+msgid "group.profiles"
+msgstr "プロファイルに限定"
+
+msgid "group.profiles_hint"
+msgstr "未選択 = 全てに表示"
+
+msgid "group.profiles_selected"
+msgstr " 件選択"
+
+msgid "group.no_profiles"
+msgstr "接続プロファイルが見つかりません。先に SSH 接続を作成してください"
+
+msgid "group.delete"
+msgstr "グループを削除（コマンドはグループなしに）"
+
+msgid "group.rename"
+msgstr "名前の変更"
+
+msgid "group.edit"
+msgstr "グループを編集"
+
+msgid "group.manage"
+msgstr "グループを管理"
+
+msgid "group.delete_confirm"
+msgstr "グループ \"{name}\" を削除しますか？中のコマンドはグループなしになります。"
+
+msgid "notify.executed"
+msgstr "コマンドを実行しました"
+
+msgid "notify.copied"
+msgstr "コマンドをコピーしました"
+
+msgid "notify.import_ok"
+msgstr "インポートに成功しました"
+
+msgid "notify.import_fail"
+msgstr "インポート失敗：データ形式が無効です"
+
+msgid "notify.cleared"
+msgstr "データを消去しました"
+
+msgid "notify.no_ssh"
+msgstr "現在のタブは SSH 接続ではありません"
+
+msgid "settings.hotkey"
+msgstr "パネルのホットキー"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "クリックしてショートカットを設定"
+
+msgid "settings.hotkeyUnbound"
+msgstr "未割り当て"
+
+msgid "settings.hotkeyRecording"
+msgstr "キーを押してください..."
+
+msgid "settings.hotkeyClear"
+msgstr "クリア"
+
+msgid "settings.hotkeySaved"
+msgstr "ホットキーを {hotkey} に設定しました"
+
+msgid "settings.hotkeyCleared"
+msgstr "ホットキーを解除しました"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "保存に失敗しました"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "記録がタイムアウトしました"
+
+msgid "settings.hotkeyConflict"
+msgstr "ホットキー \"{hotkey}\" は {names} が使用中です。上書きしますか？"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "ホットキーの競合：{names}。保存すると上書きされます。"
+
+msgid "settings.enable_step"
+msgstr "ステップを有効化"
+
+msgid "settings.disable_step"
+msgstr "ステップを無効化"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "クイックコマンドパネル。コマンドの作成と管理。"
+
+msgid "语言"
+msgstr "言語"
+
+msgid "跟随Tabby"
+msgstr "Tabby に従う"
+
+msgid "界面"
+msgstr "インターフェース"
+
+msgid "主色调"
+msgstr "プライマリー"
+
+msgid "背景"
+msgstr "背景"
+
+msgid "文字"
+msgstr "テキスト"
+
+msgid "标题栏"
+msgstr "サーフェス"
+
+msgid "边框"
+msgstr "枠線"
+
+msgid "次要文字"
+msgstr "控えめ"
+
+msgid "字体大小"
+msgstr "フォントサイズ"
+
+msgid "入口模式"
+msgstr "入口モード"
+
+msgid "浮动按钮"
+msgstr "フローティング"
+
+msgid "工具栏按钮"
+msgstr "ツールバー"
+
+msgid "面板常驻"
+msgstr "パネルを開いたままにする"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "並び替え"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "名前"
+
+msgid "执行次数"
+msgstr "使用状況"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "パネルのホットキー"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "QuickCmd+ パネルを開く"
+
+msgid "点击设置快捷键"
+msgstr "クリックしてショートカットを設定"
+
+msgid "未绑定"
+msgstr "未割り当て"
+
+msgid "清除"
+msgstr "クリア"
+
+msgid "清空"
+msgstr "クリア"
+
+msgid "确认覆盖"
+msgstr "上書き"
+
+msgid "保存失败"
+msgstr "保存に失敗しました"
+
+msgid "录制超时"
+msgstr "記録がタイムアウトしました"
+
+msgid "快捷键已清除"
+msgstr "ホットキーを解除しました"
+
+msgid "数据"
+msgstr "データ"
+
+msgid "导入数据"
+msgstr "インポート"
+
+msgid "导出数据"
+msgstr "エクスポート"
+
+msgid "清空数据"
+msgstr "すべてクリア"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ すべてのデータをクリア"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ 色を変更"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "すべてのコマンドデータを消去しますか？この操作は元に戻せません！"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "すべてのコマンドとグループを削除します。この操作は元に戻せません！"
+
+msgid "请输入 DELETE 确认："
+msgstr "確認のため DELETE と入力してください："
+
+msgid "已清空所有数据"
+msgstr "すべてのデータをクリアしました"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "自動/プリセットモードです。変更はカスタム配色を上書きします。続行しますか？"
+
+msgid "导入成功"
+msgstr "インポートに成功しました"
+
+msgid "导入失败：文件格式无效"
+msgstr "インポート失敗：ファイル形式が無効です"
+
+msgid "无效的数据格式。"
+msgstr "無効なデータ形式です。"
+
+msgid "取消"
+msgstr "キャンセル"
+
+msgid "功能"
+msgstr "機能"
+
+msgid "隐藏插件作者信息"
+msgstr "作者情報を非表示"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "作者情報を非表示にする前に、プラグインのリポジトリに Star を付けて応援してください。リポジトリページはブラウザで開かれました。あなたの Star が開発の励みになります。応援ありがとうございます！🙏"
+
+msgid "我已点 Star 支持"
+msgstr "スター済み"
+
+msgid "隐藏面板设置入口"
+msgstr "パネルの設定ボタンを非表示"
+
+msgid "滚动时对齐整行"
+msgstr "スクロール時に行を揃える"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "オン：コマンド実行後やフォーカスが外れてもパネルを開いたままにします。オフ：自動的に閉じます。"
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "オン：スクロール停止後、リストを整行に揃えます（項目が半分で切れません）。"
+
+msgid "关于"
+msgstr "について"
+
+msgid "版本"
+msgstr "バージョン"
+
+msgid "构建时间"
+msgstr "ビルド日時"
+
+msgid "作者"
+msgstr "作者"
+
+msgid "意见反馈"
+msgstr "フィードバック"
+
+msgid "点赞支持"
+msgstr "スターを付ける"
+
+msgid "Github源码"
+msgstr "GitHub ソース"
+
+msgid "NPM源码"
+msgstr "NPMソース"
+
+msgid "请喝咖啡"
+msgstr "コーヒーをおごる"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "エクスポートファイルに含める内容を選択してください。"
+
+msgid "命令与分组"
+msgstr "コマンドとグループ"
+
+msgid "界面与外观"
+msgstr "インターフェースと外観"
+
+msgid "窗口行为与位置"
+msgstr "ウィンドウの動作と位置"
+
+msgid "条命令"
+msgstr "件のコマンド"
+
+msgid "个分组"
+msgstr "件のグループ"
+
+msgid "全选"
+msgstr "すべて選択"
+
+msgid "全不选"
+msgstr "選択を解除"
+

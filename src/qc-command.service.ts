@@ -11,6 +11,8 @@ export interface CommandStep {
   delaySeconds: number
   /** 步骤类型：'command' 发送命令文本，'break' 发送 Ctrl+C 中断 */
   type?: 'command' | 'break'
+  /** 该步骤是否启用；默认 true，禁用后执行时跳过 */
+  enabled?: boolean
 }
 
 export interface QuickCommand {
@@ -30,6 +32,10 @@ export interface QuickCommand {
   color?: string        // 显示颜色（可选）
   params?: string[]     // 变量参数名列表
   pinned?: boolean      // 是否固定在快捷入口
+  /** 执行前是否需要二次确认（危险命令防误触） */
+  confirmBeforeRun?: boolean
+  /** 简称：固定快捷入口（书签）上显示的短名称；留空则回退显示 name */
+  shortName?: string
   createdAt: number
   updatedAt: number
   usageCount: number    // 使用频率
@@ -41,31 +47,36 @@ export interface QuickCommandGroup {
   color?: string
   expanded: boolean     // 是否在面板中展开
   order: number
+  profileIds?: string[] // 限制在特定配置连接中可见，空/undefined = 所有可见
 }
 
-export interface PositionMemoryData {
-  entryX: number
-  entryY: number
-  panelX: number
-  panelY: number
-  panelScrollTop: number
-  filterGroup?: string
-  groupExpanded?: Record<string, boolean>
+/** 按连接记忆的界面状态：分组筛选 + 搜索词 */
+export interface ConnectionFilterData {
+  filterGroup: string
+  searchText: string
 }
-
-// ... existing interfaces ...
 
 const STORAGE_KEY = 'qc-plus-commands-v1'
 const GROUP_KEY = 'qc-plus-groups-v1'
 const PINNED_ENTRY_POS_KEY = 'qc-plus-entry-pos'
 const PANEL_POS_KEY = 'qc-plus-panel-pos'
 const ENTRY_MODE_KEY = 'qc-plus-entry-mode'
+const FILTER_GROUP_KEY = 'qc-plus-filter-group' // 旧版全局筛选（仅用于向后迁移）
+const PINNED_ORDER_KEY = 'qc-plus-pinned-order' // 快捷入口（书签）的独立显示顺序
+const CONN_FILTER_PREFIX = 'qc-plus-conn-filter-'
+
+function generateId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).substring(2, 8)
+}
 
 /** 从命令中解析执行步骤列表（兼容旧版 text 模式 + sendCtrlC/sendCtrlCAfter） */
 export function resolveSteps(cmd: QuickCommand): CommandStep[] {
   let steps: CommandStep[]
-  if (cmd.steps && cmd.steps.length > 0) {
-    steps = cmd.steps.map(s => ({ text: s.text, delaySeconds: s.delaySeconds || 0, type: s.type || 'command' }))
+  const hasSteps = cmd.steps && cmd.steps.length > 0
+  if (hasSteps) {
+    steps = cmd.steps
+      .filter(s => s.enabled !== false)
+      .map(s => ({ text: s.text, delaySeconds: s.delaySeconds || 0, type: s.type || 'command', enabled: s.enabled !== false }))
   } else {
     const lines = cmd.text.split('\n').map(l => l.trim()).filter(l => l.length > 0)
     if (lines.length === 0) steps = [{ text: cmd.text, delaySeconds: 0, type: 'command' }]
@@ -78,13 +89,15 @@ export function resolveSteps(cmd: QuickCommand): CommandStep[] {
       }))
     }
   }
-  // 旧版兼容：sendCtrlC 在步骤前增加 break（如果首步还不是 break）
-  if (cmd.sendCtrlC && steps[0]?.type !== 'break') {
-    steps = [{ text: '', delaySeconds: 0, type: 'break' }, ...steps]
-  }
-  // 旧版兼容：sendCtrlCAfter 在步骤后增加 break（如果末步还不是 break）
-  if (cmd.sendCtrlCAfter && steps[steps.length - 1]?.type !== 'break') {
-    steps = [...steps, { text: '', delaySeconds: 0, type: 'break' }]
+  // 旧版兼容：仅 text 模式（无步骤）时，sendCtrlC/sendCtrlCAfter 才追加 break
+  // 步骤模式下用户已可显式添加 break 步骤，不应被旧标志干扰
+  if (!hasSteps) {
+    if (cmd.sendCtrlC && steps[0]?.type !== 'break') {
+      steps = [{ text: '', delaySeconds: 0, type: 'break' }, ...steps]
+    }
+    if (cmd.sendCtrlCAfter && steps[steps.length - 1]?.type !== 'break') {
+      steps = [...steps, { text: '', delaySeconds: 0, type: 'break' }]
+    }
   }
   return steps
 }
@@ -92,35 +105,98 @@ export function resolveSteps(cmd: QuickCommand): CommandStep[] {
 export class QuickCommandService {
   private commands: QuickCommand[] = []
   private groups: QuickCommandGroup[] = []
+  /** 快捷入口（书签）的独立显示顺序（命令 id 列表）；与命令列表顺序解耦，
+   *  这样拖动快捷条只改书签顺序，不会打乱列表（分组内）的排列 */
+  private pinnedOrder: string[] = []
+  private _configService: any = null
+  /** #5 修复：分组数据脏标记，避免 getGroups() 每次调用都执行昂贵的合并/持久化 */
+  private _groupsDirty = true
 
-  constructor() {
+  /** 获取 Tabby 配置段（用于初始加载和设置页面同步） */
+  get configStore(): any {
+    return this._configService?.store?.['tabby-quick-command-plus'] || null
+  }
+
+  constructor(configService?: any) {
+    this._configService = configService || null
     this.load()
   }
 
-  /* ---- 持久化 ---- */
+  /* ---- 持久化（高频 → localStorage，低频 → config） ---- */
   private load(): void {
+    // 优先从 Tabby 配置加载
+    if (this.configStore) {
+      if (Array.isArray(this.configStore.commands)) this.commands = this.configStore.commands
+      if (Array.isArray(this.configStore.groups)) this.groups = this.configStore.groups
+      // 合并 localStorage 数据（可能含有 config 尚未同步的 profileIds 等字段）
+      this.mergeLocalGroups()
+      this.loadPinnedOrder()
+      return
+    }
+    // 回退：从 localStorage 加载
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
       if (raw) this.commands = JSON.parse(raw)
     } catch { this.commands = [] }
-
     try {
       const raw = localStorage.getItem(GROUP_KEY)
       if (raw) this.groups = JSON.parse(raw)
     } catch { this.groups = [] }
+    this.loadPinnedOrder()
   }
 
-  /** 从 localStorage 重新加载数据（解决跨实例同步问题） */
+  /** 将 localStorage 中的分组数据合并到当前 groups（保留 profileIds 等高频更新字段） */
+  private mergeLocalGroups(): void {
+    try {
+      const raw = localStorage.getItem(GROUP_KEY)
+      if (!raw) return
+      const localGroups: QuickCommandGroup[] = JSON.parse(raw)
+      for (const lg of localGroups) {
+        const existing = this.groups.find(g => g.name === lg.name)
+        if (existing) {
+          // localStorage 中有 profileIds 但 config 中没有 → 补上
+          if (lg.profileIds?.length && !existing.profileIds?.length) {
+            existing.profileIds = lg.profileIds
+          }
+          // 合并其他字段
+          if (lg.expanded !== undefined && existing.expanded === undefined) existing.expanded = lg.expanded
+          if (lg.order !== undefined && existing.order === undefined) existing.order = lg.order
+        } else {
+          this.groups.push(lg)
+        }
+      }
+    } catch {}
+  }
+
+  /** 重新加载数据（解决跨实例同步问题） */
   reload(): void {
+    this._groupsDirty = true
     this.load()
   }
 
   private saveCommands(): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.commands))
+    // 命令变更 → 标记分组需要重新合并
+    this._groupsDirty = true
+    // 高频：写入 localStorage（#10 修复：try-catch 防止 QuotaExceededError）
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(this.commands)) } catch (e) { console.warn('[QC+] saveCommands localStorage failed', e) }
+    // 低频：同步到 Tabby 配置
+    if (this.configStore) {
+      try { this.configStore.commands = this.commands; this._configService.save() } catch {}
+    }
   }
 
   private saveGroups(): void {
-    localStorage.setItem(GROUP_KEY, JSON.stringify(this.groups))
+    this._groupsDirty = true
+    this._persistGroups()
+  }
+
+  /** 内部持久化（不设置脏标记），供 getGroups() 内部调用 */
+  private _persistGroups(): void {
+    // #10 修复：try-catch 防止 QuotaExceededError
+    try { localStorage.setItem(GROUP_KEY, JSON.stringify(this.groups)) } catch (e) { console.warn('[QC+] saveGroups localStorage failed', e) }
+    if (this.configStore) {
+      try { this.configStore.groups = this.groups; this._configService.save() } catch {}
+    }
   }
 
   /* ---- 命令操作 ---- */
@@ -139,8 +215,68 @@ export class QuickCommandService {
     })
   }
 
+  /** 快捷入口（书签）命令：按用户拖拽排定的顺序返回；未登记的按列表顺序追加在后（稳定排序） */
   getPinned(): QuickCommand[] {
-    return this.commands.filter(c => c.pinned).slice(0, 3)
+    const pinned = this.commands.filter(c => c.pinned)
+    if (this.pinnedOrder.length === 0) return pinned
+    const rank = new Map(this.pinnedOrder.map((id, i) => [id, i]))
+    return pinned
+      .map((c, i) => ({ c, i }))
+      .sort((a, b) => {
+        const ra = rank.has(a.c.id) ? rank.get(a.c.id)! : Number.MAX_SAFE_INTEGER
+        const rb = rank.has(b.c.id) ? rank.get(b.c.id)! : Number.MAX_SAFE_INTEGER
+        return ra === rb ? a.i - b.i : ra - rb
+      })
+      .map(x => x.c)
+  }
+
+  /** 供导出使用的书签顺序（当前实际显示顺序） */
+  getPinnedOrder(): string[] {
+    return this.getPinned().map(c => c.id)
+  }
+
+  /** 重排快捷入口（书签）顺序：只改书签自身顺序，不影响命令列表 */
+  reorderPinned(ids: string[]): void {
+    this.applyPinnedOrder(ids)
+  }
+
+  /** 应用一份书签顺序（去重 + 只保留当前确实被钉住的命令 + 补上未包含的书签） */
+  applyPinnedOrder(ids: string[]): void {
+    const pinnedIds = new Set(this.commands.filter(c => c.pinned).map(c => c.id))
+    const ordered: string[] = []
+    const seen = new Set<string>()
+    for (const id of ids || []) {
+      if (typeof id === 'string' && pinnedIds.has(id) && !seen.has(id)) { ordered.push(id); seen.add(id) }
+    }
+    // 补上未包含的书签，避免漏项
+    for (const c of this.commands) {
+      if (c.pinned && !seen.has(c.id)) { ordered.push(c.id); seen.add(c.id) }
+    }
+    this.pinnedOrder = ordered
+    this.savePinnedOrder()
+  }
+
+  /** 持久化书签顺序：高频 localStorage + 同步 Tabby 配置 */
+  private savePinnedOrder(): void {
+    try { localStorage.setItem(PINNED_ORDER_KEY, JSON.stringify(this.pinnedOrder)) } catch (e) { console.warn('[QC+] savePinnedOrder localStorage failed', e) }
+    try {
+      if (this.configStore) { this.configStore.pinnedOrder = this.pinnedOrder; this._configService.save() }
+    } catch { /* ignore */ }
+  }
+
+  /** 加载书签顺序（localStorage 优先，回退 config） */
+  private loadPinnedOrder(): void {
+    try {
+      const raw = localStorage.getItem(PINNED_ORDER_KEY)
+      if (raw) {
+        const arr = JSON.parse(raw)
+        if (Array.isArray(arr)) { this.pinnedOrder = arr.filter((x: any) => typeof x === 'string'); return }
+      }
+    } catch { /* ignore */ }
+    try {
+      const fromCfg = this.configStore?.pinnedOrder
+      if (Array.isArray(fromCfg)) this.pinnedOrder = fromCfg.filter((x: any) => typeof x === 'string')
+    } catch { /* ignore */ }
   }
 
   getById(id: string): QuickCommand | undefined {
@@ -185,7 +321,21 @@ export class QuickCommandService {
     }
   }
 
+  /** 重置所有命令的执行次数，返回被重置的命令数量 */
+  resetUsageCount(): number {
+    let n = 0
+    for (const cmd of this.commands) {
+      if (cmd.usageCount) {
+        cmd.usageCount = 0
+        n++
+      }
+    }
+    if (n > 0) this.saveCommands()
+    return n
+  }
+
   reorder(ids: string[]): void {
+    console.log('[QC+] reorder called with ' + ids.length + ' ids:', JSON.stringify(ids))
     const map = new Map(this.commands.map(c => [c.id, c]))
     const reordered: QuickCommand[] = []
     const seen = new Set<string>()
@@ -240,6 +390,12 @@ export class QuickCommandService {
 
   /* ---- 分组操作 ---- */
   getGroups(): QuickCommandGroup[] {
+    // #5 修复：脏标记为 false 且已有分组数据时，跳过昂贵的合并逻辑
+    if (!this._groupsDirty && this.groups.length > 0) {
+      return this.groups
+    }
+    this._groupsDirty = false
+
     // 从命令中自动发现分组
     const usedGroups = new Set(this.commands.map(c => c.group).filter(Boolean))
     const merged: QuickCommandGroup[] = []
@@ -294,7 +450,8 @@ export class QuickCommandService {
     }
 
     if (changed) {
-      this.saveGroups()
+      // #5 修复：使用 _persistGroups() 避免重新标记脏
+      this._persistGroups()
     }
 
     return this.groups
@@ -318,6 +475,11 @@ export class QuickCommandService {
   updateGroupOrder(name: string, order: number): void {
     const g = this.groups.find(gr => gr.name === name)
     if (g) { g.order = order; this.saveGroups() }
+  }
+
+  updateGroupProfiles(name: string, profileIds: string[]): void {
+    const g = this.groups.find(gr => gr.name === name)
+    if (g) { g.profileIds = profileIds.length > 0 ? profileIds : undefined; this.saveGroups() }
   }
 
   removeGroup(name: string): void {
@@ -346,12 +508,12 @@ export class QuickCommandService {
     }
   }
 
-  /* ---- 入口位置 ---- */
+  /* ---- 入口位置（高频操作 → localStorage，设置页面同步到 config） ---- */
   getEntryPosition(): { x: number; y: number } {
     try {
       const raw = localStorage.getItem(PINNED_ENTRY_POS_KEY)
       if (raw) return JSON.parse(raw)
-    } catch { /* ignore */ }
+    } catch {}
     return { x: 20, y: 60 }
   }
 
@@ -359,11 +521,17 @@ export class QuickCommandService {
     localStorage.setItem(PINNED_ENTRY_POS_KEY, JSON.stringify(pos))
   }
 
+  /**
+   * 面板位置（全局统一，所有连接/标签共享同一个位置）
+   * 修改人：DD1024z + Hy3
+   * 修改时间：2026-07-22
+   *   移除三态位置记忆（off/profile/global），面板位置永远全局统一
+   */
   getPanelPosition(): { x: number; y: number } {
     try {
       const raw = localStorage.getItem(PANEL_POS_KEY)
       if (raw) return JSON.parse(raw)
-    } catch { /* ignore */ }
+    } catch {}
     return { x: 20, y: 60 }
   }
 
@@ -371,61 +539,54 @@ export class QuickCommandService {
     localStorage.setItem(PANEL_POS_KEY, JSON.stringify(pos))
   }
 
-  /* ---- 按连接记忆位置 ---- */
-  private posMemoryKey(profileId: string): string {
-    return `qc-plus-pos-memory-${profileId}`
-  }
-
-  getPositionMemory(profileId: string): PositionMemoryData | null {
-    if (!profileId) return null
-    try {
-      const raw = localStorage.getItem(this.posMemoryKey(profileId))
-      if (raw) return JSON.parse(raw)
-    } catch { /* ignore */ }
-    return null
-  }
-
-  savePositionMemory(profileId: string, data: Partial<PositionMemoryData>): void {
-    if (!profileId) return
-    const existing = this.getPositionMemory(profileId) || { entryX: 20, entryY: 60, panelX: 20, panelY: 60, panelScrollTop: 0 }
-    const merged = { ...existing, ...data }
-    localStorage.setItem(this.posMemoryKey(profileId), JSON.stringify(merged))
-  }
-
-  clearPositionMemory(profileId: string): void {
-    if (!profileId) return
-    localStorage.removeItem(this.posMemoryKey(profileId))
-  }
-
-  hasPositionMemory(profileId: string): boolean {
-    if (!profileId) return false
-    try {
-      return localStorage.getItem(this.posMemoryKey(profileId)) !== null
-    } catch { return false }
-  }
-
-  togglePositionMemory(profileId: string): boolean {
-    if (this.hasPositionMemory(profileId)) {
-      this.clearPositionMemory(profileId)
-      return false // now off
-    }
-    // 首次启用：保存当前位置
-    this.savePositionMemory(profileId, {})
-    return true // now on
-  }
-
   /* ---- 入口模式：浮动按钮 / 工具栏 ---- */
   getEntryMode(): 'floating' | 'toolbar' {
+    // 优先从 Tabby 配置读取
+    if (this.configStore?.entryMode === 'toolbar' || this.configStore?.entryMode === 'floating') {
+      return this.configStore.entryMode
+    }
     try {
       const raw = localStorage.getItem(ENTRY_MODE_KEY)
       if (raw === 'toolbar') return 'toolbar'
       if (raw === 'floating') return 'floating'
-    } catch { /* ignore */ }
-    return 'toolbar' // 默认工具栏入口
+    } catch {}
+    return 'toolbar'
   }
 
   saveEntryMode(mode: 'floating' | 'toolbar'): void {
     localStorage.setItem(ENTRY_MODE_KEY, mode)
+    if (this.configStore) {
+      try { this.configStore.entryMode = mode; this._configService.save() } catch {}
+    }
+  }
+
+  /* ---- 按连接记忆：分组筛选 + 搜索词（高频操作 → localStorage） ----
+   * 修改人：DD1024z + Hy3
+   * 修改时间：2026-07-22
+   *   由全局单 key 改为按 profileId 存储；新增 searchText 持久化
+   */
+  private connFilterKey(profileId: string): string {
+    return CONN_FILTER_PREFIX + (profileId || '__global__')
+  }
+
+  getConnectionFilter(profileId: string): ConnectionFilterData {
+    try {
+      const raw = localStorage.getItem(this.connFilterKey(profileId))
+      if (raw) {
+        const d = JSON.parse(raw)
+        return { filterGroup: d.filterGroup || '', searchText: d.searchText || '' }
+      }
+    } catch {}
+    // 旧版兼容：迁移全局 filterGroup（仅首次，无连接级记录时）
+    try {
+      const legacy = this.configStore?.filterGroup || localStorage.getItem(FILTER_GROUP_KEY) || ''
+      if (legacy) return { filterGroup: legacy, searchText: '' }
+    } catch {}
+    return { filterGroup: '', searchText: '' }
+  }
+
+  saveConnectionFilter(profileId: string, data: ConnectionFilterData): void {
+    try { localStorage.setItem(this.connFilterKey(profileId), JSON.stringify(data)) } catch {}
   }
 
   /* ---- 导入/导出 ---- */
@@ -450,11 +611,27 @@ export class QuickCommandService {
           if (g.name === undefined) return false
         }
       }
-      if (data.commands) this.commands = data.commands
+      if (data.commands) this.commands = data.commands.map((c: QuickCommand) => ({ ...c, id: generateId() }))
       if (data.groups) this.groups = data.groups
       this.saveCommands()
       this.saveGroups()
       return true
     } catch { return false }
+  }
+
+  /** #17 修复：公开替换全部数据（供设置页导入使用，避免 bracket notation 访问私有成员） */
+  replaceAll(commands: QuickCommand[], groups: QuickCommandGroup[]): void {
+    this.commands = commands
+    this.groups = groups
+    this.saveCommands()
+    this.saveGroups()
+  }
+
+  /** #17 修复：公开清空全部数据（供设置页重置使用） */
+  clearAll(): void {
+    this.commands = []
+    this.groups = []
+    this.saveCommands()
+    this.saveGroups()
   }
 }

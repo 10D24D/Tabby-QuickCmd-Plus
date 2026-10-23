@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_CN\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "搜索命令..."
+
+msgid "app.ungrouped"
+msgstr "未分组"
+
+msgid "app.noresults"
+msgstr "没有匹配的命令"
+
+msgid "app.pinned"
+msgstr "常用"
+
+msgid "app.all_groups"
+msgstr "全部分组"
+
+msgid "app.auto_filter"
+msgstr "自动"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — 拖拽移动，点击打开面板"
+
+msgid "entry.disconnected"
+msgstr "SSH 已断开"
+
+msgid "entry.opened"
+msgstr "已打开，点击关闭"
+
+msgid "entry.minimized"
+msgstr "已最小化，点击恢复"
+
+msgid "panel.minimize"
+msgstr "最小化"
+
+msgid "panel.close"
+msgstr "关闭"
+
+msgid "panel.restore"
+msgstr "恢复面板"
+
+msgid "panel.settings"
+msgstr "打开设置"
+
+msgid "panel.sort"
+msgstr "排序"
+
+msgid "panel.sort_manual"
+msgstr "手动排序"
+
+msgid "panel.sort_name"
+msgstr "按名称"
+
+msgid "panel.sort_usage"
+msgstr "按执行次数"
+
+msgid "panel.sort_hint"
+msgstr "自动排序已开启；切换回手动排序以拖拽"
+
+msgid "app.clear_search"
+msgstr "清除搜索"
+
+msgid "panel.add"
+msgstr "新建命令"
+
+msgid "panel.edit"
+msgstr "编辑"
+
+msgid "panel.delete"
+msgstr "删除"
+
+msgid "panel.delete_confirm"
+msgstr "确定删除 \"{name}\" 吗？"
+
+msgid "panel.pin"
+msgstr "固定在快捷入口"
+
+msgid "panel.unpin"
+msgstr "取消固定"
+
+msgid "panel.hint.search"
+msgstr "搜索或输入自定义命令"
+
+msgid "panel.empty_group"
+msgstr "该分组下暂无命令"
+
+msgid "panel.no_auto_group"
+msgstr "没有匹配当前连接的分组"
+
+msgid "panel.execute"
+msgstr "点击执行"
+
+msgid "panel.send_and_exec"
+msgstr "发送并执行"
+
+msgid "panel.send_to_line"
+msgstr "仅发送"
+
+msgid "panel.multi_step_title"
+msgstr "多步命令提示"
+
+msgid "panel.multi_step_hint"
+msgstr "该命令包含 {count} 个步骤，是否拼接为一行发送？"
+
+msgid "panel.param_hint"
+msgstr "输入参数值"
+
+msgid "panel.send_all_tabs"
+msgstr "发送到所有标签页"
+
+msgid "panel.copy"
+msgstr "复制命令"
+
+msgid "panel.drag_reorder"
+msgstr "拖拽排序"
+
+msgid "panel.drag_reorder_group"
+msgstr "拖拽排序分组"
+
+msgid "panel.pinPanel"
+msgstr "面板常驻"
+
+msgid "settings.panelOpacity"
+msgstr "面板透明度"
+
+msgid "settings.panelOpacityHint"
+msgstr "设置面板整体透明度（50%–100%）。低于 100% 时面板内容会半透明。"
+
+msgid "settings.bookmarkSort"
+msgstr "排序方式"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "更改命令列表的排序方式，仅影响显示顺序"
+
+msgid "settings.bookmarkResetUsage"
+msgstr "重置执行次数"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "已重置 {count} 条命令的执行次数"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "添加命令"
+
+msgid "settings.edit_cmd"
+msgstr "编辑命令"
+
+msgid "settings.name"
+msgstr "名称"
+
+msgid "settings.short_name"
+msgstr "简称"
+
+msgid "settings.short_name_hint"
+msgstr "固定快捷入口上显示的短名称；留空则显示命令名称"
+
+msgid "settings.text"
+msgstr "命令内容"
+
+msgid "settings.group"
+msgstr "分组"
+
+msgid "settings.shortcut"
+msgstr "快捷键"
+
+msgid "settings.append_cr"
+msgstr "发送并执行"
+
+msgid "settings.confirm_before_run"
+msgstr "执行时确认"
+
+msgid "confirm.title"
+msgstr "确认执行"
+
+msgid "confirm.message"
+msgstr "将把以下命令发送到终端，是否继续？"
+
+msgid "confirm.run"
+msgstr "执行"
+
+msgid "settings.params"
+msgstr "变量参数"
+
+msgid "settings.pinned"
+msgstr "固定在快捷入口"
+
+msgid "settings.delay"
+msgstr "步骤延迟(秒)"
+
+msgid "settings.delay_hint"
+msgstr "延迟执行时间"
+
+msgid "settings.delay_short"
+msgstr "延迟"
+
+msgid "settings.add_step"
+msgstr "添加命令"
+
+msgid "settings.add_break"
+msgstr "添加中断"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C 中断"
+
+msgid "settings.usage_count"
+msgstr "执行次数"
+
+msgid "settings.reset"
+msgstr "重置"
+
+msgid "settings.step_placeholder"
+msgstr "命令"
+
+msgid "settings.step_type_cmd"
+msgstr "切换为命令模式"
+
+msgid "settings.step_type_break"
+msgstr "切换为中断"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH 连接作用域（留空表示全部）"
+
+msgid "settings.save"
+msgstr "保存"
+
+msgid "settings.cancel"
+msgstr "取消"
+
+msgid "settings.ok"
+msgstr "确定"
+
+msgid "settings.delete"
+msgstr "删除"
+
+msgid "settings.export"
+msgstr "导出"
+
+msgid "settings.import"
+msgstr "导入"
+
+msgid "settings.clear"
+msgstr "清空数据"
+
+msgid "settings.confirm_delete"
+msgstr "确定删除此命令？"
+
+msgid "settings.confirm_clear"
+msgstr "确定清空所有命令数据？此操作不可撤销！"
+
+msgid "settings.language"
+msgstr "界面语言"
+
+msgid "settings.lang_auto"
+msgstr "跟随Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "数据管理"
+
+msgid "group.add"
+msgstr "新建分组"
+
+msgid "group.name"
+msgstr "分组名称"
+
+msgid "group.order"
+msgstr "排序"
+
+msgid "group.profiles"
+msgstr "限定配置连接"
+
+msgid "group.profiles_hint"
+msgstr "不选 = 所有连接可见"
+
+msgid "group.profiles_selected"
+msgstr "个已选择"
+
+msgid "group.no_profiles"
+msgstr "未检测到配置连接，请先创建 SSH 连接配置"
+
+msgid "group.delete"
+msgstr "删除分组（命令移至未分组）"
+
+msgid "group.rename"
+msgstr "重命名"
+
+msgid "group.edit"
+msgstr "修改分组"
+
+msgid "group.manage"
+msgstr "管理分组"
+
+msgid "group.delete_confirm"
+msgstr "确定删除分组 \"{name}\" 吗？分组内的命令将移至未分组。"
+
+msgid "notify.executed"
+msgstr "命令已执行"
+
+msgid "notify.copied"
+msgstr "命令已复制"
+
+msgid "notify.import_ok"
+msgstr "导入成功"
+
+msgid "notify.import_fail"
+msgstr "导入失败：数据格式无效"
+
+msgid "notify.cleared"
+msgstr "数据已清空"
+
+msgid "notify.no_ssh"
+msgstr "当前标签页不是 SSH 连接"
+
+msgid "settings.hotkey"
+msgstr "面板快捷键"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "点击设置快捷键"
+
+msgid "settings.hotkeyUnbound"
+msgstr "未绑定"
+
+msgid "settings.hotkeyRecording"
+msgstr "按下按键..."
+
+msgid "settings.hotkeyClear"
+msgstr "清除"
+
+msgid "settings.hotkeySaved"
+msgstr "快捷键已设置为 {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "快捷键已清除"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "保存失败"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "录制超时"
+
+msgid "settings.hotkeyConflict"
+msgstr "快捷键「{hotkey}」已被 {names} 使用，确认将覆盖。"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "快捷键冲突：{names}，确认保存将覆盖"
+
+msgid "settings.enable_step"
+msgstr "启用该步骤"
+
+msgid "settings.disable_step"
+msgstr "禁用该步骤"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "快捷命令管理面板，创建和管理常用命令。"
+
+msgid "语言"
+msgstr "语言"
+
+msgid "跟随Tabby"
+msgstr "跟随Tabby"
+
+msgid "界面"
+msgstr "界面"
+
+msgid "主色调"
+msgstr "主色调"
+
+msgid "背景"
+msgstr "背景"
+
+msgid "文字"
+msgstr "文字"
+
+msgid "标题栏"
+msgstr "标题栏"
+
+msgid "边框"
+msgstr "边框"
+
+msgid "次要文字"
+msgstr "次要文字"
+
+msgid "字体大小"
+msgstr "字体大小"
+
+msgid "入口模式"
+msgstr "入口模式"
+
+msgid "浮动按钮"
+msgstr "浮动按钮"
+
+msgid "工具栏按钮"
+msgstr "工具栏按钮"
+
+msgid "面板常驻"
+msgstr "面板常驻"
+
+msgid "面板透明度"
+msgstr "面板透明度"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+
+msgid "排序方式"
+msgstr "排序方式"
+
+msgid "手动"
+msgstr "手动"
+
+msgid "名称"
+msgstr "名称"
+
+msgid "执行次数"
+msgstr "执行次数"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "更改命令列表的排序方式，仅影响显示顺序"
+
+msgid "重置执行次数"
+msgstr "重置执行次数"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "已重置 {count} 条命令的执行次数"
+
+msgid "没有需要重置的命令"
+msgstr "没有需要重置的命令"
+
+msgid "重置失败"
+msgstr "重置失败"
+
+msgid "面板快捷键"
+msgstr "面板快捷键"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "打开 QuickCmd+ 面板"
+
+msgid "点击设置快捷键"
+msgstr "点击设置快捷键"
+
+msgid "未绑定"
+msgstr "未绑定"
+
+msgid "清除"
+msgstr "清除"
+
+msgid "清空"
+msgstr "清空"
+
+msgid "确认覆盖"
+msgstr "确认覆盖"
+
+msgid "保存失败"
+msgstr "保存失败"
+
+msgid "录制超时"
+msgstr "录制超时"
+
+msgid "快捷键已清除"
+msgstr "快捷键已清除"
+
+msgid "数据"
+msgstr "数据"
+
+msgid "导入数据"
+msgstr "导入数据"
+
+msgid "导出数据"
+msgstr "导出数据"
+
+msgid "清空数据"
+msgstr "清空数据"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ 清空数据"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ 修改配色"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "确定清空所有命令数据？此操作不可撤销！"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "此操作将删除所有命令和分组数据，不可撤销！"
+
+msgid "请输入 DELETE 确认："
+msgstr "请输入 DELETE 确认："
+
+msgid "已清空所有数据"
+msgstr "已清空所有数据"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+
+msgid "导入成功"
+msgstr "导入成功"
+
+msgid "导入失败：文件格式无效"
+msgstr "导入失败：文件格式无效"
+
+msgid "无效的数据格式。"
+msgstr "无效的数据格式。"
+
+msgid "取消"
+msgstr "取消"
+
+msgid "功能"
+msgstr "功能"
+
+msgid "隐藏插件作者信息"
+msgstr "隐藏插件作者信息"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+
+msgid "我已点 Star 支持"
+msgstr "我已点 Star 支持"
+
+msgid "隐藏面板设置入口"
+msgstr "隐藏面板设置入口"
+
+msgid "滚动时对齐整行"
+msgstr "滚动时对齐整行"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+
+msgid "关于"
+msgstr "关于"
+
+msgid "版本"
+msgstr "版本"
+
+msgid "构建时间"
+msgstr "构建时间"
+
+msgid "作者"
+msgstr "作者"
+
+msgid "意见反馈"
+msgstr "意见反馈"
+
+msgid "点赞支持"
+msgstr "点赞支持"
+
+msgid "Github源码"
+msgstr "Github源码"
+
+msgid "NPM源码"
+msgstr "NPM源码"
+
+msgid "请喝咖啡"
+msgstr "请喝咖啡"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "选择要包含在导出文件中的内容。"
+
+msgid "命令与分组"
+msgstr "命令与分组"
+
+msgid "界面与外观"
+msgstr "界面与外观"
+
+msgid "窗口行为与位置"
+msgstr "窗口行为与位置"
+
+msgid "条命令"
+msgstr "条命令"
+
+msgid "个分组"
+msgstr "个分组"
+
+msgid "全选"
+msgstr "全选"
+
+msgid "全不选"
+msgstr "全不选"
+

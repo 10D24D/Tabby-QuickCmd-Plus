@@ -1,265 +1,168 @@
 /**
  * QuickCommand+ 国际化服务
- * 功能描述：五级回退语言检测 + 中英双语翻译
+ * 功能描述：加载 locale/*.po（24 语言）实现多语言，自动跟随 Tabby 系统语言，支持动态切换。
+ *          t(key) 同时支持点号 key（面板文案，如 panel.pin）与中文串 key（设置页文案）。
  * 创建人：DD1024z + Deepseek-V4-Flash
  * 创建时间：2026-06-26
+ * 修改人：DD1024z + Hy3
+ * 修改时间：2026-10-12
+ *   重构：从硬编码 zh/en 双语字典改为加载 24 语言 .po 文件（对齐 SFTP+ 多语言体系）
+ *   新增 Locale 类型/LOCALES 列表/detectLocaleFromString，setLocale 支持 24 语言动态切换
+ *   2026-10-12 (Hy3)：文件头举例的 key（原 app.title）已随标题改为固定品牌名而删除，换成现存 key
  */
+import { detectTabbyLanguage } from '@common/utils'
 
-const translations: Record<string, Record<string, string>> = {
-  'zh-CN': {
-    'app.name': 'QuickCmd+',
-    'app.title': '快捷命令',
-    'app.search': '搜索命令...',
-    'app.ungrouped': '未分组',
-    'app.noresults': '没有匹配的命令',
-    'app.pinned': '常用',
-    'app.all_groups': '全部分组',
+export type Locale =
+  | 'af-ZA' | 'bg-BG' | 'cs-CZ' | 'da-DK' | 'de-DE' | 'en-GB' | 'en-US' | 'es-ES'
+  | 'fr-FR' | 'hr-HR' | 'id-ID' | 'it-IT' | 'ja-JP' | 'ko-KR' | 'pl-PL' | 'pt-BR'
+  | 'pt-PT' | 'ru-RU' | 'sr-Latn' | 'sv-SE' | 'tr-TR' | 'uk-UA' | 'zh-CN' | 'zh-TW'
 
-    'entry.title': 'QuickCmd+ — 拖拽移动，点击打开面板',
-    'entry.disconnected': 'SSH 已断开',
+/** 语言下拉展示用（按语言代码排序），name 为该语言自称 */
+export const LOCALES: { code: Locale; name: string }[] = [
+  { code: 'af-ZA', name: 'Afrikaans' },
+  { code: 'bg-BG', name: 'Български' },
+  { code: 'cs-CZ', name: 'Čeština' },
+  { code: 'da-DK', name: 'Dansk' },
+  { code: 'de-DE', name: 'Deutsch' },
+  { code: 'en-GB', name: 'English (UK)' },
+  { code: 'en-US', name: 'English (US)' },
+  { code: 'es-ES', name: 'Español' },
+  { code: 'fr-FR', name: 'Français' },
+  { code: 'hr-HR', name: 'Hrvatski' },
+  { code: 'id-ID', name: 'Indonesia' },
+  { code: 'it-IT', name: 'Italiano' },
+  { code: 'ja-JP', name: '日本語' },
+  { code: 'ko-KR', name: '한국어' },
+  { code: 'pl-PL', name: 'Polski' },
+  { code: 'pt-BR', name: 'Português (BR)' },
+  { code: 'pt-PT', name: 'Português (PT)' },
+  { code: 'ru-RU', name: 'Русский' },
+  { code: 'sr-Latn', name: 'Srpski' },
+  { code: 'sv-SE', name: 'Svenska' },
+  { code: 'tr-TR', name: 'Türkçe' },
+  { code: 'uk-UA', name: 'Українська' },
+  { code: 'zh-CN', name: '简体中文' },
+  { code: 'zh-TW', name: '繁體中文' },
+]
 
-    'panel.minimize': '最小化',
-    'panel.close': '关闭',
-    'panel.restore': '恢复面板',
-    'panel.add': '新建命令',
-    'panel.edit': '编辑',
-    'panel.delete': '删除',
-    'panel.delete_confirm': '确定删除 "{name}" 吗？',
-    'panel.pin': '固定在快捷入口',
-    'panel.unpin': '取消固定',
-    'panel.hint.search': '搜索或输入自定义命令',
-    'panel.execute': '点击执行',
-    'panel.send_and_exec': '发送并执行',
-    'panel.send_to_line': '仅发送',
-    'panel.multi_step_title': '多步命令提示',
-    'panel.multi_step_hint': '该命令包含 {count} 个步骤，是否拼接为一行发送？',
-    'panel.param_hint': '输入参数值',
-    'panel.send_all_tabs': '发送到所有标签页',
-    'panel.copy': '复制命令',
+// 通过 webpack asset/source 内联 .po 文件内容
+const PO_FILES: Record<Locale, string> = {
+  'af-ZA': require('../locale/af-ZA.po'),
+  'bg-BG': require('../locale/bg-BG.po'),
+  'cs-CZ': require('../locale/cs-CZ.po'),
+  'da-DK': require('../locale/da-DK.po'),
+  'de-DE': require('../locale/de-DE.po'),
+  'en-GB': require('../locale/en-GB.po'),
+  'en-US': require('../locale/en-US.po'),
+  'es-ES': require('../locale/es-ES.po'),
+  'fr-FR': require('../locale/fr-FR.po'),
+  'hr-HR': require('../locale/hr-HR.po'),
+  'id-ID': require('../locale/id-ID.po'),
+  'it-IT': require('../locale/it-IT.po'),
+  'ja-JP': require('../locale/ja-JP.po'),
+  'ko-KR': require('../locale/ko-KR.po'),
+  'pl-PL': require('../locale/pl-PL.po'),
+  'pt-BR': require('../locale/pt-BR.po'),
+  'pt-PT': require('../locale/pt-PT.po'),
+  'ru-RU': require('../locale/ru-RU.po'),
+  'sr-Latn': require('../locale/sr-Latn.po'),
+  'sv-SE': require('../locale/sv-SE.po'),
+  'tr-TR': require('../locale/tr-TR.po'),
+  'uk-UA': require('../locale/uk-UA.po'),
+  'zh-CN': require('../locale/zh-CN.po'),
+  'zh-TW': require('../locale/zh-TW.po'),
+}
 
-    'panel.drag_reorder': '拖拽排序',
-    'panel.drag_reorder_group': '拖拽排序分组',
+/** 解析 GNU gettext .po 内容为 msgid -> msgstr（last-wins） */
+function parsePo(content: string): Record<string, string> {
+  const map: Record<string, string> = {}
+  const lines = content.replace(/\r\n/g, '\n').split('\n')
+  let key = ''
+  let val = ''
+  let inStr = false
+  const unq = (s: string): string => {
+    s = s.trim()
+    if (s.startsWith('"')) s = s.slice(1)
+    if (s.endsWith('"')) s = s.slice(0, -1)
+    return s.replace(/\\"/g, '"').replace(/\\n/g, '\n').replace(/\\\\/g, '\\')
+  }
+  for (const line of lines) {
+    if (line.startsWith('msgid ')) {
+      if (key && val) map[key] = val
+      key = unq(line.slice(6)); val = ''; inStr = false
+    } else if (line.startsWith('msgstr ')) {
+      val = unq(line.slice(7)); inStr = true
+    } else if (inStr && line.startsWith('"') && line.endsWith('"')) {
+      val += unq(line)
+    }
+  }
+  if (key && val) map[key] = val
+  return map
+}
 
-    'settings.title': 'QuickCmd+',
-    'settings.add_cmd': '添加命令',
-    'settings.edit_cmd': '编辑命令',
-    'settings.name': '名称',
-    'settings.text': '命令内容',
-    'settings.group': '分组',
-    'settings.shortcut': '快捷键',
-    'settings.append_cr': '发送并执行',
-    'settings.params': '变量参数',
-    'settings.pinned': '固定在快捷入口',
-    'settings.delay': '步骤延迟(秒)',
-    'settings.delay_hint': '延迟执行时间',
-    'settings.delay_short': '延迟',
-    'settings.add_step': '添加命令',
-    'settings.add_break': '添加中断',
-    'settings.send_ctrlc': 'Ctrl+C 中断',
-    'settings.usage_count': '执行次数',
-    'settings.reset': '重置',
-    'settings.step_placeholder': '命令',
-    'settings.step_type_cmd': '切换为命令模式',
-    'settings.step_type_break': '切换为中断',
-    'panel.memory_on': '位置记忆已启用',
-    'panel.memory_off': '启用位置记忆',
-    'settings.ssh_profiles': 'SSH 连接作用域（留空表示全部）',
-    'settings.save': '保存',
-    'settings.cancel': '取消',
-    'settings.ok': '确定',
-    'settings.delete': '删除',
-    'settings.export': '导出',
-    'settings.import': '导入',
-    'settings.clear': '清空数据',
-    'settings.confirm_delete': '确定删除此命令？',
-    'settings.confirm_clear': '确定清空所有命令数据？此操作不可撤销！',
-    'settings.language': '界面语言',
-    'settings.lang_auto': '自动',
-    'settings.lang_zh': '中文',
-    'settings.lang_en': 'English',
-    'settings.data_management': '数据管理',
+const PO_TRANSLATIONS = {} as Record<Locale, Record<string, string>>
+for (const { code } of LOCALES) PO_TRANSLATIONS[code] = parsePo(PO_FILES[code])
 
-    'group.add': '新建分组',
-    'group.name': '分组名称',
-    'group.delete': '删除分组（命令移至未分组）',
-    'group.rename': '重命名',
-    'group.edit': '修改分组',
-    'group.order': '排序',
-    'group.manage': '管理分组',
-    'group.delete_confirm': '确定删除分组 "{name}" 吗？分组内的命令将移至未分组。',
-
-    'notify.executed': '命令已执行',
-    'notify.copied': '命令已复制',
-    'notify.import_ok': '导入成功',
-    'notify.import_fail': '导入失败：数据格式无效',
-    'notify.cleared': '数据已清空',
-    'notify.no_ssh': '当前标签页不是 SSH 连接',
-  },
-  'en-US': {
-    'app.name': 'QuickCmd+',
-    'app.title': 'Quick Commands',
-    'app.search': 'Search commands...',
-    'app.ungrouped': 'Ungrouped',
-    'app.noresults': 'No matching commands',
-    'app.pinned': 'Favorites',
-    'app.all_groups': 'All groups',
-
-    'entry.title': 'QuickCmd+ — drag to move, click to toggle',
-    'entry.disconnected': 'SSH disconnected',
-
-    'panel.minimize': 'Minimize',
-    'panel.close': 'Close',
-    'panel.restore': 'Restore panel',
-    'panel.add': 'New command',
-    'panel.edit': 'Edit',
-    'panel.delete': 'Delete',
-    'panel.delete_confirm': 'Delete "{name}"?',
-    'panel.pin': 'Pin to quick entry',
-    'panel.unpin': 'Unpin',
-    'panel.hint.search': 'Search or type custom command',
-    'panel.execute': 'Click to execute',
-    'panel.send_and_exec': 'Send & Execute',
-    'panel.send_to_line': 'Send only',
-    'panel.multi_step_title': 'Multi-step Command',
-    'panel.multi_step_hint': 'This command has {count} steps. Join into one line?',
-    'panel.param_hint': 'Enter parameter value',
-    'panel.send_all_tabs': 'Send to all tabs',
-    'panel.copy': 'Copy command',
-
-    'panel.drag_reorder': 'Drag to reorder',
-    'panel.drag_reorder_group': 'Drag to reorder group',
-
-    'settings.title': 'QuickCmd+',
-    'settings.add_cmd': 'Add Command',
-    'settings.edit_cmd': 'Edit Command',
-    'settings.name': 'Name',
-    'settings.text': 'Command Text',
-    'settings.group': 'Group',
-    'settings.shortcut': 'Shortcut',
-    'settings.append_cr': 'Send & Execute',
-    'settings.params': 'Parameters',
-    'settings.pinned': 'Pin to quick entry',
-    'settings.delay': 'Step delay (s)',
-    'settings.delay_hint': 'Delay execution time',
-    'settings.delay_short': 'Delay',
-    'settings.add_step': 'Add Command',
-    'settings.add_break': 'Add Break',
-    'settings.send_ctrlc': 'Ctrl+C Break',
-    'settings.usage_count': 'Usage',
-    'settings.reset': 'Reset',
-    'settings.step_placeholder': 'Command',
-    'settings.step_type_cmd': 'Switch to command',
-    'settings.step_type_break': 'Switch to break',
-    'panel.memory_on': 'Position memory ON',
-    'panel.memory_off': 'Enable position memory',
-    'settings.ssh_profiles': 'SSH profile (leave empty for all)',
-    'settings.save': 'Save',
-    'settings.cancel': 'Cancel',
-    'settings.ok': 'OK',
-    'settings.delete': 'Delete',
-    'settings.export': 'Export',
-    'settings.import': 'Import',
-    'settings.clear': 'Clear all data',
-    'settings.confirm_delete': 'Delete this command?',
-    'settings.confirm_clear': 'Clear all command data? This cannot be undone!',
-    'settings.language': 'Language',
-    'settings.lang_auto': 'Auto',
-    'settings.lang_zh': '中文',
-    'settings.lang_en': 'English',
-    'settings.data_management': 'Data Management',
-
-    'group.add': 'New Group',
-    'group.name': 'Group Name',
-    'group.order': 'Order',
-    'group.delete': 'Delete group (commands become ungrouped)',
-    'group.rename': 'Rename',
-    'group.edit': 'Edit Group',
-    'group.manage': 'Manage Groups',
-    'group.delete_confirm': 'Delete group "{name}"? Commands inside will become ungrouped.',
-
-    'notify.executed': 'Command executed',
-    'notify.copied': 'Command copied',
-    'notify.import_ok': 'Import successful',
-    'notify.import_fail': 'Import failed: invalid data format',
-    'notify.cleared': 'Data cleared',
-    'notify.no_ssh': 'Current tab is not an SSH connection',
-  },
+/** 根据语言字符串检测对应 Locale */
+function detectLocaleFromString(lang: string): Locale | null {
+  const l = (lang || '').toLowerCase()
+  const map: Record<string, Locale> = {
+    'zh': 'zh-CN', 'zh-cn': 'zh-CN', 'zh-hans': 'zh-CN', 'zh-tw': 'zh-TW', 'zh-hk': 'zh-TW', 'zh-hant': 'zh-TW',
+    'en': 'en-US', 'en-us': 'en-US', 'en-gb': 'en-GB',
+    'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'ko': 'ko-KR', 'ko-kr': 'ko-KR',
+    'fr': 'fr-FR', 'fr-fr': 'fr-FR', 'de': 'de-DE', 'de-de': 'de-DE',
+    'es': 'es-ES', 'es-es': 'es-ES', 'pt': 'pt-BR', 'pt-br': 'pt-BR', 'pt-pt': 'pt-PT',
+    'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'it': 'it-IT', 'it-it': 'it-IT',
+    'id': 'id-ID', 'id-id': 'id-ID', 'cs': 'cs-CZ', 'cs-cz': 'cs-CZ',
+    'da': 'da-DK', 'da-dk': 'da-DK', 'hr': 'hr-HR', 'hr-hr': 'hr-HR',
+    'pl': 'pl-PL', 'pl-pl': 'pl-PL', 'sv': 'sv-SE', 'sv-se': 'sv-SE',
+    'tr': 'tr-TR', 'tr-tr': 'tr-TR', 'bg': 'bg-BG', 'bg-bg': 'bg-BG',
+    'sr': 'sr-Latn', 'sr-latn': 'sr-Latn', 'uk': 'uk-UA', 'uk-ua': 'uk-UA',
+    'af': 'af-ZA', 'af-za': 'af-ZA',
+  }
+  if (map[l]) return map[l]
+  const base = l.split('-')[0]
+  return map[base] || null
 }
 
 export class QuickCommandI18nService {
-  private locale: string = 'zh-CN'
+  private locale: Locale = 'en-US'
 
   constructor() {
     this.detectLocale()
   }
 
   private detectLocale(): void {
+    // 策略0：设置页手动选择（localStorage，最高优先级）
     const saved = localStorage.getItem('qc-plus-locale')
     if (saved && saved !== 'auto') {
-      this.locale = saved === 'en-US' ? 'en-US' : 'zh-CN'
-      return
+      const s = detectLocaleFromString(saved) || (PO_TRANSLATIONS[saved as Locale] ? (saved as Locale) : null)
+      if (s) { this.locale = s; return }
     }
-    // Auto 模式：逐级检测
-    const checks: (() => string | null)[] = [
-      // 1. Tabby localStorage
-      () => {
-        const keys = ['locale', 'language', 'tabby-language', 'tabby-locale',
-          'config', 'tabby-config', 'settings', 'tabby-settings', 'tabby-config.json']
-        for (const key of keys) {
-          const raw = localStorage.getItem(key)
-          if (!raw) continue
-          if (/^zh/i.test(raw)) return 'zh-CN'
-          if (/^en/i.test(raw)) return 'en-US'
-          try {
-            const obj = JSON.parse(raw)
-            const lang = obj?.appearance?.language || obj?.appearance?.locale
-              || obj?.language || obj?.locale || obj?.app?.language || obj?.general?.language
-            if (lang) return /^zh/i.test(String(lang)) ? 'zh-CN' : 'en-US'
-          } catch {}
-        }
-        return null
-      },
-      // 2. Electron process.env
-      () => {
-        try {
-          const e = (typeof process !== 'undefined' && process.env)
-          if (e) {
-            const lc = e.LC_ALL || e.LANG || e.LANGUAGE || ''
-            if (/^zh/i.test(lc)) return 'zh-CN'
-            if (/^en/i.test(lc)) return 'en-US'
-          }
-        } catch {}
-        return null
-      },
-      // 3. document.documentElement.lang
-      () => {
-        try {
-          const dl = document.documentElement?.lang || ''
-          if (/^zh/i.test(dl)) return 'zh-CN'
-          if (/^en/i.test(dl)) return 'en-US'
-        } catch {}
-        return null
-      },
-      // 4. navigator.languages（先扫 zh，再扫 en）
-      () => {
-        try {
-          const nl = navigator.languages || [navigator.language]
-          for (const lang of nl) { if (lang.startsWith('zh')) return 'zh-CN' }
-          for (const lang of nl) { if (lang.startsWith('en')) return 'en-US' }
-        } catch {}
-        return null
-      },
-    ]
-    for (const check of checks) {
-      const result = check()
-      if (result) { this.locale = result; return }
+
+    // 策略1：Tabby config.yaml
+    const tabbyLang = detectTabbyLanguage()
+    if (tabbyLang) {
+      const detected = detectLocaleFromString(String(tabbyLang))
+      if (detected) { this.locale = detected; return }
     }
-    // 默认中文
-    this.locale = 'zh-CN'
+
+    // 策略2：navigator.languages
+    try {
+      const langs = navigator.languages || [navigator.language]
+      for (const l of langs) {
+        const detected = detectLocaleFromString(l)
+        if (detected) { this.locale = detected; return }
+      }
+    } catch {}
+
+    // 最终回退：英文
+    this.locale = 'en-US'
   }
 
   t(key: string, params?: Record<string, string | number>): string {
-    let text = translations[this.locale]?.[key] ?? translations['en-US']?.[key] ?? key
+    let text = PO_TRANSLATIONS[this.locale]?.[key]
+    if (text === undefined) text = PO_TRANSLATIONS['en-US']?.[key] ?? key
     if (params) {
       for (const [k, v] of Object.entries(params)) {
         text = text.replace(`{${k}}`, String(v))
@@ -268,16 +171,22 @@ export class QuickCommandI18nService {
     return text
   }
 
-  setLocale(locale: string): void {
+  setLocale(locale: Locale | 'auto'): void {
     localStorage.setItem('qc-plus-locale', locale)
     if (locale === 'auto') {
       this.detectLocale()
     } else {
-      this.locale = locale === 'en-US' ? 'en-US' : 'zh-CN'
+      this.locale = locale
     }
   }
 
-  getLocale(): string {
+  getLocale(): Locale {
     return this.locale
+  }
+
+  /** 返回当前保存的选择（含 'auto'），供设置页下拉回显 */
+  getSavedLocale(): Locale | 'auto' {
+    const saved = localStorage.getItem('qc-plus-locale')
+    return (saved as Locale | 'auto') || 'auto'
   }
 }

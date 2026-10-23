@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: tr_TR\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Komut ara..."
+
+msgid "app.ungrouped"
+msgstr "Gruplanmamış"
+
+msgid "app.noresults"
+msgstr "Eşleşen komut yok"
+
+msgid "app.pinned"
+msgstr "Favoriler"
+
+msgid "app.all_groups"
+msgstr "Tüm gruplar"
+
+msgid "app.auto_filter"
+msgstr "Otomatik"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — taşımak için sürükleyin, açıp kapatmak için tıklayın"
+
+msgid "entry.disconnected"
+msgstr "SSH bağlantısı kesildi"
+
+msgid "entry.opened"
+msgstr "açık, kapatmak için tıklayın"
+
+msgid "entry.minimized"
+msgstr "küçültüldü, geri yüklemek için tıklayın"
+
+msgid "panel.minimize"
+msgstr "Küçült"
+
+msgid "panel.close"
+msgstr "Kapat"
+
+msgid "panel.restore"
+msgstr "Paneli geri yükle"
+
+msgid "panel.settings"
+msgstr "Ayarları aç"
+
+msgid "panel.sort"
+msgstr "Sırala"
+
+msgid "panel.sort_manual"
+msgstr "El ile sıralama"
+
+msgid "panel.sort_name"
+msgstr "Ad"
+
+msgid "panel.sort_usage"
+msgstr "Kullanım sayısı"
+
+msgid "panel.sort_hint"
+msgstr "Otomatik sıralama açık; sürüklemek için el ile sıralamaya geçin"
+
+msgid "app.clear_search"
+msgstr "Aramayı temizle"
+
+msgid "panel.add"
+msgstr "Yeni komut"
+
+msgid "panel.edit"
+msgstr "Düzenle"
+
+msgid "panel.delete"
+msgstr "Sil"
+
+msgid "panel.delete_confirm"
+msgstr "\"{name}\" silinsin mi?"
+
+msgid "panel.pin"
+msgstr "Hızlı girişe sabitle"
+
+msgid "panel.unpin"
+msgstr "Sabitlemeyi kaldır"
+
+msgid "panel.hint.search"
+msgstr "Arayın veya komut yazın"
+
+msgid "panel.empty_group"
+msgstr "Bu grupta komut yok"
+
+msgid "panel.no_auto_group"
+msgstr "Geçerli bağlantıyla eşleşen grup yok"
+
+msgid "panel.execute"
+msgstr "Çalıştırmak için tıklayın"
+
+msgid "panel.send_and_exec"
+msgstr "Gönder ve çalıştır"
+
+msgid "panel.send_to_line"
+msgstr "Yalnızca gönder"
+
+msgid "panel.multi_step_title"
+msgstr "Çok adımlı komut"
+
+msgid "panel.multi_step_hint"
+msgstr "Bu komutun {count} adımı var. Tek satırda birleştirilsin mi?"
+
+msgid "panel.param_hint"
+msgstr "Parametre değerini girin"
+
+msgid "panel.send_all_tabs"
+msgstr "Tüm sekmelere gönder"
+
+msgid "panel.copy"
+msgstr "Komutu kopyala"
+
+msgid "panel.drag_reorder"
+msgstr "Yeniden sıralamak için sürükleyin"
+
+msgid "panel.drag_reorder_group"
+msgstr "Grubu yeniden sıralamak için sürükleyin"
+
+msgid "panel.pinPanel"
+msgstr "Paneli açık tut"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Sıralama ölçütü"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Komut ekle"
+
+msgid "settings.edit_cmd"
+msgstr "Komutu düzenle"
+
+msgid "settings.name"
+msgstr "Ad"
+
+msgid "settings.short_name"
+msgstr "Kısa ad"
+
+msgid "settings.short_name_hint"
+msgstr "Hızlı çubukta gösterilir; boşsa komut adı kullanılır"
+
+msgid "settings.text"
+msgstr "Komut metni"
+
+msgid "settings.group"
+msgstr "Gruplandır"
+
+msgid "settings.shortcut"
+msgstr "Kısayol"
+
+msgid "settings.append_cr"
+msgstr "Gönder ve çalıştır"
+
+msgid "settings.confirm_before_run"
+msgstr "Çalıştırmadan önce onayla"
+
+msgid "confirm.title"
+msgstr "Çalıştırmayı onayla"
+
+msgid "confirm.message"
+msgstr "Aşağıdaki terminale gönderilecek. Devam edilsin mi?"
+
+msgid "confirm.run"
+msgstr "Çalıştır"
+
+msgid "settings.params"
+msgstr "Parametreler"
+
+msgid "settings.pinned"
+msgstr "Hızlı girişe sabitle"
+
+msgid "settings.delay"
+msgstr "Adım gecikmesi (sn)"
+
+msgid "settings.delay_hint"
+msgstr "Yürütme süresini geciktir"
+
+msgid "settings.delay_short"
+msgstr "Gecikme"
+
+msgid "settings.add_step"
+msgstr "Komut ekle"
+
+msgid "settings.add_break"
+msgstr "Kesme ekle"
+
+msgid "settings.send_ctrlc"
+msgstr "Ctrl+C kesme"
+
+msgid "settings.usage_count"
+msgstr "Kullanım"
+
+msgid "settings.reset"
+msgstr "Sıfırla"
+
+msgid "settings.step_placeholder"
+msgstr "Komut"
+
+msgid "settings.step_type_cmd"
+msgstr "Komuta geç"
+
+msgid "settings.step_type_break"
+msgstr "Kesmeye geç"
+
+msgid "settings.ssh_profiles"
+msgstr "SSH profili (boş = tümü)"
+
+msgid "settings.save"
+msgstr "Kaydet"
+
+msgid "settings.cancel"
+msgstr "İptal"
+
+msgid "settings.ok"
+msgstr "Tamam"
+
+msgid "settings.delete"
+msgstr "Sil"
+
+msgid "settings.export"
+msgstr "Dışa Aktar"
+
+msgid "settings.import"
+msgstr "İçe Aktar"
+
+msgid "settings.clear"
+msgstr "Tüm verileri temizle"
+
+msgid "settings.confirm_delete"
+msgstr "Bu komut silinsin mi?"
+
+msgid "settings.confirm_clear"
+msgstr "Tüm komut verileri temizlensin mi? Bu geri alınamaz!"
+
+msgid "settings.language"
+msgstr "Dil"
+
+msgid "settings.lang_auto"
+msgstr "Tabby Takip Et"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Veri yönetimi"
+
+msgid "group.add"
+msgstr "Yeni grup"
+
+msgid "group.name"
+msgstr "Grup adı"
+
+msgid "group.order"
+msgstr "Sıra"
+
+msgid "group.profiles"
+msgstr "Profillerle sınırla"
+
+msgid "group.profiles_hint"
+msgstr "İşaretsiz = herkese görünür"
+
+msgid "group.profiles_selected"
+msgstr " seçili"
+
+msgid "group.no_profiles"
+msgstr "Bağlantı profili bulunamadı, önce SSH bağlantıları oluşturun"
+
+msgid "group.delete"
+msgstr "Grubu sil (komutlar gruplanmamış olur)"
+
+msgid "group.rename"
+msgstr "Yeniden adlandır"
+
+msgid "group.edit"
+msgstr "Grubu düzenle"
+
+msgid "group.manage"
+msgstr "Grupları yönet"
+
+msgid "group.delete_confirm"
+msgstr "\"{name}\" grubu silinsin mi? İçindeki komutlar gruplanmamış olur."
+
+msgid "notify.executed"
+msgstr "Komut çalıştırıldı"
+
+msgid "notify.copied"
+msgstr "Komut kopyalandı"
+
+msgid "notify.import_ok"
+msgstr "İçe aktarma başarılı"
+
+msgid "notify.import_fail"
+msgstr "İçe aktarma başarısız: geçersiz veri biçimi"
+
+msgid "notify.cleared"
+msgstr "Veriler temizlendi"
+
+msgid "notify.no_ssh"
+msgstr "Geçerli sekme bir SSH bağlantısı değil"
+
+msgid "settings.hotkey"
+msgstr "Panel kısayolu"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Kısayol atamak için tıklayın"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Atanmamış"
+
+msgid "settings.hotkeyRecording"
+msgstr "Tuşlara basın..."
+
+msgid "settings.hotkeyClear"
+msgstr "Temizle"
+
+msgid "settings.hotkeySaved"
+msgstr "Kısayol {hotkey} olarak ayarlandı"
+
+msgid "settings.hotkeyCleared"
+msgstr "Kısayol temizlendi"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Kaydetme başarısız"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Kayıt zaman aşımı"
+
+msgid "settings.hotkeyConflict"
+msgstr "\"{hotkey}\" kısayolu {names} tarafından kullanılıyor. Üzerine yazılsın mı?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Kısayol çakışması: {names}. Kaydetmek üzerine yazar."
+
+msgid "settings.enable_step"
+msgstr "Adımı etkinleştir"
+
+msgid "settings.disable_step"
+msgstr "Adımı devre dışı bırak"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Hızlı komut paneli, komut oluşturun ve yönetin."
+
+msgid "语言"
+msgstr "Dil"
+
+msgid "跟随Tabby"
+msgstr "Tabby Takip Et"
+
+msgid "界面"
+msgstr "Arayüz"
+
+msgid "主色调"
+msgstr "Ana"
+
+msgid "背景"
+msgstr "Arka Plan"
+
+msgid "文字"
+msgstr "Metin"
+
+msgid "标题栏"
+msgstr "Yüzey"
+
+msgid "边框"
+msgstr "Sınır"
+
+msgid "次要文字"
+msgstr "Soluk"
+
+msgid "字体大小"
+msgstr "Yazı tipi boyutu"
+
+msgid "入口模式"
+msgstr "Giriş modu"
+
+msgid "浮动按钮"
+msgstr "Yüzen"
+
+msgid "工具栏按钮"
+msgstr "Araç çubuğu"
+
+msgid "面板常驻"
+msgstr "Paneli açık tut"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Sıralama ölçütü"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Ad"
+
+msgid "执行次数"
+msgstr "Kullanım"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Panel kısayolu"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "QuickCmd+ panelini aç"
+
+msgid "点击设置快捷键"
+msgstr "Kısayol atamak için tıklayın"
+
+msgid "未绑定"
+msgstr "Atanmamış"
+
+msgid "清除"
+msgstr "Temizle"
+
+msgid "清空"
+msgstr "Temizle"
+
+msgid "确认覆盖"
+msgstr "Üzerine Yaz"
+
+msgid "保存失败"
+msgstr "Kaydetme başarısız"
+
+msgid "录制超时"
+msgstr "Kayıt zaman aşımı"
+
+msgid "快捷键已清除"
+msgstr "Kısayol temizlendi"
+
+msgid "数据"
+msgstr "Veri"
+
+msgid "导入数据"
+msgstr "İçe Aktar"
+
+msgid "导出数据"
+msgstr "Dışa Aktar"
+
+msgid "清空数据"
+msgstr "Tümünü Temizle"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Tüm Verileri Temizle"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Renkleri Düzenle"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Tüm komut verileri temizlensin mi? Bu geri alınamaz!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Bu, tüm komutları ve grupları siler ve geri alınamaz!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Onaylamak için DELETE yazın:"
+
+msgid "已清空所有数据"
+msgstr "Tüm veriler temizlendi"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Auto/Preset modundasınız. Değişiklikler özel renk şemasının üzerine yazacak. Devam et?"
+
+msgid "导入成功"
+msgstr "İçe aktarma başarılı"
+
+msgid "导入失败：文件格式无效"
+msgstr "İçe aktarma başarısız: geçersiz dosya biçimi"
+
+msgid "无效的数据格式。"
+msgstr "Geçersiz veri formatı."
+
+msgid "取消"
+msgstr "İptal"
+
+msgid "功能"
+msgstr "Özellikler"
+
+msgid "隐藏插件作者信息"
+msgstr "Yazar bilgilerini gizle"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Yazar bilgilerini gizlemeden önce lütfen eklenti deposuna bir yıldız verin. Depo sayfası tarayıcınızda açıldı. Yıldızınız geliştirmeye devam etme motivasyonumdur — desteğiniz için teşekkürler! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Yıldız verdim"
+
+msgid "隐藏面板设置入口"
+msgstr "Panel ayar düğmesini gizle"
+
+msgid "滚动时对齐整行"
+msgstr "Kaydırırken satırları hizala"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Açıkken: komut çalıştırıldıktan veya odak kaybolduktan sonra panel açık kalır; kapalıyken: otomatik gizlenir."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Açıkken: kaydırma durduğunda liste tam satırlara hizalanır, böylece öğeler yarım kesilmez."
+
+msgid "关于"
+msgstr "Hakkında"
+
+msgid "版本"
+msgstr "Sürüm"
+
+msgid "构建时间"
+msgstr "Derleme zamanı"
+
+msgid "作者"
+msgstr "Yazar"
+
+msgid "意见反馈"
+msgstr "Geri bildirim"
+
+msgid "点赞支持"
+msgstr "Yıldız Ver"
+
+msgid "Github源码"
+msgstr "GitHub Kaynağı"
+
+msgid "NPM源码"
+msgstr "NPM Kaynak Kodu"
+
+msgid "请喝咖啡"
+msgstr "Bana bir kahve ısmarla"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Dışa aktarma dosyasına nelerin ekleneceğini seçin."
+
+msgid "命令与分组"
+msgstr "Komutlar ve gruplar"
+
+msgid "界面与外观"
+msgstr "Arayüz ve görünüm"
+
+msgid "窗口行为与位置"
+msgstr "Pencere davranışı ve konumu"
+
+msgid "条命令"
+msgstr "komut"
+
+msgid "个分组"
+msgstr "grup"
+
+msgid "全选"
+msgstr "Tümünü seç"
+
+msgid "全不选"
+msgstr "Seçimi temizle"
+

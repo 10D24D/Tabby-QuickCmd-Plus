@@ -1,0 +1,593 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: it_IT\n"
+
+msgid "app.name"
+msgstr "QuickCmd+"
+
+msgid "app.search"
+msgstr "Cerca comandi..."
+
+msgid "app.ungrouped"
+msgstr "Non raggruppato"
+
+msgid "app.noresults"
+msgstr "Nessun comando corrispondente"
+
+msgid "app.pinned"
+msgstr "Preferiti"
+
+msgid "app.all_groups"
+msgstr "Tutti i gruppi"
+
+msgid "app.auto_filter"
+msgstr "Auto"
+
+msgid "entry.title"
+msgstr "QuickCmd+ — trascina per spostare, clicca per attivare"
+
+msgid "entry.disconnected"
+msgstr "SSH disconnesso"
+
+msgid "entry.opened"
+msgstr "aperto, fai clic per chiudere"
+
+msgid "entry.minimized"
+msgstr "ridotto a icona, fai clic per ripristinare"
+
+msgid "panel.minimize"
+msgstr "Riduci a icona"
+
+msgid "panel.close"
+msgstr "Chiudi"
+
+msgid "panel.restore"
+msgstr "Ripristina pannello"
+
+msgid "panel.settings"
+msgstr "Apri impostazioni"
+
+msgid "panel.sort"
+msgstr "Ordina"
+
+msgid "panel.sort_manual"
+msgstr "Ordine manuale"
+
+msgid "panel.sort_name"
+msgstr "Nome"
+
+msgid "panel.sort_usage"
+msgstr "Numero di utilizzi"
+
+msgid "panel.sort_hint"
+msgstr "Ordinamento automatico attivo; torna all'ordine manuale per trascinare"
+
+msgid "app.clear_search"
+msgstr "Cancella ricerca"
+
+msgid "panel.add"
+msgstr "Nuovo comando"
+
+msgid "panel.edit"
+msgstr "Modifica"
+
+msgid "panel.delete"
+msgstr "Elimina"
+
+msgid "panel.delete_confirm"
+msgstr "Eliminare \"{name}\"?"
+
+msgid "panel.pin"
+msgstr "Fissa all’accesso rapido"
+
+msgid "panel.unpin"
+msgstr "Rimuovi"
+
+msgid "panel.hint.search"
+msgstr "Cerca o digita un comando"
+
+msgid "panel.empty_group"
+msgstr "Nessun comando in questo gruppo"
+
+msgid "panel.no_auto_group"
+msgstr "Nessun gruppo corrisponde alla connessione attuale"
+
+msgid "panel.execute"
+msgstr "Clicca per eseguire"
+
+msgid "panel.send_and_exec"
+msgstr "Invia ed esegui"
+
+msgid "panel.send_to_line"
+msgstr "Solo invia"
+
+msgid "panel.multi_step_title"
+msgstr "Comando multi-passo"
+
+msgid "panel.multi_step_hint"
+msgstr "Questo comando ha {count} passi. Unire in una riga?"
+
+msgid "panel.param_hint"
+msgstr "Inserisci il valore del parametro"
+
+msgid "panel.send_all_tabs"
+msgstr "Invia a tutte le schede"
+
+msgid "panel.copy"
+msgstr "Copia comando"
+
+msgid "panel.drag_reorder"
+msgstr "Trascina per riordinare"
+
+msgid "panel.drag_reorder_group"
+msgstr "Trascina per riordinare il gruppo"
+
+msgid "panel.pinPanel"
+msgstr "Mantieni il pannello aperto"
+
+msgid "settings.panelOpacity"
+msgstr "Panel Opacity"
+
+msgid "settings.panelOpacityHint"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "settings.bookmarkSort"
+msgstr "Ordina per"
+
+msgid "settings.bookmarkSortByUsageHint"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "settings.bookmarkResetUsage"
+msgstr "Reset usage counts"
+
+msgid "settings.bookmarkResetUsageDone"
+msgstr "Reset {count} command usage counts"
+
+msgid "settings.title"
+msgstr "QuickCmd+"
+
+msgid "settings.add_cmd"
+msgstr "Aggiungi comando"
+
+msgid "settings.edit_cmd"
+msgstr "Modifica comando"
+
+msgid "settings.name"
+msgstr "Nome"
+
+msgid "settings.short_name"
+msgstr "Nome breve"
+
+msgid "settings.short_name_hint"
+msgstr "Mostrato nella barra rapida; vuoto usa il nome del comando"
+
+msgid "settings.text"
+msgstr "Testo del comando"
+
+msgid "settings.group"
+msgstr "Raggruppa"
+
+msgid "settings.shortcut"
+msgstr "Scorciatoia"
+
+msgid "settings.append_cr"
+msgstr "Invia ed esegui"
+
+msgid "settings.confirm_before_run"
+msgstr "Conferma prima di eseguire"
+
+msgid "confirm.title"
+msgstr "Conferma l'esecuzione"
+
+msgid "confirm.message"
+msgstr "Quanto segue verrà inviato al terminale. Continuare?"
+
+msgid "confirm.run"
+msgstr "Esegui"
+
+msgid "settings.params"
+msgstr "Parametri"
+
+msgid "settings.pinned"
+msgstr "Fissa all’accesso rapido"
+
+msgid "settings.delay"
+msgstr "Ritardo passo (s)"
+
+msgid "settings.delay_hint"
+msgstr "Ritarda l'esecuzione"
+
+msgid "settings.delay_short"
+msgstr "Ritardo"
+
+msgid "settings.add_step"
+msgstr "Aggiungi comando"
+
+msgid "settings.add_break"
+msgstr "Aggiungi interruzione"
+
+msgid "settings.send_ctrlc"
+msgstr "Interruzione Ctrl+C"
+
+msgid "settings.usage_count"
+msgstr "Utilizzo"
+
+msgid "settings.reset"
+msgstr "Reimposta"
+
+msgid "settings.step_placeholder"
+msgstr "Comando"
+
+msgid "settings.step_type_cmd"
+msgstr "Passa a comando"
+
+msgid "settings.step_type_break"
+msgstr "Passa a interruzione"
+
+msgid "settings.ssh_profiles"
+msgstr "Profilo SSH (vuoto = tutti)"
+
+msgid "settings.save"
+msgstr "Salva"
+
+msgid "settings.cancel"
+msgstr "Annulla"
+
+msgid "settings.ok"
+msgstr "OK"
+
+msgid "settings.delete"
+msgstr "Elimina"
+
+msgid "settings.export"
+msgstr "Esporta"
+
+msgid "settings.import"
+msgstr "Importa"
+
+msgid "settings.clear"
+msgstr "Cancella tutti i dati"
+
+msgid "settings.confirm_delete"
+msgstr "Eliminare questo comando?"
+
+msgid "settings.confirm_clear"
+msgstr "Cancellare tutti i dati dei comandi? Operazione irreversibile!"
+
+msgid "settings.language"
+msgstr "Lingua"
+
+msgid "settings.lang_auto"
+msgstr "Segui Tabby"
+
+msgid "settings.lang_zh"
+msgstr "中文"
+
+msgid "settings.lang_en"
+msgstr "English"
+
+msgid "settings.data_management"
+msgstr "Gestione dati"
+
+msgid "group.add"
+msgstr "Nuovo gruppo"
+
+msgid "group.name"
+msgstr "Nome gruppo"
+
+msgid "group.order"
+msgstr "Ordine"
+
+msgid "group.profiles"
+msgstr "Limita ai profili"
+
+msgid "group.profiles_hint"
+msgstr "Deselezionato = visibile a tutti"
+
+msgid "group.profiles_selected"
+msgstr " selezionati"
+
+msgid "group.no_profiles"
+msgstr "Nessun profilo di connessione rilevato, crea prima connessioni SSH"
+
+msgid "group.delete"
+msgstr "Elimina gruppo (i comandi diventano non raggruppati)"
+
+msgid "group.rename"
+msgstr "Rinomina"
+
+msgid "group.edit"
+msgstr "Modifica gruppo"
+
+msgid "group.manage"
+msgstr "Gestisci gruppi"
+
+msgid "group.delete_confirm"
+msgstr "Eliminare il gruppo \"{name}\"? I comandi diventeranno non raggruppati."
+
+msgid "notify.executed"
+msgstr "Comando eseguito"
+
+msgid "notify.copied"
+msgstr "Comando copiato"
+
+msgid "notify.import_ok"
+msgstr "Importazione riuscita"
+
+msgid "notify.import_fail"
+msgstr "Importazione non riuscita: formato dati non valido"
+
+msgid "notify.cleared"
+msgstr "Dati cancellati"
+
+msgid "notify.no_ssh"
+msgstr "La scheda corrente non è una connessione SSH"
+
+msgid "settings.hotkey"
+msgstr "Scorciatoia pannello"
+
+msgid "settings.hotkeyClickToSet"
+msgstr "Clicca per impostare la scorciatoia"
+
+msgid "settings.hotkeyUnbound"
+msgstr "Non assegnato"
+
+msgid "settings.hotkeyRecording"
+msgstr "Premi i tasti..."
+
+msgid "settings.hotkeyClear"
+msgstr "Cancella"
+
+msgid "settings.hotkeySaved"
+msgstr "Scorciatoia impostata su {hotkey}"
+
+msgid "settings.hotkeyCleared"
+msgstr "Scorciatoia cancellata"
+
+msgid "settings.hotkeySaveFailed"
+msgstr "Salvataggio fallito"
+
+msgid "settings.hotkeyRecordTimeout"
+msgstr "Timeout registrazione"
+
+msgid "settings.hotkeyConflict"
+msgstr "La scorciatoia \"{hotkey}\" è usata da {names}. Sovrascrivere?"
+
+msgid "settings.hotkeyConflictConfirm"
+msgstr "Conflitto scorciatoia: {names}. Il salvataggio sovrascriverà."
+
+msgid "settings.enable_step"
+msgstr "Abilita passaggio"
+
+msgid "settings.disable_step"
+msgstr "Disabilita passaggio"
+
+msgid "快捷命令管理面板，创建和管理常用命令。"
+msgstr "Pannello comandi rapidi, crea e gestisci comandi."
+
+msgid "语言"
+msgstr "Lingua"
+
+msgid "跟随Tabby"
+msgstr "Segui Tabby"
+
+msgid "界面"
+msgstr "Interfaccia"
+
+msgid "主色调"
+msgstr "Primario"
+
+msgid "背景"
+msgstr "Sfondo"
+
+msgid "文字"
+msgstr "Testo"
+
+msgid "标题栏"
+msgstr "Superficie"
+
+msgid "边框"
+msgstr "Bordo"
+
+msgid "次要文字"
+msgstr "Attenuato"
+
+msgid "字体大小"
+msgstr "Dimensione carattere"
+
+msgid "入口模式"
+msgstr "Modalità di accesso"
+
+msgid "浮动按钮"
+msgstr "Fluttuante"
+
+msgid "工具栏按钮"
+msgstr "Barra degli strumenti"
+
+msgid "面板常驻"
+msgstr "Mantieni il pannello aperto"
+
+msgid "面板透明度"
+msgstr "Panel Opacity"
+
+msgid "设置面板整体透明度（50%–100%），低于 100% 时面板内容会半透明"
+msgstr "Set panel opacity (50%–100%). Below 100% the panel content becomes semi-transparent."
+
+msgid "排序方式"
+msgstr "Ordina per"
+
+msgid "手动"
+msgstr "Manual"
+
+msgid "名称"
+msgstr "Nome"
+
+msgid "执行次数"
+msgstr "Utilizzo"
+
+msgid "更改命令列表的排序方式，仅影响显示顺序"
+msgstr "Change command list sort order. Only affects display order."
+
+msgid "重置执行次数"
+msgstr "Reset usage counts"
+
+msgid "已重置 {count} 条命令的执行次数"
+msgstr "Reset {count} command usage counts"
+
+msgid "没有需要重置的命令"
+msgstr "No commands to reset"
+
+msgid "重置失败"
+msgstr "Reset failed"
+
+msgid "面板快捷键"
+msgstr "Scorciatoia pannello"
+
+msgid "打开 QuickCmd+ 面板"
+msgstr "Apri il pannello QuickCmd+"
+
+msgid "点击设置快捷键"
+msgstr "Clicca per impostare la scorciatoia"
+
+msgid "未绑定"
+msgstr "Non assegnato"
+
+msgid "清除"
+msgstr "Cancella"
+
+msgid "清空"
+msgstr "Cancella"
+
+msgid "确认覆盖"
+msgstr "Sovrascrivi"
+
+msgid "保存失败"
+msgstr "Salvataggio fallito"
+
+msgid "录制超时"
+msgstr "Timeout registrazione"
+
+msgid "快捷键已清除"
+msgstr "Scorciatoia cancellata"
+
+msgid "数据"
+msgstr "Dati"
+
+msgid "导入数据"
+msgstr "Importa"
+
+msgid "导出数据"
+msgstr "Esporta"
+
+msgid "清空数据"
+msgstr "Cancella Tutto"
+
+msgid "⚠️ 清空数据"
+msgstr "⚠️ Cancella Tutti i Dati"
+
+msgid "⚠️ 修改配色"
+msgstr "⚠️ Modifica Colori"
+
+msgid "确定清空所有命令数据？此操作不可撤销！"
+msgstr "Cancellare tutti i dati dei comandi? Operazione irreversibile!"
+
+msgid "此操作将删除所有命令和分组数据，不可撤销！"
+msgstr "Questo eliminerà tutti i comandi e gruppi e non può essere annullato!"
+
+msgid "请输入 DELETE 确认："
+msgstr "Digita DELETE per confermare:"
+
+msgid "已清空所有数据"
+msgstr "Tutti i dati cancellati"
+
+msgid "当前为自动/预设模式，修改将覆盖到自定义配色方案中。是否继续？"
+msgstr "Sei in modalità Auto/Preset. Le modifiche sovrascriveranno lo schema di colori personalizzato. Continuare?"
+
+msgid "导入成功"
+msgstr "Importazione riuscita"
+
+msgid "导入失败：文件格式无效"
+msgstr "Importazione non riuscita: formato file non valido"
+
+msgid "无效的数据格式。"
+msgstr "Formato dati non valido."
+
+msgid "取消"
+msgstr "Annulla"
+
+msgid "功能"
+msgstr "Funzioni"
+
+msgid "隐藏插件作者信息"
+msgstr "Nascondi info autore"
+
+msgid "隐藏作者信息前，请先为插件仓库点 Star 支持一下。仓库页面已在浏览器中打开。您的点赞支持是我开发的动力，感谢支持！🙏"
+msgstr "Prima di nascondere le informazioni sull'autore, metti una stella al repository del plugin. La pagina del repository è stata aperta nel browser. La tua stella è la mia motivazione per sviluppare — grazie per il supporto! 🙏"
+
+msgid "我已点 Star 支持"
+msgstr "Ho messo una stella"
+
+msgid "隐藏面板设置入口"
+msgstr "Nascondi pulsante impostazioni pannello"
+
+msgid "滚动时对齐整行"
+msgstr "Allinea le righe durante lo scorrimento"
+
+msgid "开启后执行命令不会自动关闭面板，面板保持常驻；关闭时执行命令或点击别处会自动收起"
+msgstr "Attivo: il pannello resta aperto dopo un comando o la perdita del focus; disattivo: si nasconde automaticamente."
+
+msgid "开启后，列表滚动停止时会自动对齐到整行，避免条目被裁掉一半；关闭则保持原生滚动"
+msgstr "Attivo: l'elenco si allinea a righe intere al termine dello scorrimento, senza tagliare le voci."
+
+msgid "关于"
+msgstr "Informazioni"
+
+msgid "版本"
+msgstr "Versione"
+
+msgid "构建时间"
+msgstr "Orario di compilazione"
+
+msgid "作者"
+msgstr "Autore"
+
+msgid "意见反馈"
+msgstr "Feedback"
+
+msgid "点赞支持"
+msgstr "Dai una Stella"
+
+msgid "Github源码"
+msgstr "Fonte GitHub"
+
+msgid "NPM源码"
+msgstr "Sorgente NPM"
+
+msgid "请喝咖啡"
+msgstr "Offrimi un caffè"
+
+msgid "选择要包含在导出文件中的内容。"
+msgstr "Scegli cosa includere nel file di esportazione."
+
+msgid "命令与分组"
+msgstr "Comandi e gruppi"
+
+msgid "界面与外观"
+msgstr "Interfaccia e aspetto"
+
+msgid "窗口行为与位置"
+msgstr "Comportamento e posizione della finestra"
+
+msgid "条命令"
+msgstr "comandi"
+
+msgid "个分组"
+msgstr "gruppi"
+
+msgid "全选"
+msgstr "Seleziona tutto"
+
+msgid "全不选"
+msgstr "Deseleziona tutto"
+
