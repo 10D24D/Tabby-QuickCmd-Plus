@@ -6,7 +6,7 @@
 [![Stars](https://img.shields.io/github/stars/10D24D/Tabby-QuickCmd-Plus?style=for-the-badge&label=Stars&color=orange)](https://github.com/10D24D/Tabby-QuickCmd-Plus/stargazers)
 [![License](https://img.shields.io/github/license/10D24D/Tabby-QuickCmd-Plus?style=for-the-badge&label=License&color=green)](https://github.com/10D24D/Tabby-QuickCmd-Plus)
 
-QuickCmd+ is a plugin for [Tabby Terminal](https://tabby.sh/) that turns long commands and multi-step flows into saved entries you can summon from a floating panel and send or run with one click. It supports groups and filtering, fuzzy search, parameter placeholders, per-connection (SSH profile) scoping, pinning to a quick bar, and a confirmation step for dangerous commands.
+QuickCmd+ is a plugin for [Tabby Terminal](https://tabby.sh/) that turns long commands and multi-step flows into saved entries you can summon from a floating panel and send or run with one click. It supports groups and filtering, fuzzy search, parameter placeholders, per-connection (SSH profile) scoping, pinning to a quick bar, and a confirmation step for dangerous commands — with a full in-panel keyboard workflow where Enter only sends, Ctrl+Enter runs and Shift+Enter broadcasts to every tab.
 
 ---
 
@@ -20,7 +20,8 @@ QuickCmd+ is a plugin for [Tabby Terminal](https://tabby.sh/) that turns long co
 - **Command short name** — a shorter label for quick-bar chips; falls back to the full name, and search matches it too
 - **Multi-line / multi-step commands** — split a command into steps with an independent delay per step (0–60s), ideal for "start the service, wait, then check status"
 - **Parameter placeholders** — use `{{param}}` in a command and fill it in a dialog before sending
-- **Right-click to edit** — open the editor straight from the list
+- **Configurable action style** — hover buttons, a right-click menu, or both; the menu includes "Duplicate as new" for building a variant of an existing command
+- **Right-click to edit** — open the editor straight from the list (kept in hover-only mode)
 - **Selective import/export** — export only what you need (commands & groups / interface & appearance / window behaviour & position)
 
 ### Execution
@@ -28,10 +29,14 @@ QuickCmd+ is a plugin for [Tabby Terminal](https://tabby.sh/) that turns long co
 - **Send or run** — clicking a command *sends* it (review, then press Enter); the inline ⏎ *sends and runs*
 - **Confirm before running** — opt-in per command: the full content is shown before sending (multi-step commands line by line); with parameters the order is confirm → fill → run
 - **Ctrl+C before running** — optionally interrupt whatever is still running first
+- **Execution history** — the clock button in the title bar lists the latest 200 runs in four columns (time / connection / command name / details); filter by connection and time range, export CSV, clear in one click
+- **Multi-tab actions** — `Shift+Enter` confirms then broadcasts to every connected tab; `Alt+Enter` forces confirmation for the current tab only
 
 ### Panel and appearance
 
 - **Keep panel open** — once enabled, running a command or losing focus no longer hides the panel; the title-bar pin and the settings toggle stay in sync both ways
+- **Layout mode** — per tab (one entry per tab) or global (entry moves to the window toolbar, panel stays alive across tabs and hides on the Settings page)
+- **Focus strategy** — after a command finishes, focus returns to the terminal or the panel (the panel option needs Keep panel open); send-only commands always keep focus in the terminal
 - **Free resizing** — drag any edge or corner; minimum height 200px
 - **Multi-column layout** — the list splits into columns on wide panels, reducing scrolling
 - **Sort mode switch** — a title-bar button cycles drag order → name → usage count
@@ -99,6 +104,19 @@ tabby-QuickCmd+/
 3. Clicking a command *sends* it to the terminal (press Enter to run); the inline ⏎ runs it immediately
 4. Drag the launcher to move it
 
+### Keyboard
+
+Once the panel is open you can skip the mouse: `↑` / `↓` pick a command, `←` / `→` switch groups, `Tab` cycles focus inside the panel, `` ` `` collapses all groups; numbers work in two stages (press `1`–`9` to lock a group, then a digit to jump to that row). Running has four levels:
+
+| Key | What it does |
+|---|---|
+| `Enter` | Send only (sits on the prompt; press Enter yourself when ready) |
+| `Ctrl` / `⌘` + `Enter` | Send and run |
+| `Alt` + `Enter` | Current tab only, with a confirmation step |
+| `Shift` + `Enter` | Confirm, then broadcast to every connected tab (including terminals in splits) |
+
+Quick-bar chips support the same combinations once focused with `Tab`; the full reference card lives in Settings under "In-panel keyboard".
+
 ### Pinning to the quick bar
 
 - Click ☆ on a command to pin it; pinned commands appear as chips above the list
@@ -107,8 +125,14 @@ tabby-QuickCmd+/
 ### Confirm before running
 
 - Tick "Confirm before running" while editing a command
-- Running it then opens a dialog showing the exact content to be sent
-- Multi-step commands are listed line by line; parameterised commands are confirmed before the parameter dialog
+- Running it then opens "Confirm command run", showing the command name and the exact content to be sent
+- Multi-step commands are listed line by line; Enter confirms, `Esc` cancels; parameterised commands are confirmed before the parameter dialog
+
+### Execution history
+
+- Open it from the clock button in the title bar; the latest 200 sends and runs are kept with time, connection, command name and details
+- The two dropdowns filter by connection and time range (today / last 7 days / last 30 days / custom); "Export" gives CSV, "Clear" asks for confirmation
+- Newlines in multi-step commands are shown as `⏎`; hover to read the full content
 
 ### Step delays
 
@@ -152,7 +176,7 @@ MIT — by DD1024z
 
 ## 📜 Version history
 
-Latest: **v2.0.0** (2026-10-23) — [full changelog](https://github.com/10D24D/Tabby-QuickCmd-Plus/blob/main/CHANGELOG.en.md)
+Latest: **v2.1.0** (2026-10-28) — [full changelog](https://github.com/10D24D/Tabby-QuickCmd-Plus/blob/main/CHANGELOG.en.md)
 
 ## Notes
 

@@ -69,11 +69,59 @@ msgstr "Effacer la recherche"
 msgid "panel.add"
 msgstr "Nouvelle commande"
 
+msgid "panel.history"
+msgstr "Historique"
+
+msgid "panel.history_clear"
+msgstr "Effacer"
+
+msgid "panel.history_clear_confirm"
+msgstr "Effacer tout l’historique d’exécution ? Cette action est irréversible."
+
+msgid "panel.history_all"
+msgstr "Toutes les connexions"
+
+msgid "panel.history_export"
+msgstr "Exporter"
+
+msgid "panel.history_time_all"
+msgstr "Toutes périodes"
+
+msgid "panel.history_today"
+msgstr "Aujourd’hui"
+
+msgid "panel.history_7d"
+msgstr "7 derniers jours"
+
+msgid "panel.history_30d"
+msgstr "30 derniers jours"
+
+msgid "panel.history_custom"
+msgstr "Personnalisé"
+
+msgid "panel.history_count"
+msgstr "{n} entrées"
+
+msgid "panel.history_empty"
+msgstr "Aucun historique d'exécution pour l'instant"
+
+msgid "panel.history_empty_filtered"
+msgstr "Aucun enregistrement correspondant"
+
 msgid "panel.edit"
-msgstr "Modifier"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Envoyer à tous les onglets connectés"
+
+msgid "panel.duplicate"
+msgstr "Dupliquer comme nouvelle"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (copie)"
 
 msgid "panel.delete"
-msgstr "Supprimer"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Supprimer « {name} » ?"
@@ -102,9 +150,6 @@ msgstr "Envoyer et exécuter"
 msgid "panel.send_to_line"
 msgstr "Envoyer seulement"
 
-msgid "panel.multi_step_title"
-msgstr "Commande multi-étapes"
-
 msgid "panel.multi_step_hint"
 msgstr "Cette commande a {count} étapes. Fusionner en une ligne ?"
 
@@ -125,6 +170,12 @@ msgstr "Glisser pour réorganiser le groupe"
 
 msgid "panel.pinPanel"
 msgstr "Garder le panneau ouvert"
+
+msgid "panel.reset_size"
+msgstr "Réinitialiser la taille"
+
+msgid "panel.reset_pos"
+msgstr "Réinitialiser la position"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Envoyer et exécuter"
 msgid "settings.confirm_before_run"
 msgstr "Confirmer avant exécution"
 
+msgid "settings.notify_refresh"
+msgstr "Actualiser la liste SFTP+"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Suivre le réglage global"
+
+msgid "settings.notify_refresh_always"
+msgstr "Toujours"
+
+msgid "settings.notify_refresh_never"
+msgstr "Jamais"
+
 msgid "confirm.title"
-msgstr "Confirmer l'exécution"
+msgstr "Confirmer l'exécution de la commande"
 
 msgid "confirm.message"
 msgstr "Ce qui suit sera envoyé au terminal. Continuer ?"
-
-msgid "confirm.run"
-msgstr "Exécuter"
 
 msgid "settings.params"
 msgstr "Paramètres"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Supprimer le groupe (les commandes seront dégroupées)"
 
 msgid "group.rename"
-msgstr "Renommer"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Modifier le groupe"
@@ -407,6 +467,39 @@ msgstr "Barre d'outils"
 
 msgid "面板常驻"
 msgstr "Garder le panneau ouvert"
+
+msgid "焦点策略"
+msgstr "Stratégie de focus"
+
+msgid "聚焦终端"
+msgstr "Focus sur le terminal"
+
+msgid "回到面板"
+msgstr "Retour au panneau"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Où va le focus du clavier après la fin d'une commande. L'envoi vers plusieurs onglets cible toujours le terminal."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Le focus revient au terminal après l'exécution — pratique pour envoyer une commande puis saisir les arguments."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Le focus revient au panneau avec la ligne précédente toujours sélectionnée — pratique pour envoyer plusieurs commandes d'affilée. Nécessite « Garder le panneau ouvert »."
+
+msgid "操作方式"
+msgstr "Style d'action"
+
+msgid "悬停显示按钮"
+msgstr "Boutons au survol"
+
+msgid "仅右键菜单"
+msgstr "Menu contextuel"
+
+msgid "两者都支持"
+msgstr "Les deux"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Où se trouvent les actions de la commande. Le menu contextuel propose aussi Dupliquer pour créer une variante."
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "Tout sélectionner"
 
 msgid "全不选"
 msgstr "Effacer la sélection"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Notifier SFTP+ pour actualiser après exécution"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Envoie une demande d'actualisation après l'exécution d'une commande. Ne concerne que SFTP+ et son interrupteur correspondant (Fonctionnalités → Actualiser la liste après les commandes QuickCmd+) doit aussi être activé — les deux côtés doivent l'être."
 

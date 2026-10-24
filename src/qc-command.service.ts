@@ -3,6 +3,9 @@
  * 功能描述：命令 CRUD + 分组管理 + localStorage 持久化
  * 创建人：DD1024z + Deepseek-V4-Flash
  * 创建时间：2026-06-26
+ * 修改人：DD1024z + Deepseek-V4.1-Flash
+ * 修改时间：2026-10-27
+ *   - 2026-10-27 (Deepseek-V4.1-Flash)：QuickCommand 新增 notifyRefresh（单条命令的刷新通知三态）
  */
 
 export interface CommandStep {
@@ -40,6 +43,15 @@ export interface QuickCommand {
   updatedAt: number
   usageCount: number    // 使用频率
   sshProfiles?: string[] // SSH profile ID 列表，为空则表示所有都可用
+  /**
+   * 执行后是否向其它插件广播「刷新请求」的三态开关：
+   *   'inherit'（或 undefined）= 跟随全局设置 broadcastExecEvents
+   *   'always'                 = 这条命令总是发（全局关着也发）
+   *   'never'                  = 这条命令从不发（如 cd / ls / tail 刷了没意义）
+   * @创建人：DD1024z + Deepseek-V4.1-Flash
+   * @创建时间：2026-10-27
+   */
+  notifyRefresh?: 'inherit' | 'always' | 'never'
 }
 
 export interface QuickCommandGroup {
@@ -63,6 +75,22 @@ const PANEL_POS_KEY = 'qc-plus-panel-pos'
 const ENTRY_MODE_KEY = 'qc-plus-entry-mode'
 const FILTER_GROUP_KEY = 'qc-plus-filter-group' // 旧版全局筛选（仅用于向后迁移）
 const PINNED_ORDER_KEY = 'qc-plus-pinned-order' // 快捷入口（书签）的独立显示顺序
+const EXEC_HISTORY_KEY = 'qc-plus-exec-history-v1' // 命令执行记录
+const EXEC_HISTORY_LIMIT = 200
+
+/** 单条命令执行记录 */
+export interface QcExecRecord {
+  /** 时间戳（ms） */
+  ts: number
+  /** 命令名（仅为空时表示直接发送的文本） */
+  name: string
+  /** 实际发送/执行的文本 */
+  text: string
+  /** 发送方式 */
+  mode: 'send' | 'run' | 'broadcast'
+  /** 目标连接标识（profileId 或 ssh:host） */
+  target: string
+}
 const CONN_FILTER_PREFIX = 'qc-plus-conn-filter-'
 
 function generateId(): string {
@@ -385,6 +413,10 @@ export class QuickCommandService {
       }
     }
     this.groups = reordered
+    // ⚠️ 只重排数组不够：getGroups() 会按 order 字段再排一次，
+    //    order 不跟着改就会出现「松手后分组弹回原位、排序值也没变」。
+    //    拖拽本身就是用户给出的新顺序意图 ⇒ 归一化成 0..n-1（与 updateGroupOrder 同语义）。
+    this.groups.forEach((g, i) => { g.order = i })
     this.saveGroups()
   }
 
@@ -464,6 +496,15 @@ export class QuickCommandService {
     this.saveGroups()
   }
 
+  /** 批量展开/收起所有分组：一次写盘、一次事件（逐个 toggle 会触发 N 次 reload 互相覆盖） */
+  setAllGroupsExpanded(expanded: boolean): void {
+    let changed = false
+    for (const g of this.groups) {
+      if (!!g.expanded !== expanded) { g.expanded = expanded; changed = true }
+    }
+    if (changed) this.saveGroups()
+  }
+
   addGroup(name: string, order?: number): void {
     if (!name) return
     if (!this.groups.find(g => g.name === name)) {
@@ -535,6 +576,16 @@ export class QuickCommandService {
     return { x: 20, y: 60 }
   }
 
+  /** 清掉保存的面板位置（默认位置算法升级后，旧坐标记忆应当作废） */
+  clearPanelPosition(): void {
+    try { localStorage.removeItem(PANEL_POS_KEY) } catch { /* ignore */ }
+  }
+
+  /** 是否有用户保存过的面板位置（用于判断「当前是否处于默认位置」） */
+  hasPanelPosition(): boolean {
+    try { return !!localStorage.getItem(PANEL_POS_KEY) } catch { return false }
+  }
+
   savePanelPosition(pos: { x: number; y: number }): void {
     localStorage.setItem(PANEL_POS_KEY, JSON.stringify(pos))
   }
@@ -557,6 +608,46 @@ export class QuickCommandService {
     localStorage.setItem(ENTRY_MODE_KEY, mode)
     if (this.configStore) {
       try { this.configStore.entryMode = mode; this._configService.save() } catch {}
+    }
+  }
+
+  /* ---- 命令执行记录（仅存本机 localStorage，最多 EXEC_HISTORY_LIMIT 条） ---- */
+  getExecRecords(): QcExecRecord[] {
+    try {
+      const raw = localStorage.getItem(EXEC_HISTORY_KEY)
+      const arr = raw ? JSON.parse(raw) : []
+      return Array.isArray(arr) ? arr : []
+    } catch { return [] }
+  }
+
+  /** 追加一条执行记录（最新的在最前，超出上限自动截断） */
+  addExecRecord(rec: QcExecRecord): void {
+    try {
+      const list = this.getExecRecords()
+      list.unshift(rec)
+      localStorage.setItem(EXEC_HISTORY_KEY, JSON.stringify(list.slice(0, EXEC_HISTORY_LIMIT)))
+    } catch { /* ignore */ }
+  }
+
+  clearExecRecords(): void {
+    try { localStorage.removeItem(EXEC_HISTORY_KEY) } catch { /* ignore */ }
+  }
+
+  /* ---- 布局模式：局部（每标签页独立） / 全局（面板跨标签常驻，入口在窗口工具栏） ---- */
+  getLayoutMode(): 'local' | 'global' {
+    const v = this.configStore?.layoutMode
+    if (v === 'local' || v === 'global') return v
+    try {
+      const raw = localStorage.getItem('qc-plus-layout-mode')
+      if (raw === 'global' || raw === 'local') return raw
+    } catch {}
+    return 'local'
+  }
+
+  saveLayoutMode(mode: 'local' | 'global'): void {
+    try { localStorage.setItem('qc-plus-layout-mode', mode) } catch {}
+    if (this.configStore) {
+      try { this.configStore.layoutMode = mode; this._configService.save() } catch {}
     }
   }
 

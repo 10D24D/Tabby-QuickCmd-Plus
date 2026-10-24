@@ -4,18 +4,12 @@
  *   支持双存储模式：Tabby 配置（config.yaml）或 浏览器缓存（localStorage）
  * 创建人：DD1024z + Deepseek-V4-Flash
  * 创建时间：2026-06-27
- * 修改人：DD1024z + Hy3
- * 修改时间：2026-10-12
- *   - 2026-10-12 (Hy3)：关于区新增 NPM 入口（openNpm），图标改为与 SFTP+ 同机制的内置 npm.svg
- *     （新增 scripts/copy-icons.mjs 随构建复制到 dist/assets/icons；运行时按 bootstrapData
- *     解析插件路径后以 file:// 引用，兼容 dist / 根 / src 三种布局）
- *   - 导出数据改为「可勾选内容」：点「导出数据」先弹出勾选弹窗（命令与分组 / 界面与外观 /
- *     窗口行为与位置，默认全选，可一键全选·全不选，一类未勾时禁用导出按钮），只把勾选的类别
- *     写进 JSON；导入侧维持「字段不存在 = 不覆盖」语义，故选择性备份不会误伤未勾选的数据
- *   - 2026-09-24 修复反馈环境信息的 Windows 版本取不准（按 build 反查市场版本名：
- *     Windows 11 25H2 (build 26200, x64)）；意见反馈拆分为「报告问题 / 提出需求」两个入口，
- *     需求类提供英文版双语正文；反馈预填环境信息（不含隐私字段）
- *   - 2026-06-29 添加双存储模式（Tabby 配置 / 浏览器缓存），默认使用 Tabby 配置
+ * 修改人：DD1024z + Deepseek-V4.1-Flash
+ * 修改时间：2026-10-27
+ *   - 2026-10-28 (Deepseek-V4.1-Flash)：界面区新增「操作方式」三档（悬停显示按钮 / 仅右键菜单 /
+ *     两者都支持，默认两者），随导出导入与重置；切换后即时通知已打开的面板
+ *   - 2026-10-27 (Deepseek-V4.1-Flash)：关于区的作者名与版本号改为可点击（作者 GitHub 主页 /
+ *     当前版本的 Release 页）；悬停下划线 + 强调色提示可点；外链打开优先走 PlatformService
  */
 import { Component, Injectable, Optional, Inject } from '@angular/core'
 import { SettingsTabProvider } from 'tabby-settings'
@@ -24,6 +18,7 @@ import { defaultQcConfig } from './qc-config-provider'
 import { QuickCommandService, QuickCommand, QuickCommandGroup } from './qc-command.service'
 import { QuickCommandI18nService, LOCALES, Locale } from './qc-i18n.service'
 import { QC_PLUS_TOGGLE_HOTKEY } from './qc-hotkey-provider'
+import { syncWindowEntryVisibility } from './qc-toolbar-button-provider'
 import {
   HotkeyBinding, readToggleHotkeyBindings, formatHotkeyBinding,
   findHotkeyConflicts, setHotkeyRecordingActive, isHotkeyRecordingActive,
@@ -147,14 +142,16 @@ const MACOS_BY_DARWIN: Record<number, string> = {
           </div>
         </div>
 
-        <!-- 入口模式 -->
+        <!-- 布局模式：局部（每标签页）/ 全局（跨标签常驻） -->
         <div class="qs-entry-mode-row">
-          <label style="font-size:13px; font-weight:500;">{{ t('入口模式', 'Entry Mode') }}</label>
+          <label style="font-size:13px; font-weight:500;">{{ t('布局模式', 'Layout Mode') }}</label>
           <div class="qs-pills">
-            <span class="qs-pill" [class.qs-pill-active]="entryMode === 'toolbar'"
-              (click)="entryMode='toolbar'; onEntryModeChange()">{{ t('工具栏按钮', 'Toolbar') }}</span>
-            <span class="qs-pill" [class.qs-pill-active]="entryMode === 'floating'"
-              (click)="entryMode='floating'; onEntryModeChange()">{{ t('浮动按钮', 'Floating') }}</span>
+            <span class="qs-pill" [class.qs-pill-active]="layoutMode === 'local'"
+              (click)="layoutMode='local'; onLayoutModeChange()"
+              [title]="t('每个标签页各自一个入口，面板跟随当前标签页', 'One entry per tab; the panel follows the current tab')">{{ t('局部（每标签）', 'Per tab') }}</span>
+            <span class="qs-pill" [class.qs-pill-active]="layoutMode === 'global'"
+              (click)="layoutMode='global'; onLayoutModeChange()"
+              [title]="t('入口移到窗口工具栏，面板在任何终端标签页都常驻显示（进入设置页时隐藏）', 'Entry moves to the window toolbar; the panel stays visible on every terminal tab (hidden on the Settings page)')">{{ t('全局（跨标签）', 'Global') }}</span>
           </div>
         </div>
 
@@ -165,6 +162,34 @@ const MACOS_BY_DARWIN: Record<number, string> = {
           <span class="qs-toggle-track" [class.active]="pinPanel">
             <span class="qs-toggle-thumb"></span>
           </span>
+        </div>
+
+        <!-- 焦点策略（与「面板常驻」联动：回到面板需常驻开启才生效） -->
+        <div class="qs-entry-mode-row" style="margin-top:12px;"
+          [title]="t('命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端', 'Where keyboard focus goes after a command finishes. Broadcasting to multiple tabs always focuses the terminal.')">
+          <label style="font-size:13px; font-weight:500;">{{ t('焦点策略', 'Focus strategy') }}</label>
+          <div class="qs-pills">
+            <span class="qs-pill" [class.qs-pill-active]="focusAfterExec === 'terminal'"
+              (click)="setFocusAfterExec('terminal')"
+              [title]="t('执行后焦点回到终端，适合发一条命令就接着敲参数', 'Focus returns to the terminal after running — good for sending one command and then typing arguments')">{{ t('聚焦终端', 'Focus terminal') }}</span>
+            <span class="qs-pill" [class.qs-pill-active]="focusAfterExec === 'panel'"
+              (click)="setFocusAfterExec('panel')"
+              [title]="t('执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」', 'Focus returns to the panel with the previous row still selected — good for sending several commands in a row. Requires Keep panel open.')">{{ t('回到面板', 'Back to panel') }}</span>
+          </div>
+        </div>
+
+        <!-- 操作方式：命令行操作入口走「悬停按钮」还是「右键菜单」 -->
+        <div class="qs-entry-mode-row" style="margin-top:12px;"
+          [title]="t('命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体', 'Where command actions live. The right-click menu also has Duplicate for building a variant.')">
+          <label style="font-size:13px; font-weight:500;">{{ t('操作方式', 'Action style') }}</label>
+          <div class="qs-pills">
+            <span class="qs-pill" [class.qs-pill-active]="actionMode === 'hover'"
+              (click)="setActionMode('hover')">{{ t('悬停显示按钮', 'Hover buttons') }}</span>
+            <span class="qs-pill" [class.qs-pill-active]="actionMode === 'menu'"
+              (click)="setActionMode('menu')">{{ t('仅右键菜单', 'Right-click menu') }}</span>
+            <span class="qs-pill" [class.qs-pill-active]="actionMode === 'both'"
+              (click)="setActionMode('both')">{{ t('两者都支持', 'Both') }}</span>
+          </div>
         </div>
 
         <!-- 排序模式 -->
@@ -213,6 +238,18 @@ const MACOS_BY_DARWIN: Record<number, string> = {
           </div>
         </div>
         <div class="qs-hint qs-hotkey-ok" *ngIf="hotkeySaveMessage">{{ hotkeySaveMessage }}</div>
+        <!-- 面板内键盘操作提示（面板获得焦点时生效） -->
+        <div class="qs-kbd-hint">
+          <div class="qs-kbd-title">{{ t('面板内键盘操作', 'In-panel keyboard') }}</div>
+          <div class="qs-kbd-row"><kbd>↑</kbd><kbd>↓</kbd><span>{{ t('移动选择', 'navigate') }}</span><kbd>←</kbd><kbd>→</kbd><span>{{ t('切换分组', 'switch group') }}</span></div>
+          <div class="qs-kbd-row"><kbd>&#96;</kbd><kbd>&#96;</kbd><span>{{ t('或', 'or') }}</span><kbd>0</kbd><kbd>0</kbd><span>{{ t('收起全部分组并回到「全部分组」', 'collapse all groups and reset to All groups') }}</span></div>
+          <div class="qs-kbd-row"><kbd>1</kbd><kbd>9</kbd><span>{{ t('选择分组；已聚焦某分组时选组内命令', 'pick a group; inside a focused group picks its commands') }}</span></div>
+          <div class="qs-kbd-row"><kbd>Esc</kbd><span>{{ t('关闭面板 / 关闭弹窗', 'close the panel / close a dialog') }}</span></div>
+          <div class="qs-kbd-row"><kbd>Enter</kbd><span>{{ t('仅发送 / 确认', 'send only / confirm') }}</span></div>
+          <div class="qs-kbd-row"><kbd>Alt</kbd><kbd>Enter</kbd><span>{{ t('确认后执行（当前标签）', 'confirm then run (current tab)') }}</span></div>
+          <div class="qs-kbd-row"><kbd>Ctrl</kbd><kbd>Enter</kbd><span>{{ t('发送并执行', 'send and run') }}</span></div>
+          <div class="qs-kbd-row"><kbd>Shift</kbd><kbd>Enter</kbd><span>{{ t('确认后广播到所有已连接标签', 'confirm then broadcast to every connected tab') }}</span></div>
+        </div>
       </div>
 
       <!-- 功能 -->
@@ -237,6 +274,14 @@ const MACOS_BY_DARWIN: Record<number, string> = {
             <span class="qs-toggle-thumb"></span>
           </span>
         </div>
+        <!-- 跨插件联动（发送侧）：命令执行后广播一条刷新请求，SFTP+ 那边的接收开关打开即生效 -->
+        <div class="qs-toggle-row" (click)="toggleBroadcastExecEvents()"
+          [title]="t('命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效', 'Broadcasts a refresh request after a command runs. Only affects SFTP+ and requires its companion switch (Features → Refresh list after QuickCmd+ commands) to be on as well — both sides must be enabled.')">
+          <span class="qs-toggle-label">{{ t('执行命令后通知 SFTP+ 刷新列表', 'Notify SFTP+ to refresh after running') }}</span>
+          <span class="qs-toggle-track" [class.active]="broadcastExecEvents">
+            <span class="qs-toggle-thumb"></span>
+          </span>
+        </div>
       </div>
 
       <!-- 数据（保持在关于上方） -->
@@ -256,9 +301,13 @@ const MACOS_BY_DARWIN: Record<number, string> = {
       <div class="qs-section">
         <label class="qs-label">{{ t('关于', 'About') }}</label>
         <div class="qs-about-row">
-          <span class="qs-about-item">{{ t('版本', 'Version') }}: {{ pkgVersion }}</span>
+          <!-- 版本号可点击：打开该版本的 GitHub Release 页 -->
+          <span class="qs-about-item">{{ t('版本', 'Version') }}:
+            <span class="qs-about-inline" (click)="openReleasePage()" [title]="releaseUrl">{{ pkgVersion }}</span></span>
           <span class="qs-about-item">{{ t('构建时间', 'Build Time') }}: {{ formatBuildTime() }}</span>
-          <span class="qs-about-item" *ngIf="!hideAuthorInfo">{{ t('作者', 'Author') }}: DD1024z</span>
+          <!-- 作者名可点击：打开作者 GitHub 主页（悬停下划线提示可点） -->
+          <span class="qs-about-item" *ngIf="!hideAuthorInfo">{{ t('作者', 'Author') }}:
+            <span class="qs-about-inline" (click)="openAuthorProfile()" [title]="authorUrl">DD1024z</span></span>
         </div>
         <div class="qs-about-row qs-about-links">
           <span class="qs-about-link" (click)="openGithub()">
@@ -427,6 +476,19 @@ const MACOS_BY_DARWIN: Record<number, string> = {
     .qs-select:focus { border-color: var(--primary-color, #3b82f6); }
     .qs-hint { opacity:.6; font-size:11px; line-height:1.5; margin-top:6px; }
 
+    /* 面板内键盘操作提示：用显式中亮灰，深色/浅色主题都能看清（不要只靠 opacity，会糊在背景里） */
+    .qs-kbd-hint { margin-top:10px; padding:10px 12px; border-radius:8px;
+      background:rgba(127,127,127,.14); border:1px solid rgba(127,127,127,.3);
+      color:rgba(150,155,170,1);
+      display:flex; flex-direction:column; gap:6px; }
+    .qs-kbd-title { font-size:11px; font-weight:600; }
+    .qs-kbd-row { display:flex; align-items:center; flex-wrap:wrap; gap:4px;
+      font-size:11px; line-height:1.6; }
+    .qs-kbd-row kbd { display:inline-block; min-width:16px; padding:0 5px; text-align:center;
+      border-radius:4px; border:1px solid rgba(127,127,127,.5);
+      background:rgba(127,127,127,.22); font-family:inherit; font-size:10px; line-height:1.7;
+      color:inherit; }
+
     /* 颜色主题 */
     .qs-color-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
     .qs-color-swatch {
@@ -540,10 +602,12 @@ const MACOS_BY_DARWIN: Record<number, string> = {
     /* range 滑块 — 保持浏览器原生样式 */
     .qs-range { flex:1; max-width:160px; margin:0; cursor:pointer; background:none; border:none; outline:none; }
 
-    /* 重置执行次数按钮行 — 与上方开关右缘对齐 */
+    /* 重置执行次数按钮行 — 与上方「排序方式」pills 右缘对齐。
+       ⚠️ 不能再加水平 padding：pills 行无内距，按钮右缘会少缩一截（实测差 10px）。
+       参考对齐对象「面板常驻」开关行用的是 padding+负 margin 相消，视觉右缘同样在容器边缘。 */
     .qs-reset-row {
       display:flex; align-items:center; justify-content:flex-end;
-      gap:8px; margin-top:2px; padding:0 10px;
+      gap:8px; margin-top:2px; padding:0;
     }
     .qs-mini-btn {
       padding:3px 10px; font-size:12px; border-radius:5px;
@@ -557,6 +621,9 @@ const MACOS_BY_DARWIN: Record<number, string> = {
     .qs-about-row { display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-top:4px; font-size:13px; }
     .qs-about-links { margin-top:8px; }
     .qs-about-item { opacity:.75; }
+    /* 关于区里的可点行内文字（作者名 / 版本号）：强调色 + 悬停下划线，与其它链接同一套观感 */
+    .qs-about-inline { color: var(--_accent, #b6b6c3); cursor: pointer; text-decoration: none; }
+    .qs-about-inline:hover { text-decoration: underline; }
     .qs-about-link {
       display:inline-flex; align-items:center; gap:4px;
       cursor:pointer; opacity:.7; transition:opacity .15s;
@@ -682,6 +749,8 @@ export class QuickCommandSettingsComponent {
 
   // 入口模式（默认工具栏按钮）
   entryMode: 'floating' | 'toolbar' = 'toolbar'
+  /** 布局模式：local = 每标签页独立入口；global = 面板跨标签常驻（入口在窗口工具栏） */
+  layoutMode: 'local' | 'global' = 'local'
   // 面板常驻（开启后执行命令不自动关闭面板）
   pinPanel = true
   /** 面板整体透明度（0.5–1），默认 1 */
@@ -691,6 +760,16 @@ export class QuickCommandSettingsComponent {
   hidePanelSettingsEntry = false
   /** 滚动停止后是否把列表吸附到整行（默认关闭，避免改变用户既有的滚动手感） */
   scrollSnapEnabled = false
+  /** 命令执行完毕后的焦点策略：terminal = 聚焦终端（默认）；panel = 回到面板（需面板常驻） */
+  focusAfterExec: 'panel' | 'terminal' = 'terminal'
+  /** 命令行的操作入口：hover = 仅悬停显示按钮；menu = 仅右键菜单；both = 两者都支持（默认） */
+  actionMode: 'hover' | 'menu' | 'both' = 'both'
+  /**
+   * 命令执行后向其它插件广播「刷新请求」（默认关）。
+   * 接收方：SFTP+ 的「执行 QuickCmd+ 命令后刷新列表」。
+   * ⛔ 两侧都要开才生效（本侧决定发不发，对方决定收不收），所以两边文案互相指路。
+   */
+  broadcastExecEvents = false
   /** 面板排序模式：manual = 拖拽顺序；name = 按名称；usage = 按执行次数 */
   sortMode: 'manual' | 'name' | 'usage' = 'manual'
   /** 隐藏作者信息确认弹窗（开启需点 Star 确认，对齐 SFTP+） */
@@ -905,11 +984,15 @@ export class QuickCommandSettingsComponent {
       if (cfg.lang !== undefined) this.lang = cfg.lang as '' | Locale
       if (cfg.fontSize !== undefined) this.fontSize = cfg.fontSize as number
       if (cfg.entryMode !== undefined) this.entryMode = cfg.entryMode as 'floating' | 'toolbar'
+      this.layoutMode = this.svc.getLayoutMode()
       if (cfg.pinPanel !== undefined) this.pinPanel = !!cfg.pinPanel
       if (cfg.panelOpacity !== undefined) this.panelOpacity = Math.min(1, Math.max(0.5, Number(cfg.panelOpacity)))
       if (cfg.hideAuthorInfo !== undefined) this.hideAuthorInfo = !!cfg.hideAuthorInfo
       if (cfg.hidePanelSettingsEntry !== undefined) this.hidePanelSettingsEntry = !!cfg.hidePanelSettingsEntry
       if (cfg.scrollSnapEnabled !== undefined) this.scrollSnapEnabled = !!cfg.scrollSnapEnabled
+      if (cfg.focusAfterExec === 'panel' || cfg.focusAfterExec === 'terminal') this.focusAfterExec = cfg.focusAfterExec
+      if (cfg.actionMode === 'hover' || cfg.actionMode === 'menu' || cfg.actionMode === 'both') this.actionMode = cfg.actionMode
+      if (cfg.broadcastExecEvents !== undefined) this.broadcastExecEvents = !!cfg.broadcastExecEvents
       if (cfg.sortMode === 'manual' || cfg.sortMode === 'name' || cfg.sortMode === 'usage') this.sortMode = cfg.sortMode
       if (cfg.theme !== undefined) this.colorTheme = cfg.theme as string
       if (cfg.colorPrimary !== undefined) this.colorPrimary = cfg.colorPrimary as string
@@ -950,6 +1033,9 @@ export class QuickCommandSettingsComponent {
       target.hideAuthorInfo = this.hideAuthorInfo
       target.hidePanelSettingsEntry = this.hidePanelSettingsEntry
       target.scrollSnapEnabled = this.scrollSnapEnabled
+      target.focusAfterExec = this.focusAfterExec
+      target.actionMode = this.actionMode
+      target.broadcastExecEvents = this.broadcastExecEvents
       target.sortMode = this.sortMode
       target.theme = this.colorTheme
       target.colorPrimary = this.colorPrimary
@@ -1103,6 +1189,37 @@ export class QuickCommandSettingsComponent {
     window.dispatchEvent(new CustomEvent('qc-plus-config-changed', { detail: { sortMode: this.sortMode } }))
   }
 
+  /** 设置命令执行完毕后的焦点策略（terminal = 聚焦终端；panel = 回到面板） */
+  setFocusAfterExec(mode: 'panel' | 'terminal'): void {
+    if (this.focusAfterExec === mode) return
+    this.focusAfterExec = mode
+    this._saveToConfig()
+    // 通知已打开的面板（下次执行命令时按新策略分配焦点）
+    window.dispatchEvent(new CustomEvent('qc-plus-config-changed', { detail: { focusAfterExec: this.focusAfterExec } }))
+  }
+
+  /** 设置命令行的操作方式（hover = 仅悬停按钮；menu = 仅右键菜单；both = 两者都支持） */
+  setActionMode(mode: 'hover' | 'menu' | 'both'): void {
+    if (this.actionMode === mode) return
+    this.actionMode = mode
+    this._saveToConfig()
+    // 通知已打开的面板：立即按新模式显隐操作按钮 / 决定右键是否弹菜单
+    window.dispatchEvent(new CustomEvent('qc-plus-config-changed', { detail: { actionMode: this.actionMode } }))
+  }
+
+  /**
+   * 切换「执行命令后通知 SFTP+ 刷新列表」（广播刷新请求）。
+   * 派发 qc-plus-config-changed 让已打开的面板立即生效（无需重开面板/重启）。
+   * @创建人：DD1024z + Deepseek-V4.1-Flash
+   * @创建时间：2026-10-27
+   */
+  toggleBroadcastExecEvents(): void {
+    this.broadcastExecEvents = !this.broadcastExecEvents
+    // _saveToConfig 内部已落盘（configService.save），这里不再重复 save
+    this._saveToConfig()
+    window.dispatchEvent(new CustomEvent('qc-plus-config-changed', { detail: { broadcastExecEvents: this.broadcastExecEvents } }))
+  }
+
   /** 重置所有命令的执行次数 */
   resetUsageCount(): void {
     try {
@@ -1119,6 +1236,14 @@ export class QuickCommandSettingsComponent {
       this._usageResetMsgTimer = null
       this.usageResetMsg = ''
     }, 2600)
+  }
+
+  /** 切换布局模式：局部 = 每标签页独立入口；全局 = 面板跨标签常驻（入口在窗口工具栏） */
+  onLayoutModeChange(): void {
+    try { this.svc?.saveLayoutMode?.(this.layoutMode) } catch {}
+    // 立刻同步窗口顶栏图标的显隐（Tabby 只在启动时收集按钮，不能靠重启）
+    try { syncWindowEntryVisibility() } catch { /* ignore */ }
+    window.dispatchEvent(new CustomEvent('qc-plus-layout-mode-changed'))
   }
 
   onEntryModeChange(): void {
@@ -1229,6 +1354,33 @@ export class QuickCommandSettingsComponent {
     }
   }
 
+  /** 作者 GitHub 主页（关于区的作者名指向它） */
+  readonly authorUrl = 'https://github.com/10D24D'
+
+  /**
+   * 当前已安装版本的 Release 页地址（关于区的版本号指向它）。
+   * 版本号取 package.json 的实际值，dev 构建若没有对应 tag 会落到 404 ——
+   * 此时退到 releases 列表页，至少能看出有哪些版本。
+   */
+  get releaseUrl(): string {
+    const v = (this.pkgVersion || '').trim()
+    const base = 'https://github.com/10D24D/Tabby-QuickCmd-Plus/releases'
+    return v ? `${base}/tag/v${v}` : base
+  }
+
+  /** 打开当前版本的 Release 页（点关于区的版本号触发） */
+  openReleasePage(): void {
+    this._openExternal(this.releaseUrl)
+  }
+
+  /**
+   * 打开作者 GitHub 主页（点关于区的作者名触发）。
+   * 只露名字不露链接太"死" —— 想找作者其它插件时无从下手，这里做成可点。
+   */
+  openAuthorProfile(): void {
+    this._openExternal(this.authorUrl)
+  }
+
   openGithub(): void {
     const url = 'https://github.com/10D24D/Tabby-QuickCmd-Plus'
     try {
@@ -1293,8 +1445,15 @@ export class QuickCommandSettingsComponent {
     return params.length ? `${base}&${params.join('&')}` : base
   }
 
-  /** 打开外部链接：Electron shell 优先，失败回退浏览器 / location.href */
+  /**
+   * 打开外部链接：优先走 Tabby 官方 `PlatformService.openExternal`（Electron / 浏览器通吃），
+   * 再退回 Electron shell 与 window.open —— 原先只用 shell hack，浏览器版 Tabby 里会失效。
+   */
   private _openExternal(url: string): void {
+    try {
+      const p = this.platformService
+      if (p && typeof p.openExternal === 'function') { p.openExternal(url); return }
+    } catch { /* 回退下面的方式 */ }
     try {
       ;(window as any).require('electron').shell.openExternal(url)
     } catch {
@@ -1604,6 +1763,9 @@ export class QuickCommandSettingsComponent {
     this.hideAuthorInfo = false
     this.hidePanelSettingsEntry = false
     this.scrollSnapEnabled = false
+    this.focusAfterExec = 'terminal'
+    this.actionMode = 'both'
+    this.broadcastExecEvents = false
     this.colorTheme = ''
     this.colorPrimary = ''
     this.colorBg = ''
@@ -1704,6 +1866,9 @@ export class QuickCommandSettingsComponent {
       data.hideAuthorInfo = this.hideAuthorInfo
       data.hidePanelSettingsEntry = this.hidePanelSettingsEntry
       data.scrollSnapEnabled = this.scrollSnapEnabled
+      data.focusAfterExec = this.focusAfterExec
+      data.actionMode = this.actionMode
+      data.broadcastExecEvents = this.broadcastExecEvents
       try {
         const entryPos = localStorage.getItem('qc-plus-entry-pos')
         if (entryPos) data.entryPos = JSON.parse(entryPos)
@@ -1803,6 +1968,9 @@ export class QuickCommandSettingsComponent {
           if (data.hideAuthorInfo !== undefined) { this.hideAuthorInfo = !!data.hideAuthorInfo; target.hideAuthorInfo = this.hideAuthorInfo }
           if (data.hidePanelSettingsEntry !== undefined) { this.hidePanelSettingsEntry = !!data.hidePanelSettingsEntry; target.hidePanelSettingsEntry = this.hidePanelSettingsEntry }
           if (data.scrollSnapEnabled !== undefined) { this.scrollSnapEnabled = !!data.scrollSnapEnabled; target.scrollSnapEnabled = this.scrollSnapEnabled }
+          if (data.focusAfterExec === 'panel' || data.focusAfterExec === 'terminal') { this.focusAfterExec = data.focusAfterExec; target.focusAfterExec = this.focusAfterExec }
+          if (data.actionMode === 'hover' || data.actionMode === 'menu' || data.actionMode === 'both') { this.actionMode = data.actionMode; target.actionMode = this.actionMode }
+          if (data.broadcastExecEvents !== undefined) { this.broadcastExecEvents = !!data.broadcastExecEvents; target.broadcastExecEvents = this.broadcastExecEvents }
           if (data.theme !== undefined) { this.colorTheme = data.theme; target.theme = data.theme }
           if (data.colorPrimary !== undefined) { this.colorPrimary = data.colorPrimary; target.colorPrimary = data.colorPrimary }
           if (data.colorBg !== undefined) { this.colorBg = data.colorBg; target.colorBg = data.colorBg }

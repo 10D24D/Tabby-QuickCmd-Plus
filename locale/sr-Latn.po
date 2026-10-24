@@ -69,11 +69,59 @@ msgstr "Obriši pretragu"
 msgid "panel.add"
 msgstr "Nova komanda"
 
+msgid "panel.history"
+msgstr "Istorija"
+
+msgid "panel.history_clear"
+msgstr "Obriši"
+
+msgid "panel.history_clear_confirm"
+msgstr "Obrisati celu istoriju izvršavanja? Ovo se ne može opozvati."
+
+msgid "panel.history_all"
+msgstr "Sve veze"
+
+msgid "panel.history_export"
+msgstr "Izvoz"
+
+msgid "panel.history_time_all"
+msgstr "Sve vreme"
+
+msgid "panel.history_today"
+msgstr "Danas"
+
+msgid "panel.history_7d"
+msgstr "Poslednjih 7 dana"
+
+msgid "panel.history_30d"
+msgstr "Poslednjih 30 dana"
+
+msgid "panel.history_custom"
+msgstr "Prilagođeno"
+
+msgid "panel.history_count"
+msgstr "{n} zapisa"
+
+msgid "panel.history_empty"
+msgstr "Još nema zapisa o izvršavanju"
+
+msgid "panel.history_empty_filtered"
+msgstr "Nema odgovarajućih zapisa"
+
 msgid "panel.edit"
-msgstr "Uredi"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Pošalji na sve povezane kartice"
+
+msgid "panel.duplicate"
+msgstr "Dupliciraj kao novu"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopija)"
 
 msgid "panel.delete"
-msgstr "Obriši"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Obrisati \"{name}\"?"
@@ -102,9 +150,6 @@ msgstr "Pošalji i izvrši"
 msgid "panel.send_to_line"
 msgstr "Samo pošalji"
 
-msgid "panel.multi_step_title"
-msgstr "Komanda u više koraka"
-
 msgid "panel.multi_step_hint"
 msgstr "Ova komanda ima {count} koraka. Spojiti u jedan red?"
 
@@ -125,6 +170,12 @@ msgstr "Prevucite za promenu redosleda grupe"
 
 msgid "panel.pinPanel"
 msgstr "Zadrži panel otvorenim"
+
+msgid "panel.reset_size"
+msgstr "Vrati veličinu"
+
+msgid "panel.reset_pos"
+msgstr "Vrati položaj"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Pošalji i izvrši"
 msgid "settings.confirm_before_run"
 msgstr "Potvrdi pre izvršavanja"
 
+msgid "settings.notify_refresh"
+msgstr "Osveži listu SFTP+"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Prati globalno podešavanje"
+
+msgid "settings.notify_refresh_always"
+msgstr "Uvek"
+
+msgid "settings.notify_refresh_never"
+msgstr "Nikad"
+
 msgid "confirm.title"
-msgstr "Potvrdi izvršavanje"
+msgstr "Potvrdi izvršavanje komande"
 
 msgid "confirm.message"
 msgstr "Sledeće će biti poslato u terminal. Nastaviti?"
-
-msgid "confirm.run"
-msgstr "Izvrši"
 
 msgid "settings.params"
 msgstr "Parametri"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Obriši grupu (komande postaju bez grupe)"
 
 msgid "group.rename"
-msgstr "Preimenuj"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Izmeni grupu"
@@ -337,7 +397,7 @@ msgid "settings.hotkeyRecording"
 msgstr "Pritisnite tastere..."
 
 msgid "settings.hotkeyClear"
-msgstr "Očisti"
+msgstr "Obriši"
 
 msgid "settings.hotkeySaved"
 msgstr "Prečica postavljena na {hotkey}"
@@ -408,6 +468,39 @@ msgstr "Traka sa alatkama"
 msgid "面板常驻"
 msgstr "Zadrži panel otvorenim"
 
+msgid "焦点策略"
+msgstr "Strategija fokusa"
+
+msgid "聚焦终端"
+msgstr "Fokusiraj terminal"
+
+msgid "回到面板"
+msgstr "Nazad na panel"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Kuda ide fokus tastature nakon završetka komande. Slanje na više kartica uvek fokusira terminal."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Nakon izvršavanja fokus se vraća na terminal — pogodno kada šaljete jednu komandu pa onda upisujete argumente."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Nakon izvršavanja fokus se vraća na panel, a prethodni red ostaje izabran — pogodno za slanje više komandi zaredom. Zahteva „Zadrži panel otvorenim”."
+
+msgid "操作方式"
+msgstr "Stil radnji"
+
+msgid "悬停显示按钮"
+msgstr "Dugmad na prelazak"
+
+msgid "仅右键菜单"
+msgstr "Meni desnog klika"
+
+msgid "两者都支持"
+msgstr "Oboje"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Gde su radnje naredbe. Meni desnog klika nudi i Dupliciraj za varijantu."
+
 msgid "面板透明度"
 msgstr "Panel Opacity"
 
@@ -454,10 +547,10 @@ msgid "未绑定"
 msgstr "Nedodeljeno"
 
 msgid "清除"
-msgstr "Očisti"
+msgstr "Obriši"
 
 msgid "清空"
-msgstr "Očisti"
+msgstr "Obriši"
 
 msgid "确认覆盖"
 msgstr "Prepiši"
@@ -590,4 +683,10 @@ msgstr "Izaberi sve"
 
 msgid "全不选"
 msgstr "Očisti izbor"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Obavesti SFTP+ o osvežavanju nakon izvršenja"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Šalje zahtev za osvežavanje nakon izvršenja komande. Odnosi se samo na SFTP+ i njegov odgovarajući prekidač (Funkcije → Osveži listu nakon QuickCmd+ komandi) takođe mora biti uključen — obe strane moraju biti omogućene."
 

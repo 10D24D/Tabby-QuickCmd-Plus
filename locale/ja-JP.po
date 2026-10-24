@@ -69,11 +69,59 @@ msgstr "検索をクリア"
 msgid "panel.add"
 msgstr "新しいコマンド"
 
+msgid "panel.history"
+msgstr "実行履歴"
+
+msgid "panel.history_clear"
+msgstr "クリア"
+
+msgid "panel.history_clear_confirm"
+msgstr "実行履歴をすべて削除しますか？元に戻せません。"
+
+msgid "panel.history_all"
+msgstr "すべての接続"
+
+msgid "panel.history_export"
+msgstr "エクスポート"
+
+msgid "panel.history_time_all"
+msgstr "全期間"
+
+msgid "panel.history_today"
+msgstr "今日"
+
+msgid "panel.history_7d"
+msgstr "直近 7 日"
+
+msgid "panel.history_30d"
+msgstr "直近 30 日"
+
+msgid "panel.history_custom"
+msgstr "カスタム"
+
+msgid "panel.history_count"
+msgstr "{n} 件"
+
+msgid "panel.history_empty"
+msgstr "実行履歴はまだありません"
+
+msgid "panel.history_empty_filtered"
+msgstr "条件に一致する履歴はありません"
+
 msgid "panel.edit"
-msgstr "編集"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "接続中のすべてのタブに送信"
+
+msgid "panel.duplicate"
+msgstr "複製して新規作成"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} のコピー"
 
 msgid "panel.delete"
-msgstr "削除"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "\"{name}\" を削除しますか？"
@@ -102,9 +150,6 @@ msgstr "送信して実行"
 msgid "panel.send_to_line"
 msgstr "送信のみ"
 
-msgid "panel.multi_step_title"
-msgstr "複数ステップコマンド"
-
 msgid "panel.multi_step_hint"
 msgstr "このコマンドには {count} ステップあります。1 行にまとめますか？"
 
@@ -125,6 +170,12 @@ msgstr "ドラッグでグループを並べ替え"
 
 msgid "panel.pinPanel"
 msgstr "パネルを開いたままにする"
+
+msgid "panel.reset_size"
+msgstr "サイズをリセット"
+
+msgid "panel.reset_pos"
+msgstr "位置をリセット"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "送信して実行"
 msgid "settings.confirm_before_run"
 msgstr "実行前に確認"
 
+msgid "settings.notify_refresh"
+msgstr "SFTP+ の一覧を更新"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "全体設定に従う"
+
+msgid "settings.notify_refresh_always"
+msgstr "常に"
+
+msgid "settings.notify_refresh_never"
+msgstr "しない"
+
 msgid "confirm.title"
-msgstr "実行の確認"
+msgstr "コマンド実行の確認"
 
 msgid "confirm.message"
 msgstr "以下をターミナルに送信します。続行しますか？"
-
-msgid "confirm.run"
-msgstr "実行"
 
 msgid "settings.params"
 msgstr "パラメータ"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "グループを削除（コマンドはグループなしに）"
 
 msgid "group.rename"
-msgstr "名前の変更"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "グループを編集"
@@ -407,6 +467,39 @@ msgstr "ツールバー"
 
 msgid "面板常驻"
 msgstr "パネルを開いたままにする"
+
+msgid "焦点策略"
+msgstr "フォーカス戦略"
+
+msgid "聚焦终端"
+msgstr "ターミナルにフォーカス"
+
+msgid "回到面板"
+msgstr "パネルに戻る"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "コマンド完了後にキーボードフォーカスが移動する先。複数タブへの一括送信では、常にターミナルにフォーカスします。"
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "実行後フォーカスがターミナルに戻ります — コマンドを送ってから引数を入力する使い方に便利です。"
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "実行後、フォーカスがパネルに戻り、直前の行が選択されたままになります — 複数のコマンドを続けて送る使い方に便利です。「パネルを開いたままにする」が必要です。"
+
+msgid "操作方式"
+msgstr "操作方式"
+
+msgid "悬停显示按钮"
+msgstr "ホバーでボタン表示"
+
+msgid "仅右键菜单"
+msgstr "右クリックメニュー"
+
+msgid "两者都支持"
+msgstr "両方"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "コマンドの操作入口。右クリックメニューには「複製して新規作成」もあり、変種を作れます。"
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "すべて選択"
 
 msgid "全不选"
 msgstr "選択を解除"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "実行後に SFTP+ へ更新を通知"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "コマンド実行後に更新リクエストを送信します。対象は SFTP+ のみで、SFTP+ 側の対応するスイッチ（機能 → コマンド実行後に一覧を更新）もオンにする必要があります（両側とも有効である必要があります）。"
 

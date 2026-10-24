@@ -69,11 +69,59 @@ msgstr "검색 지우기"
 msgid "panel.add"
 msgstr "새 명령"
 
+msgid "panel.history"
+msgstr "실행 기록"
+
+msgid "panel.history_clear"
+msgstr "지우기"
+
+msgid "panel.history_clear_confirm"
+msgstr "모든 실행 기록을 지울까요? 되돌릴 수 없습니다."
+
+msgid "panel.history_all"
+msgstr "모든 연결"
+
+msgid "panel.history_export"
+msgstr "내보내기"
+
+msgid "panel.history_time_all"
+msgstr "전체 기간"
+
+msgid "panel.history_today"
+msgstr "오늘"
+
+msgid "panel.history_7d"
+msgstr "최근 7일"
+
+msgid "panel.history_30d"
+msgstr "최근 30일"
+
+msgid "panel.history_custom"
+msgstr "사용자 지정"
+
+msgid "panel.history_count"
+msgstr "{n}건"
+
+msgid "panel.history_empty"
+msgstr "실행 기록이 없습니다"
+
+msgid "panel.history_empty_filtered"
+msgstr "조건에 맞는 기록이 없습니다"
+
 msgid "panel.edit"
-msgstr "편집"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "연결된 모든 탭에 보내기"
+
+msgid "panel.duplicate"
+msgstr "복제하여 새로 만들기"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (사본)"
 
 msgid "panel.delete"
-msgstr "삭제"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "\"{name}\"을(를) 삭제할까요?"
@@ -102,9 +150,6 @@ msgstr "전송 후 실행"
 msgid "panel.send_to_line"
 msgstr "전송만"
 
-msgid "panel.multi_step_title"
-msgstr "다단계 명령"
-
 msgid "panel.multi_step_hint"
 msgstr "이 명령에는 {count}개의 단계가 있습니다. 한 줄로 합칠까요?"
 
@@ -125,6 +170,12 @@ msgstr "드래그하여 그룹 순서 변경"
 
 msgid "panel.pinPanel"
 msgstr "패널 열어 두기"
+
+msgid "panel.reset_size"
+msgstr "크기 초기화"
+
+msgid "panel.reset_pos"
+msgstr "위치 초기화"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "전송 후 실행"
 msgid "settings.confirm_before_run"
 msgstr "실행 전 확인"
 
+msgid "settings.notify_refresh"
+msgstr "SFTP+ 목록 새로 고침"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "전역 설정 따름"
+
+msgid "settings.notify_refresh_always"
+msgstr "항상"
+
+msgid "settings.notify_refresh_never"
+msgstr "안 함"
+
 msgid "confirm.title"
-msgstr "실행 확인"
+msgstr "명령 실행 확인"
 
 msgid "confirm.message"
 msgstr "다음 내용이 터미널로 전송됩니다. 계속하시겠습니까?"
-
-msgid "confirm.run"
-msgstr "실행"
 
 msgid "settings.params"
 msgstr "매개변수"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "그룹 삭제 (명령은 그룹 없음으로)"
 
 msgid "group.rename"
-msgstr "이름 바꾸기"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "그룹 편집"
@@ -407,6 +467,39 @@ msgstr "도구 모음"
 
 msgid "面板常驻"
 msgstr "패널 열어 두기"
+
+msgid "焦点策略"
+msgstr "포커스 전략"
+
+msgid "聚焦终端"
+msgstr "터미널에 포커스"
+
+msgid "回到面板"
+msgstr "패널로 돌아가기"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "명령이 끝난 후 키보드 포커스가 이동하는 위치. 여러 탭에 일괄 전송할 때는 항상 터미널에 포커스합니다."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "실행 후 포커스가 터미널로 돌아갑니다 — 명령을 하나 보낸 뒤 인자를 입력하는 방식에 적합합니다."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "실행 후 포커스가 패널로 돌아가며 이전 행이 선택된 상태로 유지됩니다 — 여러 명령을 연속으로 보내는 방식에 적합합니다. “패널 열어 두기”가 필요합니다."
+
+msgid "操作方式"
+msgstr "동작 방식"
+
+msgid "悬停显示按钮"
+msgstr "마우스 오버 시 버튼"
+
+msgid "仅右键菜单"
+msgstr "우클릭 메뉴"
+
+msgid "两者都支持"
+msgstr "둘 다"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "명령 동작의 위치입니다. 우클릭 메뉴에는 변형을 만들 수 있는 복제도 있습니다."
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "모두 선택"
 
 msgid "全不选"
 msgstr "선택 해제"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "실행 후 SFTP+에 새로 고침 알림"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "명령 실행 후 새로 고침 요청을 보냅니다. SFTP+ 에만 적용되며, SFTP+ 쪽의 대응 스위치(기능 → 명령 실행 후 목록 새로 고침)도 켜져 있어야 합니다 — 양쪽 모두 활성화되어야 합니다."
 

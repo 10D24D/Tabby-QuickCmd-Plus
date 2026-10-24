@@ -69,11 +69,59 @@ msgstr "Vymazat hledání"
 msgid "panel.add"
 msgstr "Nový příkaz"
 
+msgid "panel.history"
+msgstr "Historie"
+
+msgid "panel.history_clear"
+msgstr "Vymazat"
+
+msgid "panel.history_clear_confirm"
+msgstr "Vymazat celou historii spouštění? Tuto akci nelze vrátit."
+
+msgid "panel.history_all"
+msgstr "Všechna připojení"
+
+msgid "panel.history_export"
+msgstr "Exportovat"
+
+msgid "panel.history_time_all"
+msgstr "Celou dobu"
+
+msgid "panel.history_today"
+msgstr "Dnes"
+
+msgid "panel.history_7d"
+msgstr "Posledních 7 dní"
+
+msgid "panel.history_30d"
+msgstr "Posledních 30 dní"
+
+msgid "panel.history_custom"
+msgstr "Vlastní"
+
+msgid "panel.history_count"
+msgstr "{n} záznamů"
+
+msgid "panel.history_empty"
+msgstr "Zatím žádné záznamy o spuštění"
+
+msgid "panel.history_empty_filtered"
+msgstr "Žádné odpovídající záznamy"
+
 msgid "panel.edit"
-msgstr "Upravit"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Poslat do všech připojených karet"
+
+msgid "panel.duplicate"
+msgstr "Duplikovat jako nový"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopie)"
 
 msgid "panel.delete"
-msgstr "Smazat"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Smazat \"{name}\"?"
@@ -102,9 +150,6 @@ msgstr "Odeslat a spustit"
 msgid "panel.send_to_line"
 msgstr "Pouze odeslat"
 
-msgid "panel.multi_step_title"
-msgstr "Vícekrokový příkaz"
-
 msgid "panel.multi_step_hint"
 msgstr "Tento příkaz má {count} kroků. Spojit do jednoho řádku?"
 
@@ -125,6 +170,12 @@ msgstr "Táhněte pro změnu pořadí skupiny"
 
 msgid "panel.pinPanel"
 msgstr "Ponechat panel otevřený"
+
+msgid "panel.reset_size"
+msgstr "Obnovit velikost"
+
+msgid "panel.reset_pos"
+msgstr "Obnovit pozici"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Odeslat a spustit"
 msgid "settings.confirm_before_run"
 msgstr "Potvrdit před spuštěním"
 
+msgid "settings.notify_refresh"
+msgstr "Obnovit seznam SFTP+"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Podle globálního nastavení"
+
+msgid "settings.notify_refresh_always"
+msgstr "Vždy"
+
+msgid "settings.notify_refresh_never"
+msgstr "Nikdy"
+
 msgid "confirm.title"
-msgstr "Potvrdit spuštění"
+msgstr "Potvrdit spuštění příkazu"
 
 msgid "confirm.message"
 msgstr "Následující bude odesláno do terminálu. Pokračovat?"
-
-msgid "confirm.run"
-msgstr "Spustit"
 
 msgid "settings.params"
 msgstr "Parametry"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Smazat skupinu (příkazy budou bez skupiny)"
 
 msgid "group.rename"
-msgstr "Přejmenovat"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Upravit skupinu"
@@ -407,6 +467,39 @@ msgstr "Panel nástrojů"
 
 msgid "面板常驻"
 msgstr "Ponechat panel otevřený"
+
+msgid "焦点策略"
+msgstr "Strategie zaměření"
+
+msgid "聚焦终端"
+msgstr "Zaměřit terminál"
+
+msgid "回到面板"
+msgstr "Zpět na panel"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Kam po dokončení příkazu přejde zaměření klávesnice. Vysílání do více karet vždy zaměří terminál."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Po spuštění se zaměření vrátí na terminál — vhodné pro odeslání jednoho příkazu a následné zadání argumentů."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Zaměření se vrátí na panel s předchozím řádkem stále vybraným — vhodné pro odeslání několika příkazů za sebou. Vyžaduje zapnuté „Ponechat panel otevřený“."
+
+msgid "操作方式"
+msgstr "Styl akcí"
+
+msgid "悬停显示按钮"
+msgstr "Tlačítka při najetí"
+
+msgid "仅右键菜单"
+msgstr "Nabídka pravým tlačítkem"
+
+msgid "两者都支持"
+msgstr "Obě"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Kde jsou akce příkazu. Nabídka pravým tlačítkem má i Duplikovat pro variantu."
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "Vybrat vše"
 
 msgid "全不选"
 msgstr "Zrušit výběr"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Upozornit SFTP+ na obnovení po spuštění"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Po spuštění příkazu odešle požadavek na obnovení. Týká se pouze SFTP+ a jeho odpovídající přepínač (Funkce → Obnovit seznam po příkazech QuickCmd+) musí být také zapnutý — zapnuté musí být obě strany."
 

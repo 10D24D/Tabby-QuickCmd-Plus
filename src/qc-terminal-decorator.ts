@@ -345,6 +345,15 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
 
   /** 根据当前入口模式构建入口 */
   private buildEntry(hostEl: HTMLElement, terminal: any, ssh: any, profileId: string, i18n: QuickCommandI18nService, qcSvc: QuickCommandService): void {
+    // ⚠️ 终端实例与连接标识必须**无条件**记录：面板发送命令完全依赖它们
+    //    （`if (!this.terminalRef) return` 会让所有执行静默失效）。
+    //    之前把这两行放在函数末尾，导致「全局布局提前 return」时它们一起被跳过 ⇒ 全局模式下根本无法执行命令。
+    ;(hostEl as any)[QuickCommandTerminalDecorator._SYM_TERMINAL] = terminal
+    ;(hostEl as any)[QuickCommandTerminalDecorator._SYM_PROFILE_ID] = profileId
+
+    // 全局布局：面板跨标签常驻、入口在窗口顶栏 —— 终端工具栏不再显示 QC+，
+    // 否则每个标签都会有一个入口，还会在某个标签的工具条上高亮（用户明确不希望）。
+    if (qcSvc.getLayoutMode() === 'global') return
     const entryMode: 'floating' | 'toolbar' = qcSvc.getEntryMode()
     let entry: HTMLElement
 
@@ -389,6 +398,7 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
 
     // 三通道触发重建
     window.addEventListener('qc-plus-entry-mode-changed', rebuild)
+    window.addEventListener('qc-plus-layout-mode-changed', rebuild)
     hostEl.addEventListener('qc-mode-change', rebuild)
     QuickCommandTerminalDecorator.rebuildRegistry.add(rebuild)
 
@@ -401,6 +411,7 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
       this.subscribeUntilDetached(terminal, {
         unsubscribe: () => {
           window.removeEventListener('qc-plus-entry-mode-changed', rebuild)
+          window.removeEventListener('qc-plus-layout-mode-changed', rebuild)
           hostEl.removeEventListener('qc-mode-change', rebuild)
           QuickCommandTerminalDecorator.rebuildRegistry.delete(rebuild)
           delete (hostEl as any)[SYM._SYM_MODE_LISTENER]
@@ -652,7 +663,7 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
         cmp.terminalHostEl = hostEl
 
         // 根据入口按钮位置计算面板最佳位置
-        this.positionPanelNearEntry(hostEl, cmp)
+        this.positionPanelAtDefault(hostEl, cmp)
 
         cmp.onClose = () => {
           this.zone.run(() => { this.closePanel(hostEl) })
@@ -702,7 +713,10 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
         let lastPaneH = -1
         const syncVisibility = () => {
           if (!document.body.contains(panelHost)) return
-          if (!hostEl.isConnected) {
+          // 全局布局：面板跨标签常驻 —— 与「宿主 pane 是否属于当前活动标签」无关，
+          // 只有切到 Tabby 设置页时才隐藏（局部布局则维持原有的归属判断）
+          const isGlobal = QuickCommandTerminalDecorator.getSharedSvc().getLayoutMode() === 'global'
+          if (!hostEl.isConnected && !isGlobal) {
             if (qcVisible) { panelHost.style.display = 'none'; qcVisible = false }
             rafId = requestAnimationFrame(syncVisibility)
             return
@@ -722,8 +736,13 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
           // app 注入失败 / 拿不到宿主节点时退回纯 rect 逻辑。
           const at: any = this.app?.activeTab ?? null
           const atRoot = (at?.hostView?.rootNodes?.[0] ?? null) as HTMLElement | null
-          const ownerVisible = !at || !atRoot || atRoot.contains(hostEl)
-          const hidden = !ownerVisible || (rect.width === 0 && rect.height === 0)
+          const isSettingsTab = !!(at && ((at as any).settingsProviders || at.constructor?.name === 'SettingsTabComponent'))
+          const ownerVisible = isGlobal
+            ? !isSettingsTab
+            : (!at || !atRoot || atRoot.contains(hostEl))
+          const hidden = isGlobal
+            ? isSettingsTab
+            : (!ownerVisible || (rect.width === 0 && rect.height === 0))
           if (hidden) {
             if (qcVisible) { panelHost.style.display = 'none'; qcVisible = false }
           } else if (!qcVisible && !(hostEl as any)[SYM._SYM_MINIMIZED]) {
@@ -749,49 +768,16 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
    * 使用 getBoundingClientRect 确保位置精确
    * 面板尺寸 320x420，紧贴按钮旁展开，避免超出边界
    */
-  private positionPanelNearEntry(hostEl: HTMLElement, cmp: QuickCommandFloatingPanel): void {
-    const entry = (hostEl as any)[QuickCommandTerminalDecorator._SYM_ENTRY] as HTMLElement
-    if (!entry) return
-
-    // 面板已挂到 document.body + position: fixed → 坐标相对 viewport
-    const entryRect = entry.getBoundingClientRect()
-    const entryW = entryRect.width
-    const entryH = entryRect.height
-
-    // 当前拆分 pane 的可视矩形（所有定位/约束都以它为基准，而非整屏 viewport）
+  /**
+   * 面板默认位置：**收口到面板组件自身的 computeDefaultPos()**（右缘对齐 SFTP+、顶边高一个标题栏）。
+   * ⚠️ 不要在装饰器里再复制一份公式 —— 两处实现必然漂移（本轮就是因此出现「标题栏被顶栏压住」）。
+   */
+  private positionPanelAtDefault(hostEl: HTMLElement, cmp: QuickCommandFloatingPanel): void {
     const r = hostEl.getBoundingClientRect()
-    const panelW = cmp.panelWidth || 320
-    const panelH = cmp.panelHeight || 420
-    const gap = 4
-
-    let vx: number, vy: number
-
-    // 水平：以「当前 pane 中轴」判断按钮在哪侧，面板贴向另一侧
-    // （用 pane 中轴而非整屏中轴，才能保证右 split pane 入口也正确贴在右 pane 内）
-    if (entryRect.left + entryW / 2 < r.left + r.width / 2) {
-      vx = entryRect.right + gap       // 按钮在 pane 左半 → 贴右侧
-    } else {
-      vx = entryRect.left - panelW - gap  // 按钮在 pane 右半 → 贴左侧
-    }
-
-    // 垂直：同样以「当前 pane 中轴」判断
-    if (entryRect.top + entryH / 2 < r.top + r.height / 2) {
-      vy = entryRect.bottom + gap      // 按钮在上半 → 贴下方
-    } else {
-      vy = entryRect.top - panelH + entryH  // 按钮在下半 → 贴上方
-    }
-
-    // 边界约束（必须限制在「当前拆分 pane」的可视矩形内，而非整屏 viewport）
-    // 否则在窄 split pane 下，面板贴入口时可能部分/全部溢出到隔壁 pane（如右 pane 入口
-    // 在右边缘，贴左侧算出的坐标落到屏幕中央=左 pane 区域）。
-    const pad = 4
-    const maxX = Math.max(r.left + pad, r.right - panelW - pad)
-    const maxY = Math.max(r.top + pad, r.bottom - panelH - pad)
-    vx = Math.max(r.left + pad, Math.min(vx, maxX))
-    vy = Math.max(r.top + pad, Math.min(vy, maxY))
-
-    cmp.panelX = Math.round(vx)
-    cmp.panelY = Math.round(vy)
+    if (r.width <= 0 || r.height <= 0) return
+    const pos = cmp.computeDefaultPos(hostEl)
+    cmp.panelX = pos.x
+    cmp.panelY = pos.y
   }
 
   private closePanel(hostEl: HTMLElement): void {
@@ -825,7 +811,7 @@ export class QuickCommandTerminalDecorator extends TerminalDecorator {
       if (cmpRef?.instance) {
         cmpRef.instance.minimized = false
         // 恢复时重新定位
-        this.positionPanelNearEntry(hostEl, cmpRef.instance)
+        this.positionPanelAtDefault(hostEl, cmpRef.instance)
       }
     }
     this._syncQcEntryState(hostEl)

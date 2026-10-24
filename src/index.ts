@@ -20,7 +20,7 @@ import { QuickCommandFloatingPanel } from './qc-floating-panel.component'
 import { QuickCommandSettingsTabProvider, QuickCommandSettingsComponent } from './qc-settings.component'
 import { QcConfigProvider } from './qc-config-provider'
 import { QcHotkeyProvider } from './qc-hotkey-provider'
-import { QcToolbarButtonProvider } from './qc-toolbar-button-provider'
+import { QcToolbarButtonProvider, syncWindowEntryVisibility } from './qc-toolbar-button-provider'
 // Auto 主题需按宿主背景亮度决定用 Dark 还是 Light 预设（与设置页同一判定口径）
 import { parseColorLuminance } from '@common/utils'
 
@@ -135,6 +135,8 @@ export default class QuickCommandPlusModule {
   constructor() {
     applySavedTheme()
     setupAutoThemeSync()
+    // 窗口顶栏图标的显隐按布局模式同步（Tabby 只收集一次按钮，无法靠重启以外的机制）
+    setTimeout(() => { try { syncWindowEntryVisibility() } catch { /* ignore */ } }, 500)
     console.log('[QC+] Module loaded OK')
   }
 }

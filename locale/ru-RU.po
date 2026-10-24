@@ -69,11 +69,59 @@ msgstr "Очистить поиск"
 msgid "panel.add"
 msgstr "Новая команда"
 
+msgid "panel.history"
+msgstr "История"
+
+msgid "panel.history_clear"
+msgstr "Очистить"
+
+msgid "panel.history_clear_confirm"
+msgstr "Очистить всю историю выполнения? Это действие нельзя отменить."
+
+msgid "panel.history_all"
+msgstr "Все подключения"
+
+msgid "panel.history_export"
+msgstr "Экспорт"
+
+msgid "panel.history_time_all"
+msgstr "Всё время"
+
+msgid "panel.history_today"
+msgstr "Сегодня"
+
+msgid "panel.history_7d"
+msgstr "Последние 7 дней"
+
+msgid "panel.history_30d"
+msgstr "Последние 30 дней"
+
+msgid "panel.history_custom"
+msgstr "Свой период"
+
+msgid "panel.history_count"
+msgstr "{n} записей"
+
+msgid "panel.history_empty"
+msgstr "История выполнения пока пуста"
+
+msgid "panel.history_empty_filtered"
+msgstr "Нет подходящих записей"
+
 msgid "panel.edit"
-msgstr "Изменить"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Отправить на все подключённые вкладки"
+
+msgid "panel.duplicate"
+msgstr "Дублировать как новую"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (копия)"
 
 msgid "panel.delete"
-msgstr "Удалить"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Удалить «{name}»?"
@@ -102,9 +150,6 @@ msgstr "Отправить и выполнить"
 msgid "panel.send_to_line"
 msgstr "Только отправить"
 
-msgid "panel.multi_step_title"
-msgstr "Многошаговая команда"
-
 msgid "panel.multi_step_hint"
 msgstr "В этой команде {count} шагов. Объединить в одну строку?"
 
@@ -125,6 +170,12 @@ msgstr "Перетащите для изменения порядка групп
 
 msgid "panel.pinPanel"
 msgstr "Оставлять панель открытой"
+
+msgid "panel.reset_size"
+msgstr "Сбросить размер"
+
+msgid "panel.reset_pos"
+msgstr "Сбросить позицию"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Отправить и выполнить"
 msgid "settings.confirm_before_run"
 msgstr "Подтверждать перед выполнением"
 
+msgid "settings.notify_refresh"
+msgstr "Обновить список SFTP+"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Как в общих настройках"
+
+msgid "settings.notify_refresh_always"
+msgstr "Всегда"
+
+msgid "settings.notify_refresh_never"
+msgstr "Никогда"
+
 msgid "confirm.title"
-msgstr "Подтверждение выполнения"
+msgstr "Подтверждение выполнения команды"
 
 msgid "confirm.message"
 msgstr "Следующее будет отправлено в терминал. Продолжить?"
-
-msgid "confirm.run"
-msgstr "Выполнить"
 
 msgid "settings.params"
 msgstr "Параметры"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Удалить группу (команды станут без группы)"
 
 msgid "group.rename"
-msgstr "Переименовать"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Изменить группу"
@@ -407,6 +467,39 @@ msgstr "Панель инструментов"
 
 msgid "面板常驻"
 msgstr "Оставлять панель открытой"
+
+msgid "焦点策略"
+msgstr "Стратегия фокуса"
+
+msgid "聚焦终端"
+msgstr "Фокус на терминале"
+
+msgid "回到面板"
+msgstr "Вернуть панель"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Куда переходит фокус клавиатуры после завершения команды. При отправке на несколько вкладок фокус всегда получает терминал."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "После выполнения фокус возвращается в терминал — удобно, если отправляете одну команду, а затем вводите аргументы."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "После выполнения фокус возвращается на панель, а предыдущая строка остаётся выделенной — удобно, чтобы отправить несколько команд подряд. Требуется «Оставлять панель открытой»."
+
+msgid "操作方式"
+msgstr "Способ действий"
+
+msgid "悬停显示按钮"
+msgstr "Кнопки при наведении"
+
+msgid "仅右键菜单"
+msgstr "Меню по правому клику"
+
+msgid "两者都支持"
+msgstr "Оба"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Где находятся действия команды. В меню правого клика есть и «Дублировать» для варианта."
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "Выбрать все"
 
 msgid "全不选"
 msgstr "Снять выделение"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Уведомлять SFTP+ об обновлении после выполнения"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Отправляет запрос на обновление после выполнения команды. Действует только для SFTP+ и его соответствующий переключатель (Функции → Обновлять список после команд QuickCmd+) тоже должен быть включён — должны быть включены обе стороны."
 

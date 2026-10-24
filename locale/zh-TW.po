@@ -69,11 +69,59 @@ msgstr "清除搜尋"
 msgid "panel.add"
 msgstr "新建命令"
 
+msgid "panel.history"
+msgstr "執行記錄"
+
+msgid "panel.history_clear"
+msgstr "清空"
+
+msgid "panel.history_clear_confirm"
+msgstr "確定清空全部執行記錄嗎？此操作不可復原。"
+
+msgid "panel.history_all"
+msgstr "全部連線"
+
+msgid "panel.history_export"
+msgstr "匯出"
+
+msgid "panel.history_time_all"
+msgstr "全部時間"
+
+msgid "panel.history_today"
+msgstr "今天"
+
+msgid "panel.history_7d"
+msgstr "近 7 天"
+
+msgid "panel.history_30d"
+msgstr "近 30 天"
+
+msgid "panel.history_custom"
+msgstr "自訂"
+
+msgid "panel.history_count"
+msgstr "共 {n} 條"
+
+msgid "panel.history_empty"
+msgstr "尚無執行記錄"
+
+msgid "panel.history_empty_filtered"
+msgstr "沒有符合條件的記錄"
+
 msgid "panel.edit"
-msgstr "編輯"
+msgstr "编辑命令"
+
+msgid "panel.broadcast"
+msgstr "發送到所有已連接分頁"
+
+msgid "panel.duplicate"
+msgstr "拷貝新建命令"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} 副本"
 
 msgid "panel.delete"
-msgstr "刪除"
+msgstr "删除命令"
 
 msgid "panel.delete_confirm"
 msgstr "確定刪除 \"{name}\" 嗎？"
@@ -102,9 +150,6 @@ msgstr "發送並執行"
 msgid "panel.send_to_line"
 msgstr "僅發送"
 
-msgid "panel.multi_step_title"
-msgstr "多步命令提示"
-
 msgid "panel.multi_step_hint"
 msgstr "該命令包含 {count} 個步驟，是否拼接為一行發送？"
 
@@ -125,6 +170,12 @@ msgstr "拖曳排序分組"
 
 msgid "panel.pinPanel"
 msgstr "面板常駐"
+
+msgid "panel.reset_size"
+msgstr "重設大小"
+
+msgid "panel.reset_pos"
+msgstr "重設位置"
 
 msgid "settings.panelOpacity"
 msgstr "面板透明度"
@@ -177,14 +228,23 @@ msgstr "發送並執行"
 msgid "settings.confirm_before_run"
 msgstr "執行前確認"
 
+msgid "settings.notify_refresh"
+msgstr "更新 SFTP+ 面板清單"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "跟隨全域設定"
+
+msgid "settings.notify_refresh_always"
+msgstr "總是"
+
+msgid "settings.notify_refresh_never"
+msgstr "從不"
+
 msgid "confirm.title"
-msgstr "確認執行"
+msgstr "命令執行確認"
 
 msgid "confirm.message"
 msgstr "將把以下命令傳送到終端機，是否繼續？"
-
-msgid "confirm.run"
-msgstr "執行"
 
 msgid "settings.params"
 msgstr "參數"
@@ -241,7 +301,7 @@ msgid "settings.delete"
 msgstr "刪除"
 
 msgid "settings.export"
-msgstr "匯出資料"
+msgstr "匯出"
 
 msgid "settings.import"
 msgstr "匯入資料"
@@ -280,10 +340,10 @@ msgid "group.order"
 msgstr "排序"
 
 msgid "group.profiles"
-msgstr "限定連接"
+msgstr "適用連接"
 
 msgid "group.profiles_hint"
-msgstr "未勾選 = 對所有連接可見"
+msgstr "勾選後僅在這些連接下顯示；不選 = 所有連接都顯示"
 
 msgid "group.profiles_selected"
 msgstr " 個已選"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "刪除分組（命令變為未分組）"
 
 msgid "group.rename"
-msgstr "重新命名"
+msgstr "重命名分组"
 
 msgid "group.edit"
 msgstr "編輯分組"
@@ -337,7 +397,7 @@ msgid "settings.hotkeyRecording"
 msgstr "請按下按鍵..."
 
 msgid "settings.hotkeyClear"
-msgstr "清除"
+msgstr "清空"
 
 msgid "settings.hotkeySaved"
 msgstr "快捷鍵已設為 {hotkey}"
@@ -408,6 +468,39 @@ msgstr "工具列"
 msgid "面板常驻"
 msgstr "面板常駐"
 
+msgid "焦点策略"
+msgstr "焦點策略"
+
+msgid "聚焦终端"
+msgstr "聚焦終端"
+
+msgid "回到面板"
+msgstr "回到面板"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "命令執行完畢後鍵盤焦點的去向。廣播到多個分頁時一律聚焦終端。"
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "執行後焦點回到終端 — 適合發一條命令後接著輸入參數。"
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "執行後焦點回到面板並保留原選中行 — 適合連續發多條命令；需開啟「面板常駐」"
+
+msgid "操作方式"
+msgstr "操作方式"
+
+msgid "悬停显示按钮"
+msgstr "懸停顯示按鈕"
+
+msgid "仅右键菜单"
+msgstr "僅右鍵選單"
+
+msgid "两者都支持"
+msgstr "兩者都支援"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "命令列的操作入口；右鍵選單裡還有「拷貝新建命令」，可拿現有命令改出變體"
+
 msgid "面板透明度"
 msgstr "面板透明度"
 
@@ -454,10 +547,10 @@ msgid "未绑定"
 msgstr "未綁定"
 
 msgid "清除"
-msgstr "清除"
+msgstr "清空"
 
 msgid "清空"
-msgstr "清除"
+msgstr "清空"
 
 msgid "确认覆盖"
 msgstr "確認覆蓋"
@@ -478,7 +571,7 @@ msgid "导入数据"
 msgstr "匯入資料"
 
 msgid "导出数据"
-msgstr "匯出資料"
+msgstr "匯出"
 
 msgid "清空数据"
 msgstr "清空資料"
@@ -590,4 +683,10 @@ msgstr "全選"
 
 msgid "全不选"
 msgstr "全不選"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "執行命令後通知 SFTP+ 重新整理列表"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "命令執行後送出重新整理請求。僅對 SFTP+ 有效，且 SFTP+ 設定頁的對應開關（功能性 → 執行 QuickCmd+ 命令後重新整理列表）也要開啟，兩邊都開才會生效。"
 

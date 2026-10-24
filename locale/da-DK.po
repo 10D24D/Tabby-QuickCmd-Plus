@@ -69,11 +69,59 @@ msgstr "Ryd søgning"
 msgid "panel.add"
 msgstr "Ny kommando"
 
+msgid "panel.history"
+msgstr "Historik"
+
+msgid "panel.history_clear"
+msgstr "Ryd"
+
+msgid "panel.history_clear_confirm"
+msgstr "Ryd hele eksekveringshistorikken? Dette kan ikke fortrydes."
+
+msgid "panel.history_all"
+msgstr "Alle forbindelser"
+
+msgid "panel.history_export"
+msgstr "Eksportér"
+
+msgid "panel.history_time_all"
+msgstr "Hele tiden"
+
+msgid "panel.history_today"
+msgstr "I dag"
+
+msgid "panel.history_7d"
+msgstr "Sidste 7 dage"
+
+msgid "panel.history_30d"
+msgstr "Sidste 30 dage"
+
+msgid "panel.history_custom"
+msgstr "Brugerdefineret"
+
+msgid "panel.history_count"
+msgstr "{n} poster"
+
+msgid "panel.history_empty"
+msgstr "Ingen kørselslog endnu"
+
+msgid "panel.history_empty_filtered"
+msgstr "Ingen matchende poster"
+
 msgid "panel.edit"
-msgstr "Rediger"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Send til alle forbundne faner"
+
+msgid "panel.duplicate"
+msgstr "Dupliker som ny"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopi)"
 
 msgid "panel.delete"
-msgstr "Slet"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Slet \"{name}\"?"
@@ -102,9 +150,6 @@ msgstr "Send og kør"
 msgid "panel.send_to_line"
 msgstr "Send kun"
 
-msgid "panel.multi_step_title"
-msgstr "Flertrinskommando"
-
 msgid "panel.multi_step_hint"
 msgstr "Denne kommando har {count} trin. Saml til én linje?"
 
@@ -125,6 +170,12 @@ msgstr "Træk for at omarrangere gruppe"
 
 msgid "panel.pinPanel"
 msgstr "Hold panelet åbent"
+
+msgid "panel.reset_size"
+msgstr "Nulstil størrelse"
+
+msgid "panel.reset_pos"
+msgstr "Nulstil placering"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Send og kør"
 msgid "settings.confirm_before_run"
 msgstr "Bekræft før kørsel"
 
+msgid "settings.notify_refresh"
+msgstr "Opdater SFTP+-liste"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Følg global indstilling"
+
+msgid "settings.notify_refresh_always"
+msgstr "Altid"
+
+msgid "settings.notify_refresh_never"
+msgstr "Aldrig"
+
 msgid "confirm.title"
-msgstr "Bekræft kørsel"
+msgstr "Bekræft kommandoafvikling"
 
 msgid "confirm.message"
 msgstr "Følgende sendes til terminalen. Fortsæt?"
-
-msgid "confirm.run"
-msgstr "Kør"
 
 msgid "settings.params"
 msgstr "Parametre"
@@ -241,7 +301,7 @@ msgid "settings.delete"
 msgstr "Slet"
 
 msgid "settings.export"
-msgstr "Eksport"
+msgstr "Eksportér"
 
 msgid "settings.import"
 msgstr "Importér"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Slet gruppe (kommandoer bliver ugrupperede)"
 
 msgid "group.rename"
-msgstr "Omdøb"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Rediger gruppe"
@@ -408,6 +468,39 @@ msgstr "Værktøjslinje"
 msgid "面板常驻"
 msgstr "Hold panelet åbent"
 
+msgid "焦点策略"
+msgstr "Fokusstrategi"
+
+msgid "聚焦终端"
+msgstr "Fokusér terminal"
+
+msgid "回到面板"
+msgstr "Tilbage til panel"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Hvor tastaturfokus går hen, når en kommando er færdig. Udsendelse til flere faner fokuserer altid terminalen."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Fokus vender tilbage til terminalen efter kørsel — godt til at sende én kommando og derefter skrive argumenter."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Fokus vender tilbage til panelet med den forrige række stadig valgt — godt til at sende flere kommandoer i træk. Kræver „Hold panelet åbent“."
+
+msgid "操作方式"
+msgstr "Handlingsstil"
+
+msgid "悬停显示按钮"
+msgstr "Knapper ved hover"
+
+msgid "仅右键菜单"
+msgstr "Højrekliksmenu"
+
+msgid "两者都支持"
+msgstr "Begge"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Hvor kommando-handlingerne er. Højrekliksmenuen har også Dupliker til en variant."
+
 msgid "面板透明度"
 msgstr "Panel Opacity"
 
@@ -478,7 +571,7 @@ msgid "导入数据"
 msgstr "Importér"
 
 msgid "导出数据"
-msgstr "Eksport"
+msgstr "Eksportér"
 
 msgid "清空数据"
 msgstr "Ryd Alle"
@@ -590,4 +683,10 @@ msgstr "Vælg alle"
 
 msgid "全不选"
 msgstr "Ryd valg"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Underret SFTP+ om opdatering efter kørsel"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Sender en anmodning om opdatering, når en kommando er kørt. Gælder kun SFTP+ og dens tilsvarende kontakt (Funktioner → Opdater liste efter QuickCmd+-kommandoer) skal også være slået til — begge sider skal være aktiveret."
 

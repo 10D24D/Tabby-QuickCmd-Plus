@@ -69,11 +69,59 @@ msgstr "Очистити пошук"
 msgid "panel.add"
 msgstr "Нова команда"
 
+msgid "panel.history"
+msgstr "Історія"
+
+msgid "panel.history_clear"
+msgstr "Очистити"
+
+msgid "panel.history_clear_confirm"
+msgstr "Очистити всю історію виконання? Цю дію не можна скасувати."
+
+msgid "panel.history_all"
+msgstr "Усі з’єднання"
+
+msgid "panel.history_export"
+msgstr "Експорт"
+
+msgid "panel.history_time_all"
+msgstr "Весь час"
+
+msgid "panel.history_today"
+msgstr "Сьогодні"
+
+msgid "panel.history_7d"
+msgstr "Останні 7 днів"
+
+msgid "panel.history_30d"
+msgstr "Останні 30 днів"
+
+msgid "panel.history_custom"
+msgstr "Свій період"
+
+msgid "panel.history_count"
+msgstr "{n} записів"
+
+msgid "panel.history_empty"
+msgstr "Історія виконання поки порожня"
+
+msgid "panel.history_empty_filtered"
+msgstr "Немає відповідних записів"
+
 msgid "panel.edit"
-msgstr "Редагувати"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Надіслати на всі підключені вкладки"
+
+msgid "panel.duplicate"
+msgstr "Дублювати як нову"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (копія)"
 
 msgid "panel.delete"
-msgstr "Видалити"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Видалити «{name}»?"
@@ -102,9 +150,6 @@ msgstr "Надіслати й виконати"
 msgid "panel.send_to_line"
 msgstr "Лише надіслати"
 
-msgid "panel.multi_step_title"
-msgstr "Багатокрокова команда"
-
 msgid "panel.multi_step_hint"
 msgstr "Ця команда має {count} кроків. Об’єднати в один рядок?"
 
@@ -125,6 +170,12 @@ msgstr "Перетягніть для зміни порядку групи"
 
 msgid "panel.pinPanel"
 msgstr "Залишати панель відкритою"
+
+msgid "panel.reset_size"
+msgstr "Скинути розмір"
+
+msgid "panel.reset_pos"
+msgstr "Скинути позицію"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Надіслати й виконати"
 msgid "settings.confirm_before_run"
 msgstr "Підтверджувати перед виконанням"
 
+msgid "settings.notify_refresh"
+msgstr "Оновити список SFTP+"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Як у загальних налаштуваннях"
+
+msgid "settings.notify_refresh_always"
+msgstr "Завжди"
+
+msgid "settings.notify_refresh_never"
+msgstr "Ніколи"
+
 msgid "confirm.title"
-msgstr "Підтвердження виконання"
+msgstr "Підтвердження виконання команди"
 
 msgid "confirm.message"
 msgstr "Наступне буде надіслано в термінал. Продовжити?"
-
-msgid "confirm.run"
-msgstr "Виконати"
 
 msgid "settings.params"
 msgstr "Параметри"
@@ -241,7 +301,7 @@ msgid "settings.delete"
 msgstr "Видалити"
 
 msgid "settings.export"
-msgstr "Експортувати"
+msgstr "Експорт"
 
 msgid "settings.import"
 msgstr "Імпорт"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Видалити групу (команди стануть без групи)"
 
 msgid "group.rename"
-msgstr "Перейменувати"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Редагувати групу"
@@ -408,6 +468,39 @@ msgstr "Панель інструментів"
 msgid "面板常驻"
 msgstr "Залишати панель відкритою"
 
+msgid "焦点策略"
+msgstr "Стратегія фокуса"
+
+msgid "聚焦终端"
+msgstr "Фокус на терміналі"
+
+msgid "回到面板"
+msgstr "Повернутися до панелі"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Куди переходить фокус клавіатури після завершення команди. При надсиланні на кілька вкладок фокус завжди отримує термінал."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Після виконання фокус повертається до термінала — зручно, коли надсилаєте одну команду, а потім вводите аргументи."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Після виконання фокус повертається на панель, а попередній рядок залишається вибраним — зручно для надсилання кількох команд поспіль. Потрібно «Залишати панель відкритою»."
+
+msgid "操作方式"
+msgstr "Спосіб дій"
+
+msgid "悬停显示按钮"
+msgstr "Кнопки при наведенні"
+
+msgid "仅右键菜单"
+msgstr "Меню правого кліку"
+
+msgid "两者都支持"
+msgstr "Обидва"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Де знаходяться дії команди. У меню правого кліку є й «Дублювати» для варіанта."
+
 msgid "面板透明度"
 msgstr "Panel Opacity"
 
@@ -478,7 +571,7 @@ msgid "导入数据"
 msgstr "Імпорт"
 
 msgid "导出数据"
-msgstr "Експортувати"
+msgstr "Експорт"
 
 msgid "清空数据"
 msgstr "Очистити Всі"
@@ -590,4 +683,10 @@ msgstr "Вибрати все"
 
 msgid "全不选"
 msgstr "Очистити вибір"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Повідомляти SFTP+ про оновлення після виконання"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Надсилає запит на оновлення після виконання команди. Стосується лише SFTP+ і його відповідний перемикач (Функції → Оновлювати список після команд QuickCmd+) також має бути ввімкнений — мають бути ввімкнені обидві сторони."
 

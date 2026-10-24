@@ -69,11 +69,59 @@ msgstr "Wyczyść wyszukiwanie"
 msgid "panel.add"
 msgstr "Nowe polecenie"
 
+msgid "panel.history"
+msgstr "Historia"
+
+msgid "panel.history_clear"
+msgstr "Wyczyść"
+
+msgid "panel.history_clear_confirm"
+msgstr "Wyczyścić całą historię wykonywania? Tej operacji nie można cofnąć."
+
+msgid "panel.history_all"
+msgstr "Wszystkie połączenia"
+
+msgid "panel.history_export"
+msgstr "Eksportuj"
+
+msgid "panel.history_time_all"
+msgstr "Cały okres"
+
+msgid "panel.history_today"
+msgstr "Dzisiaj"
+
+msgid "panel.history_7d"
+msgstr "Ostatnie 7 dni"
+
+msgid "panel.history_30d"
+msgstr "Ostatnie 30 dni"
+
+msgid "panel.history_custom"
+msgstr "Niestandardowy"
+
+msgid "panel.history_count"
+msgstr "{n} wpisów"
+
+msgid "panel.history_empty"
+msgstr "Brak historii wykonań"
+
+msgid "panel.history_empty_filtered"
+msgstr "Brak pasujących wpisów"
+
 msgid "panel.edit"
-msgstr "Edytuj"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Wyślij do wszystkich połączonych kart"
+
+msgid "panel.duplicate"
+msgstr "Duplikuj jako nowe"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopia)"
 
 msgid "panel.delete"
-msgstr "Usuń"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Usunąć „{name}”?"
@@ -102,9 +150,6 @@ msgstr "Wyślij i wykonaj"
 msgid "panel.send_to_line"
 msgstr "Tylko wyślij"
 
-msgid "panel.multi_step_title"
-msgstr "Polecenie wieloetapowe"
-
 msgid "panel.multi_step_hint"
 msgstr "To polecenie ma {count} kroków. Połączyć w jeden wiersz?"
 
@@ -125,6 +170,12 @@ msgstr "Przeciągnij, aby zmienić kolejność grupy"
 
 msgid "panel.pinPanel"
 msgstr "Zostaw panel otwarty"
+
+msgid "panel.reset_size"
+msgstr "Przywróć rozmiar"
+
+msgid "panel.reset_pos"
+msgstr "Przywróć pozycję"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Wyślij i wykonaj"
 msgid "settings.confirm_before_run"
 msgstr "Potwierdź przed uruchomieniem"
 
+msgid "settings.notify_refresh"
+msgstr "Odśwież listę SFTP+"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Zgodnie z ustawieniem globalnym"
+
+msgid "settings.notify_refresh_always"
+msgstr "Zawsze"
+
+msgid "settings.notify_refresh_never"
+msgstr "Nigdy"
+
 msgid "confirm.title"
-msgstr "Potwierdź wykonanie"
+msgstr "Potwierdź wykonanie polecenia"
 
 msgid "confirm.message"
 msgstr "Następujące polecenie zostanie wysłane do terminala. Kontynuować?"
-
-msgid "confirm.run"
-msgstr "Uruchom"
 
 msgid "settings.params"
 msgstr "Parametry"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Usuń grupę (polecenia staną się bez grupy)"
 
 msgid "group.rename"
-msgstr "Zmień nazwę"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Edytuj grupę"
@@ -407,6 +467,39 @@ msgstr "Pasek narzędzi"
 
 msgid "面板常驻"
 msgstr "Zostaw panel otwarty"
+
+msgid "焦点策略"
+msgstr "Strategia fokusu"
+
+msgid "聚焦终端"
+msgstr "Ustaw fokus na terminalu"
+
+msgid "回到面板"
+msgstr "Wróć do panelu"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Dokąd po zakończeniu polecenia przechodzi fokus klawiatury. Wysłanie do wielu kart zawsze ustawia fokus na terminalu."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Po uruchomieniu fokus wraca do terminalu — wygodne, gdy wysyłasz jedno polecenie, a potem wpisujesz argumenty."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Po uruchomieniu fokus wraca do panelu, a poprzedni wiersz pozostaje zaznaczony — wygodne, gdy wysyłasz kilka poleceń z rzędu. Wymaga włączonej opcji „Zostaw panel otwarty”."
+
+msgid "操作方式"
+msgstr "Styl akcji"
+
+msgid "悬停显示按钮"
+msgstr "Przyciski po najechaniu"
+
+msgid "仅右键菜单"
+msgstr "Menu pod prawym przyciskiem"
+
+msgid "两者都支持"
+msgstr "Oba"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Gdzie są akcje polecenia. Menu pod prawym przyciskiem ma też Duplikuj, by zrobić wariant."
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "Zaznacz wszystko"
 
 msgid "全不选"
 msgstr "Wyczyść wybór"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Powiadom SFTP+ o odświeżeniu po uruchomieniu"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Wysyła żądanie odświeżenia po wykonaniu polecenia. Dotyczy tylko SFTP+ i jego odpowiedni przełącznik (Funkcje → Odśwież listę po poleceniach QuickCmd+) również musi być włączony — obie strony muszą być włączone."
 

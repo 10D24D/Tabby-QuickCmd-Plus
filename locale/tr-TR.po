@@ -69,11 +69,59 @@ msgstr "Aramayı temizle"
 msgid "panel.add"
 msgstr "Yeni komut"
 
+msgid "panel.history"
+msgstr "Geçmiş"
+
+msgid "panel.history_clear"
+msgstr "Temizle"
+
+msgid "panel.history_clear_confirm"
+msgstr "Tüm yürütme geçmişi temizlensin mi? Bu işlem geri alınamaz."
+
+msgid "panel.history_all"
+msgstr "Tüm bağlantılar"
+
+msgid "panel.history_export"
+msgstr "Dışa aktar"
+
+msgid "panel.history_time_all"
+msgstr "Tüm zamanlar"
+
+msgid "panel.history_today"
+msgstr "Bugün"
+
+msgid "panel.history_7d"
+msgstr "Son 7 gün"
+
+msgid "panel.history_30d"
+msgstr "Son 30 gün"
+
+msgid "panel.history_custom"
+msgstr "Özel"
+
+msgid "panel.history_count"
+msgstr "{n} kayıt"
+
+msgid "panel.history_empty"
+msgstr "Henüz çalıştırma geçmişi yok"
+
+msgid "panel.history_empty_filtered"
+msgstr "Eşleşen kayıt yok"
+
 msgid "panel.edit"
-msgstr "Düzenle"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Bağlı tüm sekmelere gönder"
+
+msgid "panel.duplicate"
+msgstr "Yeni olarak çoğalt"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopya)"
 
 msgid "panel.delete"
-msgstr "Sil"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "\"{name}\" silinsin mi?"
@@ -102,9 +150,6 @@ msgstr "Gönder ve çalıştır"
 msgid "panel.send_to_line"
 msgstr "Yalnızca gönder"
 
-msgid "panel.multi_step_title"
-msgstr "Çok adımlı komut"
-
 msgid "panel.multi_step_hint"
 msgstr "Bu komutun {count} adımı var. Tek satırda birleştirilsin mi?"
 
@@ -125,6 +170,12 @@ msgstr "Grubu yeniden sıralamak için sürükleyin"
 
 msgid "panel.pinPanel"
 msgstr "Paneli açık tut"
+
+msgid "panel.reset_size"
+msgstr "Boyutu sıfırla"
+
+msgid "panel.reset_pos"
+msgstr "Konumu sıfırla"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Gönder ve çalıştır"
 msgid "settings.confirm_before_run"
 msgstr "Çalıştırmadan önce onayla"
 
+msgid "settings.notify_refresh"
+msgstr "SFTP+ listesini yenile"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Genel ayarı izle"
+
+msgid "settings.notify_refresh_always"
+msgstr "Her zaman"
+
+msgid "settings.notify_refresh_never"
+msgstr "Hiçbir zaman"
+
 msgid "confirm.title"
-msgstr "Çalıştırmayı onayla"
+msgstr "Komut çalıştırmayı onayla"
 
 msgid "confirm.message"
 msgstr "Aşağıdaki terminale gönderilecek. Devam edilsin mi?"
-
-msgid "confirm.run"
-msgstr "Çalıştır"
 
 msgid "settings.params"
 msgstr "Parametreler"
@@ -241,7 +301,7 @@ msgid "settings.delete"
 msgstr "Sil"
 
 msgid "settings.export"
-msgstr "Dışa Aktar"
+msgstr "Dışa aktar"
 
 msgid "settings.import"
 msgstr "İçe Aktar"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Grubu sil (komutlar gruplanmamış olur)"
 
 msgid "group.rename"
-msgstr "Yeniden adlandır"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Grubu düzenle"
@@ -408,6 +468,39 @@ msgstr "Araç çubuğu"
 msgid "面板常驻"
 msgstr "Paneli açık tut"
 
+msgid "焦点策略"
+msgstr "Odaklanma stratejisi"
+
+msgid "聚焦终端"
+msgstr "Terminale odaklan"
+
+msgid "回到面板"
+msgstr "Panele dön"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Bir komut tamamlandıktan sonra klavye odağının nereye gideceği. Birden fazla sekmeye gönderimde her zaman terminale odaklanılır."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Çalıştırdıktan sonra odak terminale döner — bir komut gönderip ardından argümanları yazmak için uygundur."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Çalıştırdıktan sonra odak panele döner ve önceki satır seçili kalır — arka arkaya birkaç komut göndermek için uygundur. „Paneli açık tut” gerektirir."
+
+msgid "操作方式"
+msgstr "Eylem biçimi"
+
+msgid "悬停显示按钮"
+msgstr "Üzerine gelince düğmeler"
+
+msgid "仅右键菜单"
+msgstr "Sağ tık menüsü"
+
+msgid "两者都支持"
+msgstr "İkisi de"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Komut eylemlerinin yeri. Sağ tık menüsünde varyant oluşturmak için Çoğalt da var."
+
 msgid "面板透明度"
 msgstr "Panel Opacity"
 
@@ -478,7 +571,7 @@ msgid "导入数据"
 msgstr "İçe Aktar"
 
 msgid "导出数据"
-msgstr "Dışa Aktar"
+msgstr "Dışa aktar"
 
 msgid "清空数据"
 msgstr "Tümünü Temizle"
@@ -590,4 +683,10 @@ msgstr "Tümünü seç"
 
 msgid "全不选"
 msgstr "Seçimi temizle"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Çalıştırdıktan sonra SFTP+ öğesini yenileme için bildir"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Bir komut çalıştıktan sonra yenileme isteği gönderir. Yalnızca SFTP+ için geçerlidir ve oradaki karşılık gelen anahtar (Özellikler → QuickCmd+ komutlarından sonra listeyi yenile) da açık olmalıdır — her iki taraf da etkin olmalıdır."
 

@@ -69,11 +69,59 @@ msgstr "Suche löschen"
 msgid "panel.add"
 msgstr "Neuer Befehl"
 
+msgid "panel.history"
+msgstr "Verlauf"
+
+msgid "panel.history_clear"
+msgstr "Leeren"
+
+msgid "panel.history_clear_confirm"
+msgstr "Gesamten Ausführungsverlauf löschen? Dies kann nicht rückgängig gemacht werden."
+
+msgid "panel.history_all"
+msgstr "Alle Verbindungen"
+
+msgid "panel.history_export"
+msgstr "Exportieren"
+
+msgid "panel.history_time_all"
+msgstr "Gesamter Zeitraum"
+
+msgid "panel.history_today"
+msgstr "Heute"
+
+msgid "panel.history_7d"
+msgstr "Letzte 7 Tage"
+
+msgid "panel.history_30d"
+msgstr "Letzte 30 Tage"
+
+msgid "panel.history_custom"
+msgstr "Benutzerdefiniert"
+
+msgid "panel.history_count"
+msgstr "{n} Einträge"
+
+msgid "panel.history_empty"
+msgstr "Noch keine Ausführungsprotokolle"
+
+msgid "panel.history_empty_filtered"
+msgstr "Keine passenden Einträge"
+
 msgid "panel.edit"
-msgstr "Bearbeiten"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "An alle verbundenen Tabs senden"
+
+msgid "panel.duplicate"
+msgstr "Als neu duplizieren"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (Kopie)"
 
 msgid "panel.delete"
-msgstr "Löschen"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "\"{name}\" löschen?"
@@ -102,9 +150,6 @@ msgstr "Senden & Ausführen"
 msgid "panel.send_to_line"
 msgstr "Nur senden"
 
-msgid "panel.multi_step_title"
-msgstr "Mehrschritt-Befehl"
-
 msgid "panel.multi_step_hint"
 msgstr "Dieser Befehl hat {count} Schritte. In eine Zeile zusammenfassen?"
 
@@ -125,6 +170,12 @@ msgstr "Zum Neuordnen der Gruppe ziehen"
 
 msgid "panel.pinPanel"
 msgstr "Panel geöffnet lassen"
+
+msgid "panel.reset_size"
+msgstr "Größe zurücksetzen"
+
+msgid "panel.reset_pos"
+msgstr "Position zurücksetzen"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Senden & Ausführen"
 msgid "settings.confirm_before_run"
 msgstr "Vor dem Ausführen bestätigen"
 
+msgid "settings.notify_refresh"
+msgstr "SFTP+-Liste aktualisieren"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Globaler Einstellung folgen"
+
+msgid "settings.notify_refresh_always"
+msgstr "Immer"
+
+msgid "settings.notify_refresh_never"
+msgstr "Nie"
+
 msgid "confirm.title"
-msgstr "Ausführung bestätigen"
+msgstr "Befehlsausführung bestätigen"
 
 msgid "confirm.message"
 msgstr "Folgendes wird an das Terminal gesendet. Fortfahren?"
-
-msgid "confirm.run"
-msgstr "Ausführen"
 
 msgid "settings.params"
 msgstr "Parameter"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Gruppe löschen (Befehle werden nicht gruppiert)"
 
 msgid "group.rename"
-msgstr "Umbenennen"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Gruppe bearbeiten"
@@ -337,7 +397,7 @@ msgid "settings.hotkeyRecording"
 msgstr "Tasten drücken..."
 
 msgid "settings.hotkeyClear"
-msgstr "Löschen"
+msgstr "Leeren"
 
 msgid "settings.hotkeySaved"
 msgstr "Tastenkürzel auf {hotkey} gesetzt"
@@ -408,6 +468,39 @@ msgstr "Symbolleiste"
 msgid "面板常驻"
 msgstr "Panel geöffnet lassen"
 
+msgid "焦点策略"
+msgstr "Fokusstrategie"
+
+msgid "聚焦终端"
+msgstr "Terminal fokussieren"
+
+msgid "回到面板"
+msgstr "Zurück zum Panel"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Wohin der Tastaturfokus nach Abschluss eines Befehls wechselt. Beim Senden an mehrere Tabs wird immer das Terminal fokussiert."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Fokus kehrt nach der Ausführung zum Terminal zurück — gut, um einen Befehl zu senden und dann Argumente einzutippen."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Fokus kehrt zum Panel zurück, wobei die vorherige Zeile weiterhin ausgewählt ist — gut, um mehrere Befehle hintereinander zu senden. Erfordert „Panel geöffnet lassen“."
+
+msgid "操作方式"
+msgstr "Aktionsstil"
+
+msgid "悬停显示按钮"
+msgstr "Buttons beim Überfahren"
+
+msgid "仅右键菜单"
+msgstr "Rechtsklick-Menü"
+
+msgid "两者都支持"
+msgstr "Beides"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Wo die Befehlsaktionen liegen. Das Rechtsklick-Menü bietet auch Duplizieren für eine Variante."
+
 msgid "面板透明度"
 msgstr "Panel Opacity"
 
@@ -454,10 +547,10 @@ msgid "未绑定"
 msgstr "Nicht zugewiesen"
 
 msgid "清除"
-msgstr "Löschen"
+msgstr "Leeren"
 
 msgid "清空"
-msgstr "Löschen"
+msgstr "Leeren"
 
 msgid "确认覆盖"
 msgstr "Überschreiben"
@@ -590,4 +683,10 @@ msgstr "Alle auswählen"
 
 msgid "全不选"
 msgstr "Auswahl aufheben"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "SFTP+ nach der Ausführung zum Aktualisieren benachrichtigen"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Sendet nach der Ausführung eines Befehls eine Aktualisierungsanfrage. Betrifft nur SFTP+; dort muss der zugehörige Schalter (Funktionen → Liste nach QuickCmd+-Befehlen aktualisieren) ebenfalls aktiv sein — beide Seiten müssen eingeschaltet sein."
 

@@ -69,11 +69,59 @@ msgstr "Vee soektog uit"
 msgid "panel.add"
 msgstr "Nuwe bevel"
 
+msgid "panel.history"
+msgstr "Geskiedenis"
+
+msgid "panel.history_clear"
+msgstr "Maak skoon"
+
+msgid "panel.history_clear_confirm"
+msgstr "Vee alle uitvoeringsgeskiedenis uit? Dit kan nie ontdaan word nie."
+
+msgid "panel.history_all"
+msgstr "Alle verbindings"
+
+msgid "panel.history_export"
+msgstr "Uitvoer"
+
+msgid "panel.history_time_all"
+msgstr "Alle tye"
+
+msgid "panel.history_today"
+msgstr "Vandag"
+
+msgid "panel.history_7d"
+msgstr "Laaste 7 dae"
+
+msgid "panel.history_30d"
+msgstr "Laaste 30 dae"
+
+msgid "panel.history_custom"
+msgstr "Pasgemaak"
+
+msgid "panel.history_count"
+msgstr "{n} inskrywings"
+
+msgid "panel.history_empty"
+msgstr "Nog geen uitvoeringsrekords nie"
+
+msgid "panel.history_empty_filtered"
+msgstr "Geen passende rekords nie"
+
 msgid "panel.edit"
-msgstr "Wysig"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Stuur na alle gekoppelde oortjies"
+
+msgid "panel.duplicate"
+msgstr "Dupliseer as nuwe"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopie)"
 
 msgid "panel.delete"
-msgstr "Vee uit"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Skrap \"{name}\"?"
@@ -102,9 +150,6 @@ msgstr "Stuur en voer uit"
 msgid "panel.send_to_line"
 msgstr "Stuur net"
 
-msgid "panel.multi_step_title"
-msgstr "Multi-stap-bevel"
-
 msgid "panel.multi_step_hint"
 msgstr "Hierdie bevel het {count} stappe. Voeg in een reël saam?"
 
@@ -125,6 +170,12 @@ msgstr "Sleep om groep te herrangskik"
 
 msgid "panel.pinPanel"
 msgstr "Hou paneel oop"
+
+msgid "panel.reset_size"
+msgstr "Stel grootte terug"
+
+msgid "panel.reset_pos"
+msgstr "Stel posisie terug"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Stuur en voer uit"
 msgid "settings.confirm_before_run"
 msgstr "Bevestig voor uitvoering"
 
+msgid "settings.notify_refresh"
+msgstr "Verfris SFTP+-lys"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Volg algemene instelling"
+
+msgid "settings.notify_refresh_always"
+msgstr "Altyd"
+
+msgid "settings.notify_refresh_never"
+msgstr "Nooit"
+
 msgid "confirm.title"
-msgstr "Bevestig uitvoering"
+msgstr "Bevestig beveluitvoering"
 
 msgid "confirm.message"
 msgstr "Die volgende sal na die terminaal gestuur word. Gaan voort?"
-
-msgid "confirm.run"
-msgstr "Voer uit"
 
 msgid "settings.params"
 msgstr "Parameters"
@@ -241,7 +301,7 @@ msgid "settings.delete"
 msgstr "Vee uit"
 
 msgid "settings.export"
-msgstr "Eksporteer"
+msgstr "Uitvoer"
 
 msgid "settings.import"
 msgstr "Invoer"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Skrap groep (bevele word ongegroepeer)"
 
 msgid "group.rename"
-msgstr "Hernoem"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Wysig groep"
@@ -337,7 +397,7 @@ msgid "settings.hotkeyRecording"
 msgstr "Druk sleutels..."
 
 msgid "settings.hotkeyClear"
-msgstr "Vee uit"
+msgstr "Maak skoon"
 
 msgid "settings.hotkeySaved"
 msgstr "Kortpad gestel op {hotkey}"
@@ -408,6 +468,39 @@ msgstr "Nutsbalk"
 msgid "面板常驻"
 msgstr "Hou paneel oop"
 
+msgid "焦点策略"
+msgstr "Fokusstrategie"
+
+msgid "聚焦终端"
+msgstr "Fokus terminaal"
+
+msgid "回到面板"
+msgstr "Terug na paneel"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Waar die toetsbordfokus gaan nadat ’n opdrag klaar is. Uitsending na verskeie oortjies fokus altyd die terminaal."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Fokus keer na die terminaal terug nadat dit uitgevoer is — goed vir een opdrag stuur en dan argumente tik."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Fokus keer terug na die paneel met die vorige rye nog gekies — goed om verskeie opdragte agtereenvoor te stuur. Vereis: Hou paneel oop."
+
+msgid "操作方式"
+msgstr "Aksiestyl"
+
+msgid "悬停显示按钮"
+msgstr "Wys-knoppies"
+
+msgid "仅右键菜单"
+msgstr "Regsklik-kieslys"
+
+msgid "两者都支持"
+msgstr "Beide"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Waar die opdrag-aksies sit. Die regsklik-kieslys het ook Dupliseer om 'n variant te bou."
+
 msgid "面板透明度"
 msgstr "Panel Opacity"
 
@@ -454,10 +547,10 @@ msgid "未绑定"
 msgstr "Ongebonde"
 
 msgid "清除"
-msgstr "Vee uit"
+msgstr "Maak skoon"
 
 msgid "清空"
-msgstr "Vee uit"
+msgstr "Maak skoon"
 
 msgid "确认覆盖"
 msgstr "Oorskryf"
@@ -478,7 +571,7 @@ msgid "导入数据"
 msgstr "Invoer"
 
 msgid "导出数据"
-msgstr "Eksporteer"
+msgstr "Uitvoer"
 
 msgid "清空数据"
 msgstr "Vee Uit Alles"
@@ -590,4 +683,10 @@ msgstr "Kies alles"
 
 msgid "全不选"
 msgstr "Ontkies alles"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Stel SFTP+ ná uitvoering in kennis om te verfris"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Stuur 'n verfrisversoek uit nadat 'n opdrag uitgevoer is. Raak net SFTP+ en sy ooreenstemmende skakelaar (Kenmerke → Verfris lys na QuickCmd+-opdragte) moet daar ook aan wees — beide kante moet geaktiveer wees."
 

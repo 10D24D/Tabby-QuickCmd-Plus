@@ -69,11 +69,59 @@ msgstr "Rensa sökning"
 msgid "panel.add"
 msgstr "Nytt kommando"
 
+msgid "panel.history"
+msgstr "Historik"
+
+msgid "panel.history_clear"
+msgstr "Rensa"
+
+msgid "panel.history_clear_confirm"
+msgstr "Rensa hela exekveringshistoriken? Detta går inte att ångra."
+
+msgid "panel.history_all"
+msgstr "Alla anslutningar"
+
+msgid "panel.history_export"
+msgstr "Exportera"
+
+msgid "panel.history_time_all"
+msgstr "All tid"
+
+msgid "panel.history_today"
+msgstr "Idag"
+
+msgid "panel.history_7d"
+msgstr "Senaste 7 dagarna"
+
+msgid "panel.history_30d"
+msgstr "Senaste 30 dagarna"
+
+msgid "panel.history_custom"
+msgstr "Anpassad"
+
+msgid "panel.history_count"
+msgstr "{n} poster"
+
+msgid "panel.history_empty"
+msgstr "Ingen körningshistorik ännu"
+
+msgid "panel.history_empty_filtered"
+msgstr "Inga matchande poster"
+
 msgid "panel.edit"
-msgstr "Redigera"
+msgstr "Edit command"
+
+msgid "panel.broadcast"
+msgstr "Skicka till alla anslutna flikar"
+
+msgid "panel.duplicate"
+msgstr "Duplicera som ny"
+
+msgid "panel.duplicate_copy"
+msgstr "{name} (kopia)"
 
 msgid "panel.delete"
-msgstr "Ta bort"
+msgstr "Delete command"
 
 msgid "panel.delete_confirm"
 msgstr "Ta bort \"{name}\"?"
@@ -102,9 +150,6 @@ msgstr "Skicka & kör"
 msgid "panel.send_to_line"
 msgstr "Skicka endast"
 
-msgid "panel.multi_step_title"
-msgstr "Flerstegskommando"
-
 msgid "panel.multi_step_hint"
 msgstr "Detta kommando har {count} steg. Slå ihop till en rad?"
 
@@ -125,6 +170,12 @@ msgstr "Dra för att ändra gruppordning"
 
 msgid "panel.pinPanel"
 msgstr "Håll panelen öppen"
+
+msgid "panel.reset_size"
+msgstr "Återställ storlek"
+
+msgid "panel.reset_pos"
+msgstr "Återställ position"
 
 msgid "settings.panelOpacity"
 msgstr "Panel Opacity"
@@ -177,14 +228,23 @@ msgstr "Skicka & kör"
 msgid "settings.confirm_before_run"
 msgstr "Bekräfta före körning"
 
+msgid "settings.notify_refresh"
+msgstr "Uppdatera SFTP+-listan"
+
+msgid "settings.notify_refresh_inherit"
+msgstr "Följ global inställning"
+
+msgid "settings.notify_refresh_always"
+msgstr "Alltid"
+
+msgid "settings.notify_refresh_never"
+msgstr "Aldrig"
+
 msgid "confirm.title"
-msgstr "Bekräfta körning"
+msgstr "Bekräfta kommandokörning"
 
 msgid "confirm.message"
 msgstr "Följande skickas till terminalen. Fortsätt?"
-
-msgid "confirm.run"
-msgstr "Kör"
 
 msgid "settings.params"
 msgstr "Parametrar"
@@ -295,7 +355,7 @@ msgid "group.delete"
 msgstr "Ta bort grupp (kommandon blir ogrupperade)"
 
 msgid "group.rename"
-msgstr "Byt namn"
+msgstr "Rename group"
 
 msgid "group.edit"
 msgstr "Redigera grupp"
@@ -407,6 +467,39 @@ msgstr "Verktygsfält"
 
 msgid "面板常驻"
 msgstr "Håll panelen öppen"
+
+msgid "焦点策略"
+msgstr "Fokusstrategi"
+
+msgid "聚焦终端"
+msgstr "Fokusera terminal"
+
+msgid "回到面板"
+msgstr "Tillbaka till panelen"
+
+msgid "命令执行完毕后的焦点去向。广播到多个标签时始终聚焦终端"
+msgstr "Vart tangentbordsfokus går efter att ett kommando är klart. Vid sändning till flera flikar fokuseras alltid terminalen."
+
+msgid "执行后焦点回到终端，适合发一条命令就接着敲参数"
+msgstr "Fokus återvänder till terminalen efter körning — passar när du skickar ett kommando och sedan skriver argument."
+
+msgid "执行后焦点回到面板并保留原选中行，适合连续发多条命令；需开启「面板常驻」"
+msgstr "Fokus återvänder till panelen med föregående rad fortfarande markerad — passar när du skickar flera kommandon i rad. Kräver „Håll panelen öppen”."
+
+msgid "操作方式"
+msgstr "Åtgärdsstil"
+
+msgid "悬停显示按钮"
+msgstr "Knappar vid hover"
+
+msgid "仅右键菜单"
+msgstr "Högerklicksmeny"
+
+msgid "两者都支持"
+msgstr "Båda"
+
+msgid "命令行的操作入口；右键菜单里还有「拷贝新建命令」，可拿现有命令改出变体"
+msgstr "Var kommandohandlingarna finns. Högerklicksmenyn har även Duplicera för att skapa en variant."
 
 msgid "面板透明度"
 msgstr "Panel Opacity"
@@ -590,4 +683,10 @@ msgstr "Välj alla"
 
 msgid "全不选"
 msgstr "Rensa val"
+
+msgid "执行命令后通知 SFTP+ 刷新列表"
+msgstr "Meddela SFTP+ att uppdatera efter körning"
+
+msgid "命令执行后向其它插件广播一条刷新请求。仅对 SFTP+ 有效，且需在 SFTP+ 设置页的「功能性 → 执行 QuickCmd+ 命令后刷新列表」一并打开，两边都开才会生效"
+msgstr "Skickar en begäran om uppdatering när ett kommando har körts. Gäller bara SFTP+ och dess motsvarande reglage (Funktioner → Uppdatera listan efter QuickCmd+-kommandon) måste också vara på — båda sidor måste vara aktiverade."
 
